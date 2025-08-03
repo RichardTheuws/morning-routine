@@ -20,9 +20,3 @@ if (i18n.isInitialized) {
   // Wait for i18n to initialize
   i18n.on('initialized', renderApp);
 }
-
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-);
