@@ -523,6 +523,264 @@ class AdvancedAnimationEngine {
     };
   }
 
+  private generateShoulderMobilityPhysics(level: string): GeneratedAnimation {
+    const duration = level === 'beginner' ? 6 : level === 'advanced' ? 5 : 4;
+    
+    return {
+      keyframes: [
+        {
+          timestamp: 0,
+          poses: {
+            shoulder_left: { position: { x: -25, y: 140, z: 0 }, rotation: { x: 0, y: 0, z: 0 } },
+            shoulder_right: { position: { x: 25, y: 140, z: 0 }, rotation: { x: 0, y: 0, z: 0 } },
+            arm_left: { position: { x: -30, y: 120, z: 0 }, rotation: { x: 0, y: 0, z: 0 } },
+            arm_right: { position: { x: 30, y: 120, z: 0 }, rotation: { x: 0, y: 0, z: 0 } }
+          },
+          muscleActivations: { shoulders: 0.3 },
+          breathingPhase: 'inhale',
+          focus: [],
+          instruction: 'Arms at sides'
+        },
+        {
+          timestamp: 0.25,
+          poses: {
+            shoulder_left: { position: { x: -25, y: 140, z: 0 }, rotation: { x: 0, y: 0, z: -30 } },
+            shoulder_right: { position: { x: 25, y: 140, z: 0 }, rotation: { x: 0, y: 0, z: 30 } },
+            arm_left: { position: { x: -30, y: 140, z: 0 }, rotation: { x: 0, y: 0, z: -30 } },
+            arm_right: { position: { x: 30, y: 140, z: 0 }, rotation: { x: 0, y: 0, z: 30 } }
+          },
+          muscleActivations: { shoulders: 0.6 },
+          breathingPhase: 'exhale',
+          focus: ['shoulder_left', 'shoulder_right'],
+          instruction: 'Roll shoulders back'
+        },
+        {
+          timestamp: 0.5,
+          poses: {
+            shoulder_left: { position: { x: -25, y: 140, z: 0 }, rotation: { x: 0, y: 0, z: -60 } },
+            shoulder_right: { position: { x: 25, y: 140, z: 0 }, rotation: { x: 0, y: 0, z: 60 } },
+            arm_left: { position: { x: -30, y: 160, z: 0 }, rotation: { x: 0, y: 0, z: -60 } },
+            arm_right: { position: { x: 30, y: 160, z: 0 }, rotation: { x: 0, y: 0, z: 60 } }
+          },
+          muscleActivations: { shoulders: 0.8 },
+          breathingPhase: 'inhale',
+          focus: ['shoulder_left', 'shoulder_right'],
+          instruction: 'Continue rolling up'
+        },
+        {
+          timestamp: 0.75,
+          poses: {
+            shoulder_left: { position: { x: -25, y: 140, z: 0 }, rotation: { x: 0, y: 0, z: -30 } },
+            shoulder_right: { position: { x: 25, y: 140, z: 0 }, rotation: { x: 0, y: 0, z: 30 } },
+            arm_left: { position: { x: -30, y: 140, z: 0 }, rotation: { x: 0, y: 0, z: -30 } },
+            arm_right: { position: { x: 30, y: 140, z: 0 }, rotation: { x: 0, y: 0, z: 30 } }
+          },
+          muscleActivations: { shoulders: 0.6 },
+          breathingPhase: 'exhale',
+          focus: ['shoulder_left', 'shoulder_right'],
+          instruction: 'Roll shoulders forward'
+        },
+        {
+          timestamp: 1,
+          poses: {
+            shoulder_left: { position: { x: -25, y: 140, z: 0 }, rotation: { x: 0, y: 0, z: 0 } },
+            shoulder_right: { position: { x: 25, y: 140, z: 0 }, rotation: { x: 0, y: 0, z: 0 } },
+            arm_left: { position: { x: -30, y: 120, z: 0 }, rotation: { x: 0, y: 0, z: 0 } },
+            arm_right: { position: { x: 30, y: 120, z: 0 }, rotation: { x: 0, y: 0, z: 0 } }
+          },
+          muscleActivations: { shoulders: 0.3 },
+          breathingPhase: 'inhale',
+          focus: [],
+          instruction: 'Return to start'
+        }
+      ],
+      duration,
+      style: 'smooth',
+      difficulty: level as any,
+      metadata: {
+        exerciseId: 'shoulder-rolls',
+        muscleGroups: ['shoulders', 'neck'],
+        equipment: [],
+        safetyNotes: ['Move slowly', 'Don\'t force the movement', 'Stop if you feel pain']
+      }
+    };
+  }
+
+  private generateNeckMobilityPhysics(level: string): GeneratedAnimation {
+    const duration = level === 'beginner' ? 6 : level === 'advanced' ? 5 : 4;
+    
+    return {
+      keyframes: [
+        {
+          timestamp: 0,
+          poses: {
+            head: { position: { x: 0, y: 170, z: 0 }, rotation: { x: 0, y: 0, z: 0 } },
+            neck: { position: { x: 0, y: 155, z: 0 }, rotation: { x: 0, y: 0, z: 0 } }
+          },
+          muscleActivations: { neck: 0.2 },
+          breathingPhase: 'inhale',
+          focus: [],
+          instruction: 'Neutral head position'
+        },
+        {
+          timestamp: 0.33,
+          poses: {
+            head: { position: { x: 0, y: 170, z: 0 }, rotation: { x: 0, y: -30, z: 0 } },
+            neck: { position: { x: 0, y: 155, z: 0 }, rotation: { x: 0, y: -20, z: 0 } }
+          },
+          muscleActivations: { neck: 0.5 },
+          breathingPhase: 'exhale',
+          focus: ['neck'],
+          instruction: 'Turn head left'
+        },
+        {
+          timestamp: 0.66,
+          poses: {
+            head: { position: { x: 0, y: 170, z: 0 }, rotation: { x: 0, y: 30, z: 0 } },
+            neck: { position: { x: 0, y: 155, z: 0 }, rotation: { x: 0, y: 20, z: 0 } }
+          },
+          muscleActivations: { neck: 0.5 },
+          breathingPhase: 'inhale',
+          focus: ['neck'],
+          instruction: 'Turn head right'
+        },
+        {
+          timestamp: 1,
+          poses: {
+            head: { position: { x: 0, y: 170, z: 0 }, rotation: { x: 0, y: 0, z: 0 } },
+            neck: { position: { x: 0, y: 155, z: 0 }, rotation: { x: 0, y: 0, z: 0 } }
+          },
+          muscleActivations: { neck: 0.2 },
+          breathingPhase: 'exhale',
+          focus: [],
+          instruction: 'Return to center'
+        }
+      ],
+      duration,
+      style: 'smooth',
+      difficulty: level as any,
+      metadata: {
+        exerciseId: 'neck-rotations',
+        muscleGroups: ['neck'],
+        equipment: [],
+        safetyNotes: ['Move slowly', 'Don\'t force rotation', 'Stop if dizzy']
+      }
+    };
+  }
+
+  private generateJumpingPhysics(level: string): GeneratedAnimation {
+    const duration = level === 'beginner' ? 4 : level === 'advanced' ? 3 : 2;
+    
+    return {
+      keyframes: [
+        {
+          timestamp: 0,
+          poses: {
+            pelvis: { position: { x: 0, y: 50, z: 0 }, rotation: { x: 0, y: 0, z: 0 } },
+            arm_left: { position: { x: -20, y: 120, z: 0 }, rotation: { x: 0, y: 0, z: 0 } },
+            arm_right: { position: { x: 20, y: 120, z: 0 }, rotation: { x: 0, y: 0, z: 0 } },
+            leg_left: { position: { x: -10, y: 0, z: 0 }, rotation: { x: 0, y: 0, z: 0 } },
+            leg_right: { position: { x: 10, y: 0, z: 0 }, rotation: { x: 0, y: 0, z: 0 } }
+          },
+          muscleActivations: { core: 0.4, legs: 0.3 },
+          breathingPhase: 'inhale',
+          focus: [],
+          instruction: 'Starting position'
+        },
+        {
+          timestamp: 0.5,
+          poses: {
+            pelvis: { position: { x: 0, y: 70, z: 0 }, rotation: { x: 0, y: 0, z: 0 } },
+            arm_left: { position: { x: -40, y: 160, z: 0 }, rotation: { x: 0, y: 0, z: -45 } },
+            arm_right: { position: { x: 40, y: 160, z: 0 }, rotation: { x: 0, y: 0, z: 45 } },
+            leg_left: { position: { x: -25, y: 0, z: 0 }, rotation: { x: 0, y: 0, z: 0 } },
+            leg_right: { position: { x: 25, y: 0, z: 0 }, rotation: { x: 0, y: 0, z: 0 } }
+          },
+          muscleActivations: { core: 0.8, legs: 0.9 },
+          breathingPhase: 'exhale',
+          focus: ['legs', 'core'],
+          instruction: 'Jump with arms and legs out'
+        },
+        {
+          timestamp: 1,
+          poses: {
+            pelvis: { position: { x: 0, y: 50, z: 0 }, rotation: { x: 0, y: 0, z: 0 } },
+            arm_left: { position: { x: -20, y: 120, z: 0 }, rotation: { x: 0, y: 0, z: 0 } },
+            arm_right: { position: { x: 20, y: 120, z: 0 }, rotation: { x: 0, y: 0, z: 0 } },
+            leg_left: { position: { x: -10, y: 0, z: 0 }, rotation: { x: 0, y: 0, z: 0 } },
+            leg_right: { position: { x: 10, y: 0, z: 0 }, rotation: { x: 0, y: 0, z: 0 } }
+          },
+          muscleActivations: { core: 0.4, legs: 0.3 },
+          breathingPhase: 'inhale',
+          focus: [],
+          instruction: 'Return to start'
+        }
+      ],
+      duration,
+      style: 'dynamic',
+      difficulty: level as any,
+      metadata: {
+        exerciseId: 'jumping-jacks',
+        muscleGroups: ['legs', 'core', 'shoulders'],
+        equipment: [],
+        safetyNotes: ['Land softly', 'Keep core engaged', 'Modify if needed']
+      }
+    };
+  }
+
+  private generateKneeToChestPhysics(level: string): GeneratedAnimation {
+    const duration = level === 'beginner' ? 5 : level === 'advanced' ? 4 : 3;
+    
+    return {
+      keyframes: [
+        {
+          timestamp: 0,
+          poses: {
+            pelvis: { position: { x: 0, y: 20, z: 0 }, rotation: { x: 0, y: 0, z: 0 } },
+            knee_left: { position: { x: -15, y: 40, z: 0 }, rotation: { x: 90, y: 0, z: 0 } },
+            knee_right: { position: { x: 15, y: 40, z: 0 }, rotation: { x: 90, y: 0, z: 0 } }
+          },
+          muscleActivations: { core: 0.3, hip_flexors: 0.2 },
+          breathingPhase: 'inhale',
+          focus: [],
+          instruction: 'Lying with knees bent'
+        },
+        {
+          timestamp: 0.5,
+          poses: {
+            pelvis: { position: { x: 0, y: 20, z: 0 }, rotation: { x: 0, y: 0, z: 0 } },
+            knee_left: { position: { x: -15, y: 80, z: 0 }, rotation: { x: 135, y: 0, z: 0 } },
+            knee_right: { position: { x: 15, y: 40, z: 0 }, rotation: { x: 90, y: 0, z: 0 } }
+          },
+          muscleActivations: { core: 0.6, hip_flexors: 0.7 },
+          breathingPhase: 'exhale',
+          focus: ['knee_left', 'hip_flexors'],
+          instruction: 'Pull left knee to chest'
+        },
+        {
+          timestamp: 1,
+          poses: {
+            pelvis: { position: { x: 0, y: 20, z: 0 }, rotation: { x: 0, y: 0, z: 0 } },
+            knee_left: { position: { x: -15, y: 40, z: 0 }, rotation: { x: 90, y: 0, z: 0 } },
+            knee_right: { position: { x: 15, y: 40, z: 0 }, rotation: { x: 90, y: 0, z: 0 } }
+          },
+          muscleActivations: { core: 0.3, hip_flexors: 0.2 },
+          breathingPhase: 'inhale',
+          focus: [],
+          instruction: 'Return to start'
+        }
+      ],
+      duration,
+      style: 'controlled',
+      difficulty: level as any,
+      metadata: {
+        exerciseId: 'knee-to-chest',
+        muscleGroups: ['hip_flexors', 'core'],
+        equipment: [],
+        safetyNotes: ['Don\'t force the stretch', 'Keep back flat', 'Breathe deeply']
+      }
+    };
+  }
   private async applyAIRefinements(
     animation: GeneratedAnimation,
     instruction: string,
