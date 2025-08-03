@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../../contexts/LanguageContext';
 import { Button } from '../common/Button';
 import { Card } from '../common/Card';
 import { ArrowLeft, ArrowRight, Check } from 'lucide-react';
@@ -20,7 +20,7 @@ const availableGoals = [
 ];
 
 export const GoalSelection: React.FC<GoalSelectionProps> = ({ onNext, onBack }) => {
-  const { t, i18n } = useTranslation(['common', 'exercises']);
+  const { t, language, isReady } = useLanguage();
   const [selectedGoals, setSelectedGoals] = useState<string[]>([]);
 
   const toggleGoal = (goalId: string) => {
@@ -37,6 +37,18 @@ export const GoalSelection: React.FC<GoalSelectionProps> = ({ onNext, onBack }) 
     }
   };
 
+  // Show loading state while translations are loading
+  if (!isReady) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-blue-50 flex items-center justify-center p-4">
+        <Card className="w-full max-w-md p-8 text-center">
+          <div className="w-8 h-8 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
+          <div className="text-slate-600">Loading...</div>
+        </Card>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-blue-50 flex items-center justify-center p-4">
       <Card className="w-full max-w-md p-8">
@@ -44,7 +56,7 @@ export const GoalSelection: React.FC<GoalSelectionProps> = ({ onNext, onBack }) 
           {t('chooseGoals')}
         </h2>
         <p className="text-slate-600 text-center mb-6">
-          {i18n.language === 'nl' 
+          {language === 'nl' 
             ? 'Selecteer één of meer doelen voor je routine'
             : 'Select one or more goals for your routine'
           }
@@ -67,11 +79,6 @@ export const GoalSelection: React.FC<GoalSelectionProps> = ({ onNext, onBack }) 
               )}
             </button>
           ))}
-        </div>
-
-        {/* Debug info for mobile - remove in production */}
-        <div className="text-xs text-slate-400 mb-4 text-center">
-          Lang: {i18n.language} | Goals: {selectedGoals.length}
         </div>
 
         <div className="flex gap-3">

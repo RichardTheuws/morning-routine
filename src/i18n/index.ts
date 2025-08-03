@@ -28,8 +28,17 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    fallbackLng: 'en',
+    fallbackLng: 'nl',
     defaultNS: 'common',
+    debug: false, // Set to true for debugging
+    
+    // Ensure translations load synchronously on mobile
+    initImmediate: false,
+    
+    // Wait for translations to load
+    react: {
+      useSuspense: false,
+    },
     
     interpolation: {
       escapeValue: false,
@@ -39,7 +48,21 @@ i18n
       order: ['localStorage', 'navigator', 'htmlTag'],
       caches: ['localStorage'],
       lookupLocalStorage: 'morning-routine-language',
+      checkWhitelist: true,
     },
+    
+    // Whitelist supported languages
+    supportedLngs: ['nl', 'en'],
+    nonExplicitSupportedLngs: true,
   });
+
+// Ensure i18n is ready before app starts
+i18n.on('initialized', () => {
+  console.log('i18n initialized with language:', i18n.language);
+});
+
+i18n.on('languageChanged', (lng) => {
+  console.log('Language changed to:', lng);
+});
 
 export default i18n;

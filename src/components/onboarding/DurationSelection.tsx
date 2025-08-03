@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../../contexts/LanguageContext';
 import { Button } from '../common/Button';
 import { Card } from '../common/Card';
 import { ArrowLeft, Clock } from 'lucide-react';
@@ -12,8 +12,19 @@ interface DurationSelectionProps {
 const durations = [5, 10, 15, 20, 25, 30];
 
 export const DurationSelection: React.FC<DurationSelectionProps> = ({ onComplete, onBack }) => {
-  const { t, i18n } = useTranslation(['common', 'onboarding']);
+  const { t, language, isReady } = useLanguage();
   const [selectedDuration, setSelectedDuration] = useState<number>(10);
+
+  if (!isReady) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-blue-50 flex items-center justify-center p-4">
+        <Card className="w-full max-w-md p-8 text-center">
+          <div className="w-8 h-8 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
+          <div className="text-slate-600">Loading...</div>
+        </Card>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-blue-50 flex items-center justify-center p-4">
@@ -22,7 +33,7 @@ export const DurationSelection: React.FC<DurationSelectionProps> = ({ onComplete
           {t('chooseDuration')}
         </h2>
         <p className="text-slate-600 text-center mb-6">
-          {i18n.language === 'nl' 
+          {language === 'nl' 
             ? 'Hoeveel tijd heb je voor je ochtendroutine?'
             : 'How much time do you have for your morning routine?'
           }
@@ -54,7 +65,7 @@ export const DurationSelection: React.FC<DurationSelectionProps> = ({ onComplete
             onClick={() => onComplete(selectedDuration)} 
             className="flex-1"
           >
-            {i18n.language === 'nl' ? 'Routine maken' : 'Create routine'}
+            {language === 'nl' ? 'Routine maken' : 'Create routine'}
           </Button>
         </div>
       </Card>

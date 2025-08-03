@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { LanguageProvider } from './contexts/LanguageContext';
+import { useLanguage } from './contexts/LanguageContext';
 import { PrivacyConsent } from './components/privacy/PrivacyConsent';
 import { usePrivacy } from './hooks/usePrivacy';
 import { Welcome } from './components/onboarding/Welcome';
@@ -27,6 +28,7 @@ type AppState =
 
 function AppContent() {
   const { showConsentDialog, updateConsent, isConsentValid } = usePrivacy();
+  const { isReady } = useLanguage();
   const [currentState, setCurrentState] = useState<AppState>(() => {
     try {
       // Check if user has completed onboarding
@@ -51,6 +53,19 @@ function AppContent() {
           updateConsent(consent);
         }} 
       />
+    );
+  }
+
+  // Show loading screen while translations are loading
+  if (!isReady) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-blue-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-12 h-12 border-3 border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <div className="text-slate-700 font-medium">Loading Morning Routine...</div>
+          <div className="text-slate-500 text-sm mt-1">Preparing your experience</div>
+        </div>
+      </div>
     );
   }
 

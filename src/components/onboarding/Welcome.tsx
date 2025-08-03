@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../../contexts/LanguageContext';
 import { Button } from '../common/Button';
 import { Card } from '../common/Card';
 import { Sunrise, Shield, Heart } from 'lucide-react';
@@ -9,11 +9,22 @@ interface WelcomeProps {
 }
 
 export const Welcome: React.FC<WelcomeProps> = ({ onNext }) => {
-  const { t, i18n } = useTranslation(['common', 'onboarding']);
+  const { t, language, setLanguage, isReady } = useLanguage();
   
   const changeLanguage = (lang: string) => {
-    i18n.changeLanguage(lang);
+    setLanguage(lang as 'nl' | 'en');
   };
+
+  if (!isReady) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-blue-50 flex items-center justify-center p-4">
+        <Card className="w-full max-w-md p-8 text-center">
+          <div className="w-8 h-8 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
+          <div className="text-slate-600">Loading translations...</div>
+        </Card>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-blue-50 flex items-center justify-center p-4">
@@ -56,14 +67,14 @@ export const Welcome: React.FC<WelcomeProps> = ({ onNext }) => {
           </p>
           <div className="flex gap-2">
             <Button
-              variant={i18n.language === 'nl' ? 'primary' : 'outline'}
+              variant={language === 'nl' ? 'primary' : 'outline'}
               onClick={() => changeLanguage('nl')}
               className="flex-1"
             >
               Nederlands
             </Button>
             <Button
-              variant={i18n.language === 'en' ? 'primary' : 'outline'}
+              variant={language === 'en' ? 'primary' : 'outline'}
               onClick={() => changeLanguage('en')}
               className="flex-1"
             >

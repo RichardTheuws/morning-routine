@@ -1,10 +1,12 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Language } from '../types/Exercise';
 
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
+  isReady: boolean;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -89,13 +91,83 @@ const translations = {
 };
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { i18n, ready } = useTranslation();
   const [language, setLanguage] = useState<Language>(() => {
-    const saved = localStorage.getItem('morning-routine-language');
-    return (saved as Language) || 'nl';
+    try {
+      const saved = localStorage.getItem('morning-routine-language');
+      return (saved as Language) || 'nl';
+    } catch (error) {
+      console.warn('localStorage not available, using default language');
+      return 'nl';
+    }
   });
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem('morning-routine-language', language);
+    // Wait for i18n to be ready
+    if (ready && i18n.isInitialized) {
+      setIsReady(true);
+      
+      // Set language in i18n
+      if (i18n.language !== language) {
+        i18n.changeLanguage(language);
+      }
+      
+      // Save to localStorage
+      try {
+        localStorage.setItem('morning-routine-language', language);
+      } catch (error) {
+        console.warn('Could not save language preference');
+      }
+    }
+  }, [language, ready, i18n]);
+
+  useEffect(() => {
+    // Listen for i18n language changes
+    const handleLanguageChange = (lng: string) => {
+      if (lng !== language && (lng === 'nl' || lng === 'en')) {
+        setLanguage(lng as Language);
+      }
+    };
+
+    if (i18n.isInitialized) {
+      i18n.on('languageChanged', handleLanguageChange);
+      return () => i18n.off('languageChanged', handleLanguageChange);
+    }
+  }, [language, i18n]);
+
+  const handleSetLanguage = (lang: Language) => {
+    setLanguage(lang);
+    if (i18n.isInitialized) {
+      i18n.changeLanguage(lang);
+    }
+  };
+
+  const t = (key: string): string => {
+    if (!isReady || !i18n.isInitialized) {
+      return key; // Return key as fallback while loading
+    }
+    
+    try {
+      const translation = i18n.t(key);
+      return translation !== key ? translation : key;
+    } catch (error) {
+      console.warn(`Translation failed for key: ${key}`);
+      return key;
+    }
+  };
+
+  return (
+    <LanguageContext.Provider value={{ 
+      language, 
+      setLanguage: handleSetLanguage, 
+      t, 
+      isReady 
+    }}>
+      {children}
+    </LanguageContext.Provider>
+  );
+};
   }, [language]);
 
   const t = (key: string): string => {

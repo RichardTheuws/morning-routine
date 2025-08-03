@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../../contexts/LanguageContext';
 import { Button } from '../common/Button';
 import { Card } from '../common/Card';
 import { ArrowLeft, ArrowRight, Star } from 'lucide-react';
@@ -17,7 +17,7 @@ const levels: { id: UserLevel; stars: number }[] = [
 ];
 
 export const LevelSelection: React.FC<LevelSelectionProps> = ({ onNext, onBack }) => {
-  const { t, i18n } = useTranslation(['common', 'onboarding']);
+  const { t, language, isReady } = useLanguage();
   const [selectedLevel, setSelectedLevel] = useState<UserLevel>('beginner');
 
   const getLevelDescription = (level: UserLevel) => {
@@ -33,8 +33,19 @@ export const LevelSelection: React.FC<LevelSelectionProps> = ({ onNext, onBack }
         expert: 'I\'m experienced and looking for intensive exercises'
       }
     };
-    return descriptions[i18n.language as 'nl' | 'en'][level];
+    return descriptions[language][level];
   };
+
+  if (!isReady) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-blue-50 flex items-center justify-center p-4">
+        <Card className="w-full max-w-md p-8 text-center">
+          <div className="w-8 h-8 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
+          <div className="text-slate-600">Loading...</div>
+        </Card>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-blue-50 flex items-center justify-center p-4">
@@ -43,7 +54,7 @@ export const LevelSelection: React.FC<LevelSelectionProps> = ({ onNext, onBack }
           {t('chooseLevel')}
         </h2>
         <p className="text-slate-600 text-center mb-6">
-          {i18n.language === 'nl' 
+          {language === 'nl' 
             ? 'Kies je fitnessniveau'
             : 'Choose your fitness level'
           }

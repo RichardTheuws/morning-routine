@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.2] - 2025-01-27
+
+### Fixed
+- **iOS Mobile Translation Issues** - Fixed translation keys showing instead of actual translations on iOS Safari/Chrome
+- **White Screen After Goal Selection** - Resolved blank screen issue on mobile devices after selecting goals
+- **i18n Initialization Race Condition** - Ensured translations load before app renders
+- **localStorage Errors in Private Browsing** - Added proper error handling for localStorage access
+- **Mobile Language Detection** - Improved language detection and switching on mobile devices
+
+### Improved
+- **Translation System Robustness** - Enhanced LanguageContext with proper i18n integration
+- **Loading States** - Added loading indicators while translations are being loaded
+- **Error Handling** - Better fallbacks when localStorage is not available
+- **Mobile Performance** - Optimized translation loading for mobile devices
+
 ## [1.0.0] - 2025-01-27
 
 ### Added
