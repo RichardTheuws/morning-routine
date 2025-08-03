@@ -287,8 +287,9 @@ export const AnimationGenerator: React.FC<AnimationGeneratorProps> = ({
             <span>Style: {animation.style}</span>
             <span>Duration: {animation.duration}s</span>
           </div>
-        <div className="text-slate-500 text-xs mt-1">
-          {isVideoLoading ? 'Loading video...' : 'Generating demonstration...'}
+          <div className="text-slate-500 text-xs mt-1">
+            {isVideoLoading ? 'Loading video...' : 'Generating demonstration...'}
+          </div>
         </div>
       )}
     </div>
