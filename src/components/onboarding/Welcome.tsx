@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLanguage } from '../../contexts/LanguageContext';
+import { useTranslation } from 'react-i18next';
 import { Button } from '../common/Button';
 import { Card } from '../common/Card';
 import { Sunrise, Shield, Heart } from 'lucide-react';
@@ -9,7 +9,11 @@ interface WelcomeProps {
 }
 
 export const Welcome: React.FC<WelcomeProps> = ({ onNext }) => {
-  const { t, language, setLanguage } = useLanguage();
+  const { t, i18n } = useTranslation(['common', 'onboarding']);
+  
+  const changeLanguage = (lang: string) => {
+    i18n.changeLanguage(lang);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-blue-50 flex items-center justify-center p-4">
@@ -19,13 +23,10 @@ export const Welcome: React.FC<WelcomeProps> = ({ onNext }) => {
             <Sunrise className="w-8 h-8 text-emerald-600" />
           </div>
           <h1 className="text-2xl font-bold text-slate-900 mb-2">
-            {t('appTitle')}
+            {t('common:appTitle')}
           </h1>
           <p className="text-slate-600">
-            {language === 'nl' 
-              ? 'Start elke dag met een gezonde, effectieve ochtendroutine. Privacyvriendelijk en volledig offline.'
-              : 'Start every day with a healthy, effective morning routine. Privacy-friendly and completely offline.'
-            }
+            {t('onboarding:welcome.subtitle')}
           </p>
         </div>
 
@@ -35,7 +36,7 @@ export const Welcome: React.FC<WelcomeProps> = ({ onNext }) => {
               <Shield className="w-4 h-4 text-blue-600" />
             </div>
             <span className="text-sm text-slate-700">
-              {language === 'nl' ? 'Geen account nodig, alles blijft lokaal' : 'No account needed, everything stays local'}
+              {t('onboarding:welcome.features.privacy')}
             </span>
           </div>
           
@@ -44,26 +45,26 @@ export const Welcome: React.FC<WelcomeProps> = ({ onNext }) => {
               <Heart className="w-4 h-4 text-emerald-600" />
             </div>
             <span className="text-sm text-slate-700">
-              {language === 'nl' ? 'Aangepast aan jouw doelen en niveau' : 'Tailored to your goals and level'}
+              {t('onboarding:welcome.features.personalized')}
             </span>
           </div>
         </div>
 
         <div className="space-y-3 mb-6">
           <p className="text-sm font-medium text-slate-700">
-            {t('chooseLanguage')}
+            {t('common:chooseLanguage')}
           </p>
           <div className="flex gap-2">
             <Button
-              variant={language === 'nl' ? 'primary' : 'outline'}
-              onClick={() => setLanguage('nl')}
+              variant={i18n.language === 'nl' ? 'primary' : 'outline'}
+              onClick={() => changeLanguage('nl')}
               className="flex-1"
             >
               Nederlands
             </Button>
             <Button
-              variant={language === 'en' ? 'primary' : 'outline'}
-              onClick={() => setLanguage('en')}
+              variant={i18n.language === 'en' ? 'primary' : 'outline'}
+              onClick={() => changeLanguage('en')}
               className="flex-1"
             >
               English
@@ -72,7 +73,7 @@ export const Welcome: React.FC<WelcomeProps> = ({ onNext }) => {
         </div>
 
         <Button onClick={onNext} size="lg" className="w-full">
-          {language === 'nl' ? 'Laten we beginnen' : "Let's get started"}
+          {t('onboarding:welcome.getStarted')}
         </Button>
       </Card>
     </div>

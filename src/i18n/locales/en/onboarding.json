@@ -1,0 +1,31 @@
+{
+  "welcome": {
+    "title": "Welcome to Morning Routine",
+    "subtitle": "Start every day with a healthy, effective morning routine. Privacy-friendly and completely offline.",
+    "features": {
+      "privacy": "No account needed, everything stays local",
+      "personalized": "Tailored to your goals and level",
+      "offline": "Works completely offline"
+    },
+    "getStarted": "Let's get started"
+  },
+  "goals": {
+    "title": "Choose your goals",
+    "subtitle": "Select one or more goals for your routine",
+    "selectAtLeast": "Please select at least one goal"
+  },
+  "level": {
+    "title": "Choose your fitness level",
+    "subtitle": "Choose your fitness level",
+    "descriptions": {
+      "beginner": "I'm new to exercise or have little experience",
+      "advanced": "I exercise regularly and want more challenge",
+      "expert": "I'm experienced and looking for intensive exercises"
+    }
+  },
+  "duration": {
+    "title": "Choose duration",
+    "subtitle": "How much time do you have for your morning routine?",
+    "createRoutine": "Create routine"
+  }
+}

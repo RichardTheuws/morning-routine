@@ -1,0 +1,29 @@
+{
+  "goals": {
+    "backPain": "Reduce back pain",
+    "neckPain": "Reduce neck pain",
+    "fatLoss": "Fat loss",
+    "mobility": "Mobility",
+    "energy": "Energy boost",
+    "strength": "Build strength",
+    "relaxation": "Relaxation"
+  },
+  "categories": {
+    "back": "Back",
+    "neck": "Neck",
+    "core": "Core",
+    "cardio": "Cardio",
+    "mobility": "Mobility",
+    "strength": "Strength",
+    "relaxation": "Relaxation"
+  },
+  "instructions": {
+    "steps": "Steps:",
+    "tips": "Tips:",
+    "commonMistakes": "Common mistakes:",
+    "alternatives": "Alternatives:",
+    "breathe": "Remember to breathe",
+    "control": "Move with control",
+    "listen": "Listen to your body"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "goals": {
+    "backPain": "Rugklachten verminderen",
+    "neckPain": "Nekpijn verminderen",
+    "fatLoss": "Vetverbranding",
+    "mobility": "Mobiliteit",
+    "energy": "Energie boost",
+    "strength": "Kracht opbouwen",
+    "relaxation": "Ontspanning"
+  },
+  "categories": {
+    "back": "Rug",
+    "neck": "Nek",
+    "core": "Core",
+    "cardio": "Cardio",
+    "mobility": "Mobiliteit",
+    "strength": "Kracht",
+    "relaxation": "Ontspanning"
+  },
+  "instructions": {
+    "steps": "Stappen:",
+    "tips": "Tips:",
+    "commonMistakes": "Veelgemaakte fouten:",
+    "alternatives": "Alternatieven:",
+    "breathe": "Vergeet niet te ademen",
+    "control": "Beweeg gecontroleerd",
+    "listen": "Luister naar je lichaam"
+  }
+}

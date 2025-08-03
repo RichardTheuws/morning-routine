@@ -10,9 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "framer-motion": "^12.23.12",
+    "i18next": "^25.3.2",
+    "i18next-browser-languagedetector": "^8.2.0",
+    "lottie-react": "^2.4.1",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-i18next": "^15.6.1",
     "vite-plugin-pwa": "^1.0.2"
   },
   "devDependencies": {

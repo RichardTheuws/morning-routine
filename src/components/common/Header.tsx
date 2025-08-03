@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLanguage } from '../../contexts/LanguageContext';
+import { useTranslation } from 'react-i18next';
 import { Settings, Globe } from 'lucide-react';
 
 interface HeaderProps {
@@ -13,17 +13,17 @@ export const Header: React.FC<HeaderProps> = ({
   onSettingsClick, 
   showLanguageSwitch = true 
 }) => {
-  const { t, language, setLanguage } = useLanguage();
+  const { t, i18n } = useTranslation('common');
 
   const toggleLanguage = () => {
-    setLanguage(language === 'nl' ? 'en' : 'nl');
+    i18n.changeLanguage(i18n.language === 'nl' ? 'en' : 'nl');
   };
 
   return (
     <header className="bg-white shadow-sm border-b border-slate-200 px-4 py-3">
       <div className="max-w-4xl mx-auto flex items-center justify-between">
         <h1 className="text-xl font-semibold text-slate-900">
-          {title || t('appTitle')}
+          {title || t('common:appTitle')}
         </h1>
         
         <div className="flex items-center gap-3">
@@ -31,11 +31,11 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               onClick={toggleLanguage}
               className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors duration-200"
-              aria-label={`Switch to ${language === 'nl' ? 'English' : 'Nederlands'}`}
+              aria-label={`Switch to ${i18n.language === 'nl' ? 'English' : 'Nederlands'}`}
             >
               <Globe size={16} />
               <span className="uppercase font-bold">
-                {language === 'nl' ? 'EN' : 'NL'}
+                {i18n.language === 'nl' ? 'EN' : 'NL'}
               </span>
             </button>
           )}
@@ -44,7 +44,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               onClick={onSettingsClick}
               className="p-2 text-slate-600 hover:text-slate-900 transition-colors duration-200"
-              aria-label={t('settings')}
+              aria-label={t('common:settings')}
             >
               <Settings size={20} />
             </button>

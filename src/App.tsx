@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { LanguageProvider } from './contexts/LanguageContext';
+import { PrivacyConsent } from './components/privacy/PrivacyConsent';
+import { usePrivacy } from './hooks/usePrivacy';
 import { Welcome } from './components/onboarding/Welcome';
 import { GoalSelection } from './components/onboarding/GoalSelection';
 import { LevelSelection } from './components/onboarding/LevelSelection';
@@ -10,6 +13,7 @@ import { SettingsPage } from './components/settings/SettingsPage';
 import { exercises } from './data/exercises';
 import { UserLevel } from './types/Exercise';
 import { useProgress } from './hooks/useProgress';
+import { privacyService } from './services/PrivacyService';
 
 type AppState = 
   | 'welcome'
@@ -23,6 +27,7 @@ type AppState =
   | 'settings';
 
 function AppContent() {
+  const { showConsentDialog, updateConsent, isConsentValid } = usePrivacy();
   const [currentState, setCurrentState] = useState<AppState>(() => {
     // Check if user has completed onboarding
     const hasOnboarded = localStorage.getItem('morning-routine-onboarded');
@@ -33,6 +38,17 @@ function AppContent() {
   const [selectedLevel, setSelectedLevel] = useState<UserLevel>('beginner');
   const [selectedDuration, setSelectedDuration] = useState<number>(10);
   const { updateProgress } = useProgress();
+
+  // Show privacy consent first if needed
+  if (showConsentDialog) {
+    return (
+      <PrivacyConsent 
+        onConsentGiven={(consent) => {
+          updateConsent(consent);
+        }} 
+      />
+    );
+  }
 
   const handleOnboardingComplete = (goals: string[], level: UserLevel, duration: number) => {
     setSelectedGoals(goals);

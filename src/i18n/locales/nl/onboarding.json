@@ -1,0 +1,31 @@
+{
+  "welcome": {
+    "title": "Welkom bij Morning Routine",
+    "subtitle": "Start elke dag met een gezonde, effectieve ochtendroutine. Privacyvriendelijk en volledig offline.",
+    "features": {
+      "privacy": "Geen account nodig, alles blijft lokaal",
+      "personalized": "Aangepast aan jouw doelen en niveau",
+      "offline": "Werkt volledig offline"
+    },
+    "getStarted": "Laten we beginnen"
+  },
+  "goals": {
+    "title": "Kies je doelen",
+    "subtitle": "Selecteer één of meer doelen voor je routine",
+    "selectAtLeast": "Selecteer minimaal één doel"
+  },
+  "level": {
+    "title": "Kies je fitnessniveau",
+    "subtitle": "Kies je fitnessniveau",
+    "descriptions": {
+      "beginner": "Ik begin net met beweging of heb weinig ervaring",
+      "advanced": "Ik beweeg regelmatig en wil meer uitdaging",
+      "expert": "Ik ben ervaren en zoek intensieve oefeningen"
+    }
+  },
+  "duration": {
+    "title": "Kies tijdsduur",
+    "subtitle": "Hoeveel tijd heb je voor je ochtendroutine?",
+    "createRoutine": "Routine maken"
+  }
+}
