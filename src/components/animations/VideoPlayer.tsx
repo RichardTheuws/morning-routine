@@ -128,13 +128,36 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
 
   const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
     console.error('Video error:', e);
-    const video = e.currentTarget;
-    console.error('Video error details:', {
+    console.error(`Video error for ${exerciseName}:`, {
       error: video.error,
       networkState: video.networkState,
-      readyState: video.readyState,
-      src: video.src
+      readyState: video.readyState, 
+      src: video.src,
+      videoUrl: videoUrl
     });
+    
+    // Provide more specific error information
+    let errorMessage = 'Video failed to load';
+    if (video.networkState === 3) { // NETWORK_NO_SOURCE
+      errorMessage = 'Video source not available';
+    } else if (video.error) {
+      switch (video.error.code) {
+        case 1: // MEDIA_ERR_ABORTED
+          errorMessage = 'Video loading aborted';
+          break;
+        case 2: // MEDIA_ERR_NETWORK
+          errorMessage = 'Network error loading video';
+          break;
+        case 3: // MEDIA_ERR_DECODE
+          errorMessage = 'Video decode error';
+          break;
+        case 4: // MEDIA_ERR_SRC_NOT_SUPPORTED
+          errorMessage = 'Video format not supported';
+          break;
+      }
+    }
+    
+    console.warn(`${errorMessage} for ${exerciseName}: ${videoUrl}`);
     setHasError(true);
     setShowThumbnail(true);
     setIsLoading(false);

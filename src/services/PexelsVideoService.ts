@@ -116,34 +116,98 @@ class PexelsVideoService {
   ];
 
   async getVideoForExercise(exerciseId: string): Promise<ExerciseVideoMapping | null> {
-    // First check our curated mappings
-    const mapping = this.EXERCISE_VIDEO_MAPPINGS.find(m => m.exerciseId === exerciseId);
-    if (mapping) {
-      return mapping;
-    }
-
-    // If not found and API key available, try to search Pexels API
+    // Prioritize API search for fresh, working video URLs
     if (!this.PEXELS_API_KEY) {
       console.warn('Pexels API key not configured, using fallback content');
+      // Check curated mappings as fallback when no API key
+      const mapping = this.EXERCISE_VIDEO_MAPPINGS.find(m => m.exerciseId === exerciseId);
+      if (mapping) {
+        return mapping;
+      }
       return this.generateFallbackContent(exerciseId);
     }
 
     try {
+      // First try API search for fresh video URLs
       const searchResult = await this.searchPexelsVideos(exerciseId);
       if (searchResult) {
-        return {
-          exerciseId,
-          searchTerms: [exerciseId],
-          customVideoUrl: searchResult.video_files[0]?.link,
-          thumbnailUrl: searchResult.image,
-          description: `${exerciseId} exercise demonstration`
-        };
+        // Get the best quality video file
+        const videoFile = this.getBestVideoFile(searchResult.video_files);
+        if (videoFile) {
+          return {
+            exerciseId,
+            searchTerms: [exerciseId],
+            customVideoUrl: videoFile.link,
+            thumbnailUrl: searchResult.image,
+            description: `${exerciseId} exercise demonstration`
+          };
+        }
+      }
+      
+      // Fallback to curated mappings if API search fails
+      const mapping = this.EXERCISE_VIDEO_MAPPINGS.find(m => m.exerciseId === exerciseId);
+      if (mapping) {
+        // Validate the curated URL before returning
+        const isValid = await this.validateVideoUrl(mapping.customVideoUrl || '');
+        if (isValid) {
+          return mapping;
+        }
+      }
+      
+      // Try a broader search if specific exercise not found
+      const broadSearchResult = await this.searchPexelsVideos('fitness exercise workout');
+      if (broadSearchResult) {
+        const videoFile = this.getBestVideoFile(broadSearchResult.video_files);
+        if (videoFile) {
+          return {
+            exerciseId,
+            searchTerms: ['fitness', 'exercise'],
+            customVideoUrl: videoFile.link,
+            thumbnailUrl: broadSearchResult.image,
+            description: `${exerciseId} exercise - fitness demonstration`
+          };
+        }
       }
     } catch (error) {
       console.error('Pexels API search failed:', error);
+      
+      // Final fallback to curated mappings
+      const mapping = this.EXERCISE_VIDEO_MAPPINGS.find(m => m.exerciseId === exerciseId);
+      if (mapping) {
+        return {
+          exerciseId,
+          searchTerms: mapping.searchTerms,
+          customVideoUrl: mapping.customVideoUrl,
+          thumbnailUrl: mapping.thumbnailUrl,
+          description: mapping.description
+        };
+      }
     }
 
     return this.generateFallbackContent(exerciseId);
+  }
+
+  // Get the best quality video file from available options
+  private getBestVideoFile(videoFiles: any[]): any | null {
+    if (!videoFiles || videoFiles.length === 0) return null;
+    
+    // Prefer HD quality, then standard, then any available
+    const hdVideo = videoFiles.find(file => 
+      file.quality === 'hd' && file.file_type === 'video/mp4'
+    );
+    if (hdVideo) return hdVideo;
+    
+    const sdVideo = videoFiles.find(file => 
+      file.quality === 'sd' && file.file_type === 'video/mp4'
+    );
+    if (sdVideo) return sdVideo;
+    
+    // Return any MP4 file as fallback
+    const mp4Video = videoFiles.find(file => file.file_type === 'video/mp4');
+    if (mp4Video) return mp4Video;
+    
+    // Return first available file
+    return videoFiles[0];
   }
 
   private async searchPexelsVideos(query: string): Promise<PexelsVideo | null> {
@@ -154,38 +218,29 @@ class PexelsVideoService {
 
     try {
       // Enhanced search with fitness-specific terms
-      const fitnessQuery = `${query} exercise fitness workout demonstration`;
+      const searchQuery = query.includes('exercise') ? query : `${query} exercise fitness workout`;
       
-      const response = await fetch(`${this.BASE_URL}/search?query=${encodeURIComponent(query)}&per_page=1`, {
+      const response = await fetch(`${this.BASE_URL}/search?query=${encodeURIComponent(searchQuery)}&per_page=5&orientation=landscape`, {
         headers: {
           'Authorization': this.PEXELS_API_KEY
         }
       });
 
       if (!response.ok) {
-        console.error(`Pexels API error: ${response.status} - ${response.statusText}`);
-        
-        // Try alternative search with broader terms
-        const fallbackResponse = await fetch(`${this.BASE_URL}/search?query=${encodeURIComponent('fitness exercise')}&per_page=5`, {
-          headers: {
-            'Authorization': this.PEXELS_API_KEY
-          }
-        });
-        
-        if (fallbackResponse.ok) {
-          const fallbackData = await fallbackResponse.json();
-          return fallbackData.videos?.[Math.floor(Math.random() * fallbackData.videos.length)] || null;
-        }
-        
         throw new Error(`Pexels API error: ${response.status}`);
       }
 
       const data = await response.json();
       
       // Log successful API usage for debugging
-      console.log(`Pexels API: Found ${data.videos?.length || 0} videos for "${query}"`);
+      console.log(`Pexels API: Found ${data.videos?.length || 0} videos for "${searchQuery}"`);
       
-      return data.videos?.[0] || null;
+      // Return the first video with valid video files
+      const validVideo = data.videos?.find((video: any) => 
+        video.video_files && video.video_files.length > 0
+      );
+      
+      return validVideo || null;
     } catch (error) {
       console.error('Pexels search failed:', error);
       return null;
@@ -194,16 +249,18 @@ class PexelsVideoService {
 
   // Validate video URL accessibility
   async validateVideoUrl(url: string): Promise<boolean> {
+    if (!url) return false;
+    
     try {
-      const response = await fetch(url, { 
+      // Use HEAD request to check if video exists without downloading
+      const response = await fetch(url, {
         method: 'HEAD',
-        mode: 'no-cors' // Allow cross-origin requests
+        mode: 'no-cors'
       });
-      return response.ok;
+      return true; // If no error thrown, assume valid
     } catch (error) {
-      // For no-cors mode, we can't check response.ok, so assume it's valid if no error
-      console.warn('Video validation inconclusive (CORS):', error);
-      return true; // Assume valid for cross-origin videos
+      console.warn('Video validation failed:', error);
+      return false;
     }
   }
 

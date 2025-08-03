@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { advancedAnimationEngine, GeneratedAnimation } from '../../services/AdvancedAnimationEngine';
 import { pexelsVideoService, ExerciseVideoMapping } from '../../services/PexelsVideoService';
@@ -34,18 +34,12 @@ export const AnimationGenerator: React.FC<AnimationGeneratorProps> = ({
   const [viewMode, setViewMode] = useState<ViewMode>('auto');
   const [error, setError] = useState<string | null>(null);
   const [hasVideoConsent, setHasVideoConsent] = useState(false);
+  const [isVideoLoading, setIsVideoLoading] = useState(false);
 
-  useEffect(() => {
-    // Check video consent
-    const consent = privacyService.getConsent();
-    setHasVideoConsent(consent?.videoContent || false);
-    
-    loadContent();
-  }, [exerciseId, exerciseName, steps, animationInstruction, level]);
-
-  const loadContent = async () => {
+  const loadContent = useCallback(async (videoConsent: boolean) => {
     setIsLoading(true);
     setError(null);
+    setIsVideoLoading(true);
     
     try {
       // Generate cache key for animation
@@ -71,25 +65,57 @@ export const AnimationGenerator: React.FC<AnimationGeneratorProps> = ({
       setAnimation(generatedAnimation);
       
       // Load video if consent given
-      if (hasVideoConsent) {
+      if (videoConsent) {
         try {
+          console.log(`Loading video for exercise: ${exerciseId}`);
           const video = await pexelsVideoService.getVideoForExercise(exerciseId);
-          setVideoMapping(video);
+          console.log(`Video result for ${exerciseId}:`, video);
           
-          // If we have a working video, show it by default, otherwise animation
-          if (viewMode === 'auto') {
-            if (video?.customVideoUrl) {
-              setViewMode('video');
+          if (video) {
+            setVideoMapping(video);
+            
+            // Validate video URL before setting view mode
+            if (video.customVideoUrl) {
+              const isValid = await pexelsVideoService.validateVideoUrl(video.customVideoUrl);
+              console.log(`Video URL validation for ${exerciseId}:`, isValid);
+              
+              if (isValid && viewMode === 'auto') {
+                setViewMode('video');
+              } else if (!isValid) {
+                console.warn(`Invalid video URL for ${exerciseId}, falling back to animation`);
+                if (viewMode === 'auto') {
+                  setViewMode('animation');
+                }
+              }
             } else {
+              console.log(`No video URL for ${exerciseId}, using animation`);
+              if (viewMode === 'auto') {
+                setViewMode('animation');
+              }
+            }
+          } else {
+            console.log(`No video found for ${exerciseId}, using animation`);
+            if (viewMode === 'auto') {
               setViewMode('animation');
             }
           }
+          
+          pexelsVideoService.trackVideoPerformance(exerciseId, 'load', { 
+            hasVideo: !!video?.customVideoUrl,
+            videoUrl: video?.customVideoUrl 
+          });
         } catch (videoError) {
           console.error('Video loading failed:', videoError);
           pexelsVideoService.trackVideoPerformance(exerciseId, 'error', { error: videoError });
+          
+          // Fallback to animation on video error
+          if (viewMode === 'auto') {
+            setViewMode('animation');
+          }
         }
       } else {
         // No video consent, always use animation
+        console.log(`No video consent, using animation for ${exerciseId}`);
         if (viewMode === 'auto') {
           setViewMode('animation');
         }
@@ -121,10 +147,24 @@ export const AnimationGenerator: React.FC<AnimationGeneratorProps> = ({
           safetyNotes: []
         }
       });
+      
+      if (viewMode === 'auto') {
+        setViewMode('animation');
+      }
     }
     
     setIsLoading(false);
-  };
+    setIsVideoLoading(false);
+  }, [exerciseId, exerciseName, steps, animationInstruction, level, viewMode]);
+
+  useEffect(() => {
+    // Check video consent
+    const consent = privacyService.getConsent();
+    const videoConsent = consent?.videoContent || false;
+    setHasVideoConsent(videoConsent);
+    
+    loadContent(videoConsent);
+  }, [loadContent]);
 
   const handleViewModeChange = (mode: ViewMode) => {
     setViewMode(mode);
@@ -157,7 +197,7 @@ export const AnimationGenerator: React.FC<AnimationGeneratorProps> = ({
       <div className={`w-full h-48 bg-slate-100 rounded-xl flex items-center justify-center ${className}`}>
         <div className="text-center">
           <div className="text-slate-600 mb-2">⚠️ {error}</div>
-          <Button variant="outline" onClick={loadContent} size="sm">
+          <Button variant="outline" onClick={() => loadContent(hasVideoConsent)} size="sm">
             {t('common:retry')}
           </Button>
         </div>
@@ -247,6 +287,8 @@ export const AnimationGenerator: React.FC<AnimationGeneratorProps> = ({
             <span>Style: {animation.style}</span>
             <span>Duration: {animation.duration}s</span>
           </div>
+        <div className="text-slate-500 text-xs mt-1">
+          {isVideoLoading ? 'Loading video...' : 'Generating demonstration...'}
         </div>
       )}
     </div>
