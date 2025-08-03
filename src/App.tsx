@@ -45,6 +45,30 @@ function AppContent() {
   const [selectedDuration, setSelectedDuration] = useState<number>(10);
   const { updateProgress } = useProgress();
 
+  // Select exercises based on user goals and level - MUST be at top level before any returns
+  const selectedExercises = React.useMemo(() => {
+    if (selectedGoals.length === 0) {
+      return exercises.slice(0, 5); // Default selection
+    }
+    
+    // Filter exercises based on selected goals
+    const filteredExercises = exercises.filter(exercise => 
+      exercise.goals.some(goal => selectedGoals.includes(goal))
+    );
+    
+    // If we have enough filtered exercises, use them
+    if (filteredExercises.length >= 4) {
+      return filteredExercises.slice(0, 6); // Take up to 6 exercises
+    }
+    
+    // Otherwise, supplement with general exercises
+    const generalExercises = exercises.filter(exercise => 
+      !filteredExercises.includes(exercise)
+    );
+    
+    return [...filteredExercises, ...generalExercises].slice(0, 5);
+  }, [selectedGoals]);
+
   // Show privacy consent first if needed
   if (showConsentDialog) {
     return (
@@ -96,30 +120,6 @@ function AppContent() {
     updateProgress(totalDuration);
     setCurrentState('dashboard');
   };
-
-  // Select exercises based on user goals and level
-  const selectedExercises = React.useMemo(() => {
-    if (selectedGoals.length === 0) {
-      return exercises.slice(0, 5); // Default selection
-    }
-    
-    // Filter exercises based on selected goals
-    const filteredExercises = exercises.filter(exercise => 
-      exercise.goals.some(goal => selectedGoals.includes(goal))
-    );
-    
-    // If we have enough filtered exercises, use them
-    if (filteredExercises.length >= 4) {
-      return filteredExercises.slice(0, 6); // Take up to 6 exercises
-    }
-    
-    // Otherwise, supplement with general exercises
-    const generalExercises = exercises.filter(exercise => 
-      !filteredExercises.includes(exercise)
-    );
-    
-    return [...filteredExercises, ...generalExercises].slice(0, 5);
-  }, [selectedGoals]);
 
   switch (currentState) {
     case 'welcome':
