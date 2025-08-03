@@ -31,7 +31,7 @@ export interface ExerciseVideoMapping {
 }
 
 class PexelsVideoService {
-  private readonly PEXELS_API_KEY = process.env.VITE_PEXELS_API_KEY || ''; // Use environment variable
+  private readonly PEXELS_API_KEY = import.meta.env.VITE_PEXELS_API_KEY || ''; // Use environment variable
   private readonly BASE_URL = 'https://api.pexels.com/videos';
   
   // Curated exercise video mappings with working Pexels videos
