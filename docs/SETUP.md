@@ -25,7 +25,7 @@ The app uses Pexels for professional exercise demonstration videos. Here's how t
 ### Step 3: Copy Your API Key
 Your API key will look like this:
 ```
-aJ6Ng9GbHjTQZKwvyaYFdLGfnBeRBGXfvUy0OY0wugm7HjGebQoVVhho
+563492ad6f917344157440503f567ba95e4fc362ec38a45bbac188d67
 ```
 
 **Important:** Keep this key private and never commit it to version control!

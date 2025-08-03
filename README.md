@@ -45,7 +45,7 @@ For video demonstrations, you'll need a free Pexels API key:
 
 1. **Create a Pexels account** at [pexels.com](https://www.pexels.com)
 2. **Get your API key** at [pexels.com/api](https://www.pexels.com/api/)
-3. **Copy your API key** (it looks like: `aJ6Ng9GbHjTQZKwvyaYFdLGfnBeRBGXfvUy0OY0wugm7HjGebQoVVhho`)
+3. **Copy your API key** (it looks like: `563492ad6f917344157440503f567ba95e4fc362ec38a45bbac188d67`)
 
 ### Run Locally
 
