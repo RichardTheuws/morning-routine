@@ -285,6 +285,8 @@ This app was developed using [bolt.new](https://bolt.new), an AI-powered develop
 
 *"I wanted to create something that respects users' privacy as much as the development process respected rapid iteration and transparency."* - Richard Theuws
 
+**Note**: Replace `your-username` in GitHub URLs with your actual GitHub username when deploying.
+
 ## 🗺️ Roadmap
 
 ### Version 1.1 (Q2 2024)

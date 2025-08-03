@@ -145,7 +145,28 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   const t = (key: string): string => {
     if (!isReady || !i18n.isInitialized) {
-      return key; // Return key as fallback while loading
+      // Return a reasonable fallback based on the key
+      const fallbacks: Record<string, string> = {
+        'appTitle': 'Morning Routine',
+        'chooseGoals': 'Kies je doelen',
+        'chooseLevel': 'Kies je niveau', 
+        'chooseDuration': 'Kies tijdsduur',
+        'back': 'Terug',
+        'next': 'Volgende',
+        'beginner': 'Beginner',
+        'advanced': 'Gevorderd',
+        'expert': 'Expert',
+        'minutes': 'minuten',
+        'exercises:goals.backPain': 'Rugklachten verminderen',
+        'exercises:goals.neckPain': 'Nekpijn verminderen',
+        'exercises:goals.fatLoss': 'Vetverbranding',
+        'exercises:goals.mobility': 'Mobiliteit',
+        'exercises:goals.energy': 'Energie boost',
+        'exercises:goals.strength': 'Kracht opbouwen',
+        'exercises:goals.relaxation': 'Ontspanning'
+      };
+      
+      return fallbacks[key] || key;
     }
     
     try {

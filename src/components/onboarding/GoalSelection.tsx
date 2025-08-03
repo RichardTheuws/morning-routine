@@ -73,7 +73,7 @@ export const GoalSelection: React.FC<GoalSelectionProps> = ({ onNext, onBack }) 
                   : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-50'
               }`}
             >
-              <span className="font-medium">{t(goal.key)}</span>
+              <span className="font-medium">{t(`exercises:${goal.key}`)}</span>
               {selectedGoals.includes(goal.id) && (
                 <Check className="w-5 h-5 text-emerald-600" />
               )}

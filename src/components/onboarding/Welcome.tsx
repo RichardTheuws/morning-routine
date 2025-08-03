@@ -34,10 +34,13 @@ export const Welcome: React.FC<WelcomeProps> = ({ onNext }) => {
             <Sunrise className="w-8 h-8 text-emerald-600" />
           </div>
           <h1 className="text-2xl font-bold text-slate-900 mb-2">
-            {t('common:appTitle')}
+            {t('appTitle')}
           </h1>
           <p className="text-slate-600">
-            {t('onboarding:welcome.subtitle')}
+            {language === 'nl' 
+              ? 'Start elke dag met een gezonde, effectieve ochtendroutine. Privacyvriendelijk en volledig offline.'
+              : 'Start every day with a healthy, effective morning routine. Privacy-friendly and completely offline.'
+            }
           </p>
         </div>
 
@@ -47,7 +50,10 @@ export const Welcome: React.FC<WelcomeProps> = ({ onNext }) => {
               <Shield className="w-4 h-4 text-blue-600" />
             </div>
             <span className="text-sm text-slate-700">
-              {t('onboarding:welcome.features.privacy')}
+              {language === 'nl' 
+                ? 'Geen account nodig, alles blijft lokaal'
+                : 'No account needed, everything stays local'
+              }
             </span>
           </div>
           
@@ -56,7 +62,10 @@ export const Welcome: React.FC<WelcomeProps> = ({ onNext }) => {
               <Heart className="w-4 h-4 text-emerald-600" />
             </div>
             <span className="text-sm text-slate-700">
-              {t('onboarding:welcome.features.personalized')}
+              {language === 'nl' 
+                ? 'Aangepast aan jouw doelen en niveau'
+                : 'Tailored to your goals and level'
+              }
             </span>
           </div>
         </div>
@@ -84,7 +93,7 @@ export const Welcome: React.FC<WelcomeProps> = ({ onNext }) => {
         </div>
 
         <Button onClick={onNext} size="lg" className="w-full">
-          {t('onboarding:welcome.getStarted')}
+          {language === 'nl' ? 'Laten we beginnen' : 'Let\'s get started'}
         </Button>
       </Card>
     </div>
