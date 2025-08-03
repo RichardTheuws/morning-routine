@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLanguage } from '../../contexts/LanguageContext';
+import { useTranslation } from 'react-i18next';
 import { Button } from '../common/Button';
 import { Card } from '../common/Card';
 import { ArrowLeft, ArrowRight, Star } from 'lucide-react';
@@ -17,7 +17,7 @@ const levels: { id: UserLevel; stars: number }[] = [
 ];
 
 export const LevelSelection: React.FC<LevelSelectionProps> = ({ onNext, onBack }) => {
-  const { t, language } = useLanguage();
+  const { t, i18n } = useTranslation(['common', 'onboarding']);
   const [selectedLevel, setSelectedLevel] = useState<UserLevel>('beginner');
 
   const getLevelDescription = (level: UserLevel) => {
@@ -33,7 +33,7 @@ export const LevelSelection: React.FC<LevelSelectionProps> = ({ onNext, onBack }
         expert: 'I\'m experienced and looking for intensive exercises'
       }
     };
-    return descriptions[language][level];
+    return descriptions[i18n.language as 'nl' | 'en'][level];
   };
 
   return (
@@ -43,7 +43,7 @@ export const LevelSelection: React.FC<LevelSelectionProps> = ({ onNext, onBack }
           {t('chooseLevel')}
         </h2>
         <p className="text-slate-600 text-center mb-6">
-          {language === 'nl' 
+          {i18n.language === 'nl' 
             ? 'Kies je fitnessniveau'
             : 'Choose your fitness level'
           }

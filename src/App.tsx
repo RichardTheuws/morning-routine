@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { PrivacyConsent } from './components/privacy/PrivacyConsent';
 import { usePrivacy } from './hooks/usePrivacy';
@@ -29,9 +28,14 @@ type AppState =
 function AppContent() {
   const { showConsentDialog, updateConsent, isConsentValid } = usePrivacy();
   const [currentState, setCurrentState] = useState<AppState>(() => {
-    // Check if user has completed onboarding
-    const hasOnboarded = localStorage.getItem('morning-routine-onboarded');
-    return hasOnboarded ? 'dashboard' : 'welcome';
+    try {
+      // Check if user has completed onboarding
+      const hasOnboarded = localStorage.getItem('morning-routine-onboarded');
+      return hasOnboarded ? 'dashboard' : 'welcome';
+    } catch (error) {
+      console.error('Error accessing localStorage:', error);
+      return 'welcome';
+    }
   });
   
   const [selectedGoals, setSelectedGoals] = useState<string[]>([]);
@@ -54,7 +58,11 @@ function AppContent() {
     setSelectedGoals(goals);
     setSelectedLevel(level);
     setSelectedDuration(duration);
-    localStorage.setItem('morning-routine-onboarded', 'true');
+    try {
+      localStorage.setItem('morning-routine-onboarded', 'true');
+    } catch (error) {
+      console.error('Error saving to localStorage:', error);
+    }
     setCurrentState('dashboard');
   };
 

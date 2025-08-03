@@ -127,7 +127,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
   };
 
   const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
-    console.error('Video error:', e);
+    const video = e.currentTarget;
     console.error(`Video error for ${exerciseName}:`, {
       error: video.error,
       networkState: video.networkState,

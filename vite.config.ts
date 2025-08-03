@@ -17,6 +17,8 @@ export default defineConfig({
         short_name: 'Morning Routine',
         description: 'Privacy-first morning routine app by Richard Theuws - built with bolt.new',
         theme_color: '#059669',
+        display: 'standalone',
+        orientation: 'portrait',
         icons: [
           {
             src: 'icon-192.png',
@@ -32,6 +34,10 @@ export default defineConfig({
       }
     })
   ],
+  server: {
+    host: true,
+    port: 5173
+  },
   optimizeDeps: {
     exclude: ['lucide-react'],
   },

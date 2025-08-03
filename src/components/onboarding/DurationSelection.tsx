@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLanguage } from '../../contexts/LanguageContext';
+import { useTranslation } from 'react-i18next';
 import { Button } from '../common/Button';
 import { Card } from '../common/Card';
 import { ArrowLeft, Clock } from 'lucide-react';
@@ -12,7 +12,7 @@ interface DurationSelectionProps {
 const durations = [5, 10, 15, 20, 25, 30];
 
 export const DurationSelection: React.FC<DurationSelectionProps> = ({ onComplete, onBack }) => {
-  const { t, language } = useLanguage();
+  const { t, i18n } = useTranslation(['common', 'onboarding']);
   const [selectedDuration, setSelectedDuration] = useState<number>(10);
 
   return (
@@ -22,7 +22,7 @@ export const DurationSelection: React.FC<DurationSelectionProps> = ({ onComplete
           {t('chooseDuration')}
         </h2>
         <p className="text-slate-600 text-center mb-6">
-          {language === 'nl' 
+          {i18n.language === 'nl' 
             ? 'Hoeveel tijd heb je voor je ochtendroutine?'
             : 'How much time do you have for your morning routine?'
           }
@@ -54,7 +54,7 @@ export const DurationSelection: React.FC<DurationSelectionProps> = ({ onComplete
             onClick={() => onComplete(selectedDuration)} 
             className="flex-1"
           >
-            {language === 'nl' ? 'Routine maken' : 'Create routine'}
+            {i18n.language === 'nl' ? 'Routine maken' : 'Create routine'}
           </Button>
         </div>
       </Card>

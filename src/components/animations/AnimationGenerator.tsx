@@ -72,32 +72,29 @@ export const AnimationGenerator: React.FC<AnimationGeneratorProps> = ({
         try {
           console.log(`Loading video for exercise: ${exerciseId}`);
           const video = await pexelsVideoService.getVideoForExercise(exerciseId);
-          console.log(`Video result for ${exerciseId}:`, video);
           
           if (video) {
             setVideoMapping(video);
             
             // Validate video URL before setting view mode
             if (video.customVideoUrl) {
-              const isValid = await pexelsVideoService.validateVideoUrl(video.customVideoUrl);
-              console.log(`Video URL validation for ${exerciseId}:`, isValid);
+              // Skip validation on mobile to avoid CORS issues
+              const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+              const isValid = isMobile ? true : await pexelsVideoService.validateVideoUrl(video.customVideoUrl);
               
               if (isValid && viewMode === 'auto') {
                 setViewMode('video');
               } else if (!isValid) {
-                console.warn(`Invalid video URL for ${exerciseId}, falling back to animation`);
                 if (viewMode === 'auto') {
                   setViewMode('animation');
                 }
               }
             } else {
-              console.log(`No video URL for ${exerciseId}, using animation`);
               if (viewMode === 'auto') {
                 setViewMode('animation');
               }
             }
           } else {
-            console.log(`No video found for ${exerciseId}, using animation`);
             if (viewMode === 'auto') {
               setViewMode('animation');
             }

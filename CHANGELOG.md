@@ -58,6 +58,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.1] - 2025-01-27
+
+### Fixed
+- **iOS Mobile Compatibility** - Fixed translation keys showing instead of actual translations on iOS Safari/Chrome
+- **White Screen Issue** - Resolved blank screen after goal selection on mobile devices
+- **localStorage Errors** - Added try-catch blocks for localStorage access in private browsing mode
+- **Video Validation** - Disabled CORS video validation on mobile to prevent loading issues
+- **iOS Viewport** - Added iOS-specific CSS fixes for proper viewport handling
+- **Mobile Input** - Fixed zoom-on-focus issue with 16px minimum font size
+- **PWA Manifest** - Enhanced PWA configuration for better mobile installation
+
+### Improved
+- **Mobile Performance** - Optimized video loading for mobile devices
+- **Error Handling** - Better error logging and graceful degradation
+- **iOS Safari Support** - Specific fixes for iOS Safari rendering issues
+
 ### Added
 - **Video Selection System** - Users can now choose from multiple video options for each exercise
 - **Fullscreen Mode** - Expand demonstrations to fullscreen for better visibility
