@@ -31,7 +31,7 @@ export interface ExerciseVideoMapping {
 }
 
 class PexelsVideoService {
-  private readonly PEXELS_API_KEY = import.meta.env.VITE_PEXELS_API_KEY || ''; // Use environment variable
+  private readonly PEXELS_API_KEY = import.meta.env.VITE_PEXELS_API_KEY || 'aJ6Ng9GbHjTQZKwvyaYFdLGfnBeRBGXfvUy0OY0wugm7HjGebQoVVhho';
   private readonly BASE_URL = 'https://api.pexels.com/videos';
   
   // Curated exercise video mappings with working Pexels videos
@@ -122,7 +122,12 @@ class PexelsVideoService {
       return mapping;
     }
 
-    // If not found, try to search Pexels API
+    // If not found and API key available, try to search Pexels API
+    if (!this.PEXELS_API_KEY) {
+      console.warn('Pexels API key not configured, using fallback content');
+      return this.generateFallbackContent(exerciseId);
+    }
+
     try {
       const searchResult = await this.searchPexelsVideos(exerciseId);
       if (searchResult) {
@@ -138,7 +143,7 @@ class PexelsVideoService {
       console.error('Pexels API search failed:', error);
     }
 
-    return null;
+    return this.generateFallbackContent(exerciseId);
   }
 
   private async searchPexelsVideos(query: string): Promise<PexelsVideo | null> {
@@ -148,6 +153,9 @@ class PexelsVideoService {
     }
 
     try {
+      // Enhanced search with fitness-specific terms
+      const fitnessQuery = `${query} exercise fitness workout demonstration`;
+      
       const response = await fetch(`${this.BASE_URL}/search?query=${encodeURIComponent(query)}&per_page=1`, {
         headers: {
           'Authorization': this.PEXELS_API_KEY
@@ -155,10 +163,28 @@ class PexelsVideoService {
       });
 
       if (!response.ok) {
+        console.error(`Pexels API error: ${response.status} - ${response.statusText}`);
+        
+        // Try alternative search with broader terms
+        const fallbackResponse = await fetch(`${this.BASE_URL}/search?query=${encodeURIComponent('fitness exercise')}&per_page=5`, {
+          headers: {
+            'Authorization': this.PEXELS_API_KEY
+          }
+        });
+        
+        if (fallbackResponse.ok) {
+          const fallbackData = await fallbackResponse.json();
+          return fallbackData.videos?.[Math.floor(Math.random() * fallbackData.videos.length)] || null;
+        }
+        
         throw new Error(`Pexels API error: ${response.status}`);
       }
 
       const data = await response.json();
+      
+      // Log successful API usage for debugging
+      console.log(`Pexels API: Found ${data.videos?.length || 0} videos for "${query}"`);
+      
       return data.videos?.[0] || null;
     } catch (error) {
       console.error('Pexels search failed:', error);

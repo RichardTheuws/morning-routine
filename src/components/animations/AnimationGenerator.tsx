@@ -76,13 +76,22 @@ export const AnimationGenerator: React.FC<AnimationGeneratorProps> = ({
           const video = await pexelsVideoService.getVideoForExercise(exerciseId);
           setVideoMapping(video);
           
-          // Always start with animation, let user choose video
+          // If we have a working video, show it by default, otherwise animation
           if (viewMode === 'auto') {
-            setViewMode('animation');
+            if (video?.customVideoUrl) {
+              setViewMode('video');
+            } else {
+              setViewMode('animation');
+            }
           }
         } catch (videoError) {
           console.error('Video loading failed:', videoError);
           pexelsVideoService.trackVideoPerformance(exerciseId, 'error', { error: videoError });
+        }
+      } else {
+        // No video consent, always use animation
+        if (viewMode === 'auto') {
+          setViewMode('animation');
         }
       }
       

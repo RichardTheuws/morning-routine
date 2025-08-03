@@ -196,6 +196,12 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onBack }) => {
                 : '✓ No tracking or data collection'
               }
             </p>
+            <p>
+              {isLanguageDutch
+                ? '✓ Pexels API integratie voor professionele video demonstraties'
+                : '✓ Pexels API integration for professional video demonstrations'
+              }
+            </p>
           </div>
           <Button 
             variant="outline" 
