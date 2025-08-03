@@ -1,7 +1,7 @@
 {
   "name": "Morning Routine App",
   "short_name": "Morning Routine",
-  "description": "Privacy-first morning routine app for healthy daily habits",
+  "description": "Privacy-first morning routine app by Richard Theuws - built with bolt.new",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

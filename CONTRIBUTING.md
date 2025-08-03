@@ -373,6 +373,7 @@ Brief description of changes
 ### Questions?
 - **GitHub Discussions** - General questions and ideas
 - **GitHub Issues** - Bug reports and feature requests
+- **Email Richard** - [richard@theuws.com](mailto:richard@theuws.com) for direct questions
 - **Code Review** - Ask for feedback on your changes
 
 ### Stuck?

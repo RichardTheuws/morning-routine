@@ -15,7 +15,7 @@ export default defineConfig({
       manifest: {
         name: 'Morning Routine App',
         short_name: 'Morning Routine',
-        description: 'Privacy-first morning routine app for healthy daily habits',
+        description: 'Privacy-first morning routine app by Richard Theuws - built with bolt.new',
         theme_color: '#059669',
         icons: [
           {

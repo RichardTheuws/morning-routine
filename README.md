@@ -261,7 +261,15 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 - **GitHub Issues** - For bugs and feature requests
 - **Discussions** - For questions and community support
-- **Email** - [your-email@example.com] for direct questions
+- **Email** - [richard@theuws.com](mailto:richard@theuws.com) for direct questions
+
+## 👨‍💻 Author
+
+**Richard Theuws** - [richard@theuws.com](mailto:richard@theuws.com)
+
+This app was developed using [bolt.new](https://bolt.new), an AI-powered development platform. The choice to build with bolt.new directly influenced the privacy-first architecture - since the development process itself emphasized rapid, transparent iteration, it felt natural to extend that philosophy to user data by keeping everything local and open source.
+
+*"I wanted to create something that respects users' privacy as much as the development process respected rapid iteration and transparency."* - Richard Theuws
 
 ## 🗺️ Roadmap
 
