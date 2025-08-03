@@ -1,18 +1,18 @@
 # Contributing to Morning Routine App
 
-Bedankt voor je interesse in het bijdragen aan Morning Routine App! 🎉
+Thank you for your interest in contributing to Morning Routine App! 🎉
 
-## 🚀 Quick Start voor Contributors
+## 🚀 Quick Start for Contributors
 
 ### Development Setup
 
-1. **Fork en clone de repository**
+1. **Fork and clone the repository**
 ```bash
-git clone https://github.com/jouw-username/morning-routine-app.git
+git clone https://github.com/your-username/morning-routine-app.git
 cd morning-routine-app
 ```
 
-2. **Installeer dependencies**
+2. **Install dependencies**
 ```bash
 npm install
 ```
@@ -104,8 +104,8 @@ Add to `src/data/exercises.ts`:
   "id": "unique-exercise-id",
   "name_nl": "Nederlandse naam",
   "name_en": "English name",
-  "category": ["Rug", "Core", "Mobiliteit"],
-  "goals": ["Rugklachten verminderen", "Core versterken"],
+  "category": ["Back", "Core", "Mobility"],
+  "goals": ["Reduce back pain", "Strengthen core"],
   "levels": {
     "beginner": {
       "duration": "1m",
@@ -158,7 +158,7 @@ Add to `src/data/exercises.ts`:
 Write detailed animation instructions:
 
 ```typescript
-"animation_instruction_nl": "Persoon ligt op rug, knieën gebogen. Heupen langzaam omhoog duwen tot rechte lijn van knieën naar schouders. Highlight billen en core tijdens piekcontractie. Langzaam terug naar startpositie."
+"animation_instruction_en": "Person lies on back, knees bent. Slowly push hips up until straight line from knees to shoulders. Highlight glutes and core during peak contraction. Slowly return to starting position."
 ```
 
 ### 3. Testing New Exercises
@@ -170,20 +170,34 @@ Write detailed animation instructions:
 ## 🌍 Adding Translations
 
 ### 1. Language Context
-Add new language to `src/contexts/LanguageContext.tsx`:
+Add new language to `src/i18n/locales/`:
 
 ```typescript
-const translations = {
-  nl: { /* Dutch translations */ },
-  en: { /* English translations */ },
-  de: { /* German translations */ }, // New language
-  fr: { /* French translations */ }, // New language
-};
-
-type Language = 'nl' | 'en' | 'de' | 'fr'; // Update type
+// Create new files:
+src/i18n/locales/de/common.json
+src/i18n/locales/de/exercises.json
+src/i18n/locales/de/onboarding.json
 ```
 
-### 2. Exercise Translations
+### 2. Update i18n Configuration
+```typescript
+// In src/i18n/index.ts
+import deCommon from './locales/de/common.json';
+import deExercises from './locales/de/exercises.json';
+import deOnboarding from './locales/de/onboarding.json';
+
+const resources = {
+  en: { /* English translations */ },
+  nl: { /* Dutch translations */ },
+  de: { 
+    common: deCommon,
+    exercises: deExercises,
+    onboarding: deOnboarding,
+  },
+};
+```
+
+### 3. Exercise Translations
 Add translated fields to exercise data:
 
 ```typescript
@@ -196,21 +210,10 @@ Add translated fields to exercise data:
 }
 ```
 
-### 3. UI Translations
-Add UI text translations:
-
-```typescript
-de: {
-  appTitle: 'Morgenroutine',
-  welcome: 'Willkommen zu Ihrer Morgenroutine',
-  // ... all UI strings
-}
-```
-
 ## 🎬 Improving Animations
 
 ### 1. AI Animation Engine
-Enhance `src/services/AIAnimationEngine.ts`:
+Enhance `src/services/AdvancedAnimationEngine.ts`:
 
 ```typescript
 // Add new exercise pattern
@@ -219,10 +222,10 @@ private generateNewExerciseMotion(level: string): ExerciseMotion {
     keyframes: [
       {
         timestamp: 0,
-        joints: { /* initial position */ },
-        muscleActivation: { /* muscle groups */ },
+        poses: { /* initial position */ },
+        muscleActivations: { /* muscle groups */ },
         breathingPhase: 'inhale',
-        emphasis: []
+        focus: []
       },
       // ... more keyframes
     ],
@@ -234,22 +237,16 @@ private generateNewExerciseMotion(level: string): ExerciseMotion {
 ```
 
 ### 2. Video Integration
-Add exercise videos to `src/services/VideoService.ts`:
+Add exercise videos to `src/services/PexelsVideoService.ts`:
 
 ```typescript
-'new-exercise-id': [
-  {
-    id: 'new-exercise-video',
-    exerciseId: 'new-exercise-id',
-    level: 'beginner',
-    source: 'pexels',
-    videoUrl: 'https://example.com/video.mp4',
-    thumbnailUrl: 'https://example.com/thumb.jpg',
-    duration: 60,
-    quality: 'high',
-    description: 'Exercise demonstration'
-  }
-]
+{
+  exerciseId: 'new-exercise-id',
+  searchTerms: ['exercise', 'movement', 'fitness'],
+  customVideoUrl: 'https://videos.pexels.com/video-files/...',
+  thumbnailUrl: 'https://images.pexels.com/photos/...',
+  description: 'Exercise demonstration'
+}
 ```
 
 ## 🧪 Testing
@@ -269,7 +266,7 @@ Add exercise videos to `src/services/VideoService.ts`:
 npm run lint
 
 # Run type checking
-npm run type-check
+npx tsc --noEmit
 
 # Run tests (when available)
 npm test
