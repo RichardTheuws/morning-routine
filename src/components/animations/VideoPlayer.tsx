@@ -128,6 +128,13 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
 
   const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
     console.error('Video error:', e);
+    const video = e.currentTarget;
+    console.error('Video error details:', {
+      error: video.error,
+      networkState: video.networkState,
+      readyState: video.readyState,
+      src: video.src
+    });
     setHasError(true);
     setShowThumbnail(true);
     setIsLoading(false);
@@ -172,6 +179,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
           crossOrigin="anonymous"
         >
           <source src={videoUrl} type="video/mp4" />
+          <source src={videoUrl.replace('.mp4', '.webm')} type="video/webm" />
           {t('common:error')}: Video not supported
         </video>
       )}
@@ -186,8 +194,9 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
               className="w-full h-full object-cover"
               onError={(e) => {
                 // Try fallback thumbnail
-                if (e.currentTarget.src !== fallbackThumbnail) {
-                  e.currentTarget.src = fallbackThumbnail;
+                const currentSrc = e.currentTarget.src;
+                if (!currentSrc.includes('fallback')) {
+                  e.currentTarget.src = `${fallbackThumbnail}?fallback=true`;
                 } else {
                   e.currentTarget.style.display = 'none';
                 }

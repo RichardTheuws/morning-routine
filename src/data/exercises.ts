@@ -651,4 +651,540 @@ export const exercises: Exercise[] = [
       }
     }
   }
+  },
+  {
+    "id": "standing-forward-bend",
+    "name_nl": "Staande vooroverbuiging",
+    "name_en": "Standing Forward Bend",
+    "category": ["Rug", "Hamstrings", "Mobiliteit"],
+    "goals": ["Rug ontspannen", "Hamstrings rekken", "Mobiliteit"],
+    "levels": {
+      "beginner": {
+        "duration": "1m",
+        "sets": 1,
+        "reps": 5,
+        "description_nl": "Rustige stretch voor de onderrug en hamstrings.",
+        "description_en": "Gentle stretch for lower back and hamstrings.",
+        "steps_nl": [
+          "Sta rechtop, voeten op heupbreedte.",
+          "Adem in en reik omhoog met beide armen.",
+          "Adem uit en buig langzaam voorover vanuit de heupen, handen richting grond.",
+          "Houd je knieën licht gebogen als je rug of hamstrings stijf aanvoelen.",
+          "Kom langzaam weer omhoog, rol wervel voor wervel uit."
+        ],
+        "steps_en": [
+          "Stand upright, feet hip-width apart.",
+          "Inhale and reach up with both arms.",
+          "Exhale and slowly bend forward from your hips, hands toward the floor.",
+          "Keep your knees slightly bent if your back or hamstrings feel tight.",
+          "Slowly come back up, rolling up vertebra by vertebra."
+        ],
+        "tips_nl": [
+          "Laat het hoofd ontspannen hangen.",
+          "Buig je knieën indien nodig.",
+          "Stop bij pijn - rek moet prettig aanvoelen."
+        ],
+        "tips_en": [
+          "Let your head hang relaxed.",
+          "Bend your knees if needed.",
+          "Stop if painful - stretch should feel pleasant."
+        ],
+        "common_mistakes_nl": [
+          "Niet vanuit de heupen buigen maar vanuit de rug.",
+          "Te ver forceren richting de grond.",
+          "Adem inhouden tijdens de stretch."
+        ],
+        "common_mistakes_en": [
+          "Bending from the back instead of the hips.",
+          "Forcing too far toward the floor.",
+          "Holding breath during the stretch."
+        ],
+        "alternative_nl": "Rustig tot halverwege voorover buigen als volledig niet lukt, of plaats handen op schenen.",
+        "alternative_en": "Bend halfway if a full bend is too much, or place hands on shins.",
+        "animation_instruction_nl": "Lijntekening van een persoon die langzaam voorover buigt vanuit heupen en weer omhoog rolt, highlight hamstrings en onderrug.",
+        "animation_instruction_en": "Line drawing of a person slowly bending forward from hips and rolling back up, highlight hamstrings and lower back."
+      },
+      "advanced": {
+        "duration": "2m",
+        "sets": 1,
+        "reps": 8,
+        "description_nl": "Probeer handen plat op de vloer te leggen, houd benen meer gestrekt.",
+        "description_en": "Try to place hands flat on the floor, keep legs straighter.",
+        "steps_nl": [
+          "Voer als beginner uit.",
+          "Laat handen zo ver mogelijk richting vloer zakken.",
+          "Blijf 5-10 seconden onderin hangen, adem diep in en uit.",
+          "Kom langzaam weer omhoog, wervel voor wervel."
+        ],
+        "steps_en": [
+          "Perform as beginner.",
+          "Lower hands as far toward the floor as possible.",
+          "Hang for 5-10 seconds at the bottom, breathing deeply.",
+          "Slowly come back up, vertebra by vertebra."
+        ],
+        "tips_nl": [
+          "Voel rek, maar geen pijn.",
+          "Zorg dat de beweging vloeiend blijft.",
+          "Gebruik zwaartekracht om dieper te komen."
+        ],
+        "tips_en": [
+          "Feel a stretch, but no pain.",
+          "Keep the movement smooth.",
+          "Use gravity to go deeper."
+        ],
+        "common_mistakes_nl": [
+          "Benen overstrekken.",
+          "Schouders optrekken.",
+          "Te snel bewegen."
+        ],
+        "common_mistakes_en": [
+          "Hyperextending the legs.",
+          "Shrugging the shoulders.",
+          "Moving too quickly."
+        ],
+        "alternative_nl": "Plaats handen op schenen of yoga blokken bij te veel spanning.",
+        "alternative_en": "Place hands on shins or yoga blocks if too much tension.",
+        "animation_instruction_nl": "Diepere buiging zichtbaar, houdmomenten onderin, handen richting vloer, highlight flexibiliteit.",
+        "animation_instruction_en": "Deeper bend visible, holds at the bottom, hands toward floor, highlight flexibility."
+      },
+      "expert": {
+        "duration": "3m",
+        "sets": 1,
+        "reps": 10,
+        "description_nl": "Voeg een lichte sway of twist toe onderin voor dynamiek.",
+        "description_en": "Add a gentle sway or twist at the bottom for dynamic stretch.",
+        "steps_nl": [
+          "Buig als advanced.",
+          "Pak afwisselend de linker- en rechter enkel vast en draai romp lichtjes mee.",
+          "Kom steeds terug naar het midden.",
+          "Rol langzaam op na afronding."
+        ],
+        "steps_en": [
+          "Bend as advanced.",
+          "Alternate grabbing left and right ankle, gently twisting torso.",
+          "Return to center each time.",
+          "Roll up slowly after finishing."
+        ],
+        "tips_nl": [
+          "Beweeg langzaam en controleer de draai.",
+          "Focus op ontspannen ademhaling.",
+          "Luister naar je lichaam."
+        ],
+        "tips_en": [
+          "Move slowly and control the twist.",
+          "Focus on relaxed breathing.",
+          "Listen to your body."
+        ],
+        "common_mistakes_nl": [
+          "Te snel draaien of trekken aan de enkels.",
+          "Verlies van balans door te veel beweging."
+        ],
+        "common_mistakes_en": [
+          "Twisting or pulling at the ankles too quickly.",
+          "Losing balance from too much movement."
+        ],
+        "alternative_nl": "Blijf bij de gewone vooroverbuiging als twisten te zwaar is.",
+        "alternative_en": "Stick to the standard forward bend if twisting is too difficult.",
+        "animation_instruction_nl": "Onderin kleine sway/twist zichtbaar, om en om naar enkels, vloeiende beweging.",
+        "animation_instruction_en": "Gentle sway/twist at the bottom, alternating toward ankles, flowing movement."
+      }
+    }
+  },
+  {
+    "id": "seated-spinal-twist",
+    "name_nl": "Zittende wervelkolom twist",
+    "name_en": "Seated Spinal Twist",
+    "category": ["Rug", "Mobiliteit", "Ontspanning"],
+    "goals": ["Rug mobiliseren", "Romp draaien", "Ontspanning"],
+    "levels": {
+      "beginner": {
+        "duration": "1m",
+        "sets": 1,
+        "reps": 2,
+        "description_nl": "Lichte twist voor mobiliteit in de rug.",
+        "description_en": "Gentle twist for spinal mobility.",
+        "steps_nl": [
+          "Ga rechtop zitten met beide benen gestrekt.",
+          "Plaats je rechtervoet aan de buitenkant van je linkerknie.",
+          "Draai je romp naar rechts, plaats je linker elleboog aan de buitenkant van je rechterknie.",
+          "Kijk over je rechterschouder, houd 15 seconden vast, wissel van kant."
+        ],
+        "steps_en": [
+          "Sit upright with both legs extended.",
+          "Place your right foot outside your left knee.",
+          "Twist your torso to the right, placing your left elbow outside your right knee.",
+          "Look over your right shoulder, hold for 15 seconds, then switch sides."
+        ],
+        "tips_nl": [
+          "Houd beide zitbotten op de grond.",
+          "Beweeg alleen zover als comfortabel voelt.",
+          "Adem rustig door tijdens de twist."
+        ],
+        "tips_en": [
+          "Keep both sit bones on the floor.",
+          "Only twist as far as feels comfortable.",
+          "Breathe calmly during the twist."
+        ],
+        "common_mistakes_nl": [
+          "Bekken optillen.",
+          "Te veel forceren in de draai.",
+          "Schouders optrekken."
+        ],
+        "common_mistakes_en": [
+          "Lifting the pelvis.",
+          "Forcing the twist too much.",
+          "Shrugging the shoulders."
+        ],
+        "alternative_nl": "Buig onderste been voor meer comfort, of zit op een kussen.",
+        "alternative_en": "Bend bottom leg for more comfort, or sit on a cushion.",
+        "animation_instruction_nl": "Lijntekening met langzame draai, highlight van de wervelkolom, ademhaling zichtbaar.",
+        "animation_instruction_en": "Line drawing with slow twist, spine highlighted, breathing visible."
+      },
+      "advanced": {
+        "duration": "2m",
+        "sets": 1,
+        "reps": 3,
+        "description_nl": "Maak de draai dieper, focus op lengte maken in de rug.",
+        "description_en": "Deepen the twist, focus on elongating the spine.",
+        "steps_nl": [
+          "Voer als beginner uit.",
+          "Bij elke ademhaling verleng je de rug bij inademen en draai je iets dieper uit bij uitademen.",
+          "Houd 20-30 seconden per kant vast."
+        ],
+        "steps_en": [
+          "Perform as beginner.",
+          "With each inhale, lengthen the spine, with each exhale, deepen the twist.",
+          "Hold 20-30 seconds per side."
+        ],
+        "tips_nl": [
+          "Strek de kruin omhoog bij draaien.",
+          "Adem diep in de buik.",
+          "Voel de ruimte tussen de wervels."
+        ],
+        "tips_en": [
+          "Reach the crown of your head upward as you twist.",
+          "Breathe deeply into your belly.",
+          "Feel the space between vertebrae."
+        ],
+        "common_mistakes_nl": [
+          "Rond maken van de rug.",
+          "Op schouders duwen.",
+          "Adem inhouden."
+        ],
+        "common_mistakes_en": [
+          "Rounding the back.",
+          "Pushing with the shoulders.",
+          "Holding breath."
+        ],
+        "alternative_nl": "Draai minder diep, houd de onderrug lang.",
+        "alternative_en": "Twist less deeply, keep lower back long.",
+        "animation_instruction_nl": "Diepe twist, duidelijk verschil tussen lengte en rotatie, ademhaling gesynchroniseerd.",
+        "animation_instruction_en": "Deep twist, clear difference between length and rotation, breathing synchronized."
+      },
+      "expert": {
+        "duration": "3m",
+        "sets": 1,
+        "reps": 4,
+        "description_nl": "Voeg lichte zijwaartse buiging toe aan de twist voor extra rek.",
+        "description_en": "Add a gentle side bend to the twist for extra stretch.",
+        "steps_nl": [
+          "Voer advanced uit.",
+          "Na de twist, buig licht zijwaarts over het opgetrokken been.",
+          "Kom langzaam terug naar het midden, herhaal per kant."
+        ],
+        "steps_en": [
+          "Perform as advanced.",
+          "After the twist, gently side bend over the raised knee.",
+          "Slowly return to center, repeat for both sides."
+        ],
+        "tips_nl": [
+          "Beweeg in een vloeiende lijn.",
+          "Let op je ademhaling.",
+          "Combineer twist en zijbuiging geleidelijk."
+        ],
+        "tips_en": [
+          "Move in a smooth line.",
+          "Pay attention to your breathing.",
+          "Combine twist and side bend gradually."
+        ],
+        "common_mistakes_nl": [
+          "Trekken aan knie voor extra draai.",
+          "Twisten met teveel kracht.",
+          "Te snelle overgangen."
+        ],
+        "common_mistakes_en": [
+          "Pulling on knee for extra twist.",
+          "Twisting with too much force.",
+          "Too rapid transitions."
+        ],
+        "alternative_nl": "Alleen de twist zonder zijwaartse buiging.",
+        "alternative_en": "Only the twist, without side bend.",
+        "animation_instruction_nl": "Twist met lichte zijwaartse buiging, beweging in slow-motion, vloeiende overgangen.",
+        "animation_instruction_en": "Twist with gentle side bend, movement in slow-motion, flowing transitions."
+      }
+    }
+  },
+  {
+    "id": "knee-rolls",
+    "name_nl": "Knieën rollen (rugrol)",
+    "name_en": "Knee Rolls (Back Roll)",
+    "category": ["Rug", "Mobiliteit", "Ontspanning"],
+    "goals": ["Lage rug losmaken", "Mobiliteit", "Ontspanning"],
+    "levels": {
+      "beginner": {
+        "duration": "1m",
+        "sets": 1,
+        "reps": 6,
+        "description_nl": "Zachte rotatie van de onderrug om spanning los te laten.",
+        "description_en": "Gentle rotation of the lower back to relieve tension.",
+        "steps_nl": [
+          "Ga op je rug liggen met knieën gebogen en voeten op de vloer.",
+          "Spreid je armen in een T-vorm.",
+          "Laat beide knieën langzaam naar links zakken terwijl je hoofd naar rechts draait.",
+          "Breng knieën terug naar het midden, herhaal naar rechts."
+        ],
+        "steps_en": [
+          "Lie on your back, knees bent, feet on the floor.",
+          "Spread your arms in a T-shape.",
+          "Slowly lower both knees to the left while turning your head to the right.",
+          "Bring knees back to center, repeat to the right."
+        ],
+        "tips_nl": [
+          "Beweeg langzaam, gebruik ademhaling om te ontspannen.",
+          "Houd schouders op de grond.",
+          "Laat zwaartekracht het werk doen."
+        ],
+        "tips_en": [
+          "Move slowly, use your breath to relax.",
+          "Keep shoulders on the ground.",
+          "Let gravity do the work."
+        ],
+        "common_mistakes_nl": [
+          "Te snel bewegen, rug los van de vloer trekken.",
+          "Knieën forceren richting grond."
+        ],
+        "common_mistakes_en": [
+          "Moving too quickly, lifting back off the floor.",
+          "Forcing knees toward the ground."
+        ],
+        "alternative_nl": "Knieën minder ver laten zakken bij stijfheid, of plaats kussen tussen knieën.",
+        "alternative_en": "Lower knees less far if stiff, or place pillow between knees.",
+        "animation_instruction_nl": "Ruglig, knieën rollen van links naar rechts, hoofd draait tegengesteld, langzame beweging.",
+        "animation_instruction_en": "Supine, knees roll left to right, head turns opposite, slow movement."
+      },
+      "advanced": {
+        "duration": "2m",
+        "sets": 1,
+        "reps": 10,
+        "description_nl": "Vergroot de bewegingsuitslag, houd knieën bij elkaar.",
+        "description_en": "Increase range of motion, keep knees together.",
+        "steps_nl": [
+          "Voer als beginner uit.",
+          "Laat knieën verder richting vloer zakken.",
+          "Houd 5 seconden onderin vast bij elke zijde."
+        ],
+        "steps_en": [
+          "Perform as beginner.",
+          "Lower knees further toward the floor.",
+          "Hold at the bottom for 5 seconds on each side."
+        ],
+        "tips_nl": [
+          "Adem diep in bij terugrollen naar midden.",
+          "Voel de stretch in de onderrug.",
+          "Ontspan bewust alle spieren."
+        ],
+        "tips_en": [
+          "Inhale deeply when returning to center.",
+          "Feel the stretch in the lower back.",
+          "Consciously relax all muscles."
+        ],
+        "common_mistakes_nl": [
+          "Knieën uit elkaar laten vallen.",
+          "Schouders van de grond tillen."
+        ],
+        "common_mistakes_en": [
+          "Letting knees separate.",
+          "Lifting shoulders off the ground."
+        ],
+        "alternative_nl": "Voeten verder uit elkaar plaatsen voor stabiliteit.",
+        "alternative_en": "Place feet wider for stability.",
+        "animation_instruction_nl": "Grotere bewegingen, pauze onderin, focus op volledige ontspanning, highlight onderrug.",
+        "animation_instruction_en": "Larger movements, pause at bottom, focus on full relaxation, highlight lower back."
+      },
+      "expert": {
+        "duration": "3m",
+        "sets": 1,
+        "reps": 14,
+        "description_nl": "Breng knieën richting oksel voor diepe stretch.",
+        "description_en": "Bring knees toward armpit for a deeper stretch.",
+        "steps_nl": [
+          "Voer als advanced uit.",
+          "Breng knieën richting oksel bij elke kant.",
+          "Blijf de schouders plat op de grond houden."
+        ],
+        "steps_en": [
+          "Perform as advanced.",
+          "Bring knees toward armpit on each side.",
+          "Keep shoulders flat on the floor."
+        ],
+        "tips_nl": [
+          "Blijf rustig doorademen.",
+          "Voel de diepe stretch in de rug.",
+          "Gebruik tegengestelde hoofdbeweging voor balans."
+        ],
+        "tips_en": [
+          "Keep breathing calmly.",
+          "Feel the deep stretch in the back.",
+          "Use opposite head movement for balance."
+        ],
+        "common_mistakes_nl": [
+          "Schouders van de vloer halen.",
+          "Te veel kracht gebruiken."
+        ],
+        "common_mistakes_en": [
+          "Lifting shoulders off the floor.",
+          "Using too much force."
+        ],
+        "alternative_nl": "Breng knieën minder ver als het te intens wordt.",
+        "alternative_en": "Bring knees less far if it becomes too intense.",
+        "animation_instruction_nl": "Diepe rol, knieën richting oksel, langzaam uitgevoerd, maximale stretch zichtbaar.",
+        "animation_instruction_en": "Deep roll, knees toward armpit, performed slowly, maximum stretch visible."
+      }
+    }
+  },
+  {
+    "id": "superman",
+    "name_nl": "Superman",
+    "name_en": "Superman",
+    "category": ["Rug", "Core", "Kracht"],
+    "goals": ["Rug versterken", "Core activeren", "Houding verbeteren"],
+    "levels": {
+      "beginner": {
+        "duration": "1m",
+        "sets": 1,
+        "reps": 6,
+        "description_nl": "Versterkende oefening voor de hele rug.",
+        "description_en": "Strengthening exercise for the entire back.",
+        "steps_nl": [
+          "Ga op je buik liggen, armen voor je uitgestrekt.",
+          "Til beide armen en benen een klein stukje van de grond.",
+          "Houd 2 seconden vast, laat rustig zakken.",
+          "Rust kort tussen herhalingen."
+        ],
+        "steps_en": [
+          "Lie on your stomach, arms stretched out in front.",
+          "Lift both arms and legs slightly off the ground.",
+          "Hold for 2 seconds, then lower gently.",
+          "Rest briefly between repetitions."
+        ],
+        "tips_nl": [
+          "Span billen en schouders licht aan.",
+          "Adem uit bij het optillen.",
+          "Kijk naar de grond om nek te beschermen."
+        ],
+        "tips_en": [
+          "Squeeze glutes and shoulder blades gently.",
+          "Exhale as you lift.",
+          "Look down to protect your neck."
+        ],
+        "common_mistakes_nl": [
+          "Trekken in de onderrug.",
+          "Hoofd te ver optillen.",
+          "Adem inhouden."
+        ],
+        "common_mistakes_en": [
+          "Pulling in the lower back.",
+          "Lifting head too high.",
+          "Holding breath."
+        ],
+        "alternative_nl": "Alleen armen of alleen benen optillen, of plaats kussen onder buik.",
+        "alternative_en": "Lift only arms or only legs, or place pillow under stomach.",
+        "animation_instruction_nl": "Persoon op buik, tilt langzaam armen en benen omhoog, kort vasthouden, highlight rugspieren.",
+        "animation_instruction_en": "Person on stomach, slowly lifts arms and legs, holds briefly, highlight back muscles."
+      },
+      "advanced": {
+        "duration": "2m",
+        "sets": 1,
+        "reps": 10,
+        "description_nl": "Blijf langer in de hoogste positie, strek de armen goed.",
+        "description_en": "Hold longer at the highest position, fully extend arms.",
+        "steps_nl": [
+          "Voer als beginner uit.",
+          "Houd bovenin 5 seconden vast per herhaling.",
+          "Span het hele lichaam aan.",
+          "Focus op kwaliteit boven kwantiteit."
+        ],
+        "steps_en": [
+          "Perform as beginner.",
+          "Hold at the top for 5 seconds per repetition.",
+          "Engage the entire body.",
+          "Focus on quality over quantity."
+        ],
+        "tips_nl": [
+          "Voel de spieren in je rug werken.",
+          "Houd ademhaling gelijkmatig.",
+          "Strek vingers en tenen actief uit."
+        ],
+        "tips_en": [
+          "Feel the muscles in your back working.",
+          "Keep breathing steady.",
+          "Actively extend fingers and toes."
+        ],
+        "common_mistakes_nl": [
+          "Te hoog optillen en compenseren.",
+          "Spanning verliezen tijdens vasthouden."
+        ],
+        "common_mistakes_en": [
+          "Lifting too high and compensating.",
+          "Losing tension during the hold."
+        ],
+        "alternative_nl": "Kortere houdmomenten als 5 seconden te zwaar is.",
+        "alternative_en": "Shorter holds if 5 seconds is too difficult.",
+        "animation_instruction_nl": "Langere houdmomenten zichtbaar, meer spanning in rugspieren, gecontroleerde beweging.",
+        "animation_instruction_en": "Longer holds visible, more tension in back muscles, controlled movement."
+      },
+      "expert": {
+        "duration": "3m",
+        "sets": 2,
+        "reps": 8,
+        "description_nl": "Voeg dynamische bewegingen toe: zwembeweging met armen.",
+        "description_en": "Add dynamic movements: swimming motion with arms.",
+        "steps_nl": [
+          "Til armen en benen op zoals advanced.",
+          "Maak afwisselende zwembewegingen met armen terwijl je omhoog blijft.",
+          "Houd benen stabiel omhoog.",
+          "Voer 8 zwembewegingen uit per herhaling."
+        ],
+        "steps_en": [
+          "Lift arms and legs as in advanced.",
+          "Make alternating swimming motions with arms while staying up.",
+          "Keep legs stable and elevated.",
+          "Perform 8 swimming motions per repetition."
+        ],
+        "tips_nl": [
+          "Houd core strak tijdens beweging.",
+          "Beweeg armen gecontroleerd.",
+          "Blijf doorademen tijdens de beweging."
+        ],
+        "tips_en": [
+          "Keep core tight during movement.",
+          "Move arms in a controlled manner.",
+          "Keep breathing during the movement."
+        ],
+        "common_mistakes_nl": [
+          "Benen laten zakken tijdens armbeweging.",
+          "Te snelle armbeweging.",
+          "Verlies van rugspanning."
+        ],
+        "common_mistakes_en": [
+          "Letting legs drop during arm movement.",
+          "Too rapid arm movement.",
+          "Loss of back tension."
+        ],
+        "alternative_nl": "Statische hold zonder armbeweging als dynamiek te zwaar is.",
+        "alternative_en": "Static hold without arm movement if dynamics are too difficult.",
+        "animation_instruction_nl": "Superman met zwembeweging, armen alterneren, benen blijven omhoog, highlight core stabiliteit.",
+        "animation_instruction_en": "Superman with swimming motion, arms alternate, legs stay up, highlight core stability."
+      }
+    }
 ];

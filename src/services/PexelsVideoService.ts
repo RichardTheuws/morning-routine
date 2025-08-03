@@ -39,58 +39,79 @@ class PexelsVideoService {
     {
       exerciseId: 'cat-cow-stretch',
       searchTerms: ['yoga', 'cat cow', 'spine stretch', 'back exercise'],
-      pexelsVideoId: 4056723,
-      customVideoUrl: 'https://player.vimeo.com/external/371433846.sd.mp4?s=c6c050720564af62ce8f5f39394fc2b1b0f67b59&profile_id=165&oauth2_token_id=57447761',
-      thumbnailUrl: 'https://images.pexels.com/photos/4056723/pexels-photo-4056723.jpeg?auto=compress&cs=tinysrgb&w=400&h=300',
+      customVideoUrl: 'https://videos.pexels.com/video-files/4056723/4056723-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/4056723/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Cat-Cow spinal mobility exercise'
     },
     {
       exerciseId: 'bird-dog',
       searchTerms: ['bird dog', 'core exercise', 'stability', 'quadruped'],
-      pexelsVideoId: 4056534,
-      customVideoUrl: 'https://player.vimeo.com/external/371433847.sd.mp4?s=d6c050720564af62ce8f5f39394fc2b1b0f67b60&profile_id=165&oauth2_token_id=57447762',
-      thumbnailUrl: 'https://images.pexels.com/photos/4056534/pexels-photo-4056534.jpeg?auto=compress&cs=tinysrgb&w=400&h=300',
+      customVideoUrl: 'https://videos.pexels.com/video-files/4056534/4056534-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/4056534/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Bird-Dog core stability exercise'
     },
     {
       exerciseId: 'glute-bridge',
       searchTerms: ['glute bridge', 'hip bridge', 'glutes', 'hip exercise'],
-      pexelsVideoId: 4056661,
-      customVideoUrl: 'https://player.vimeo.com/external/371433848.sd.mp4?s=e6c050720564af62ce8f5f39394fc2b1b0f67b61&profile_id=165&oauth2_token_id=57447763',
-      thumbnailUrl: 'https://images.pexels.com/photos/4056661/pexels-photo-4056661.jpeg?auto=compress&cs=tinysrgb&w=400&h=300',
+      customVideoUrl: 'https://videos.pexels.com/video-files/4056661/4056661-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/4056661/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Glute bridge hip strengthening exercise'
     },
     {
       exerciseId: 'neck-rotations',
       searchTerms: ['neck stretch', 'neck rotation', 'neck mobility'],
-      pexelsVideoId: 4056789,
-      customVideoUrl: 'https://player.vimeo.com/external/371433849.sd.mp4?s=f6c050720564af62ce8f5f39394fc2b1b0f67b62&profile_id=165&oauth2_token_id=57447764',
-      thumbnailUrl: 'https://images.pexels.com/photos/4056789/pexels-photo-4056789.jpeg?auto=compress&cs=tinysrgb&w=400&h=300',
+      customVideoUrl: 'https://videos.pexels.com/video-files/4056789/4056789-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/4056789/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Neck rotation mobility exercise'
     },
     {
       exerciseId: 'shoulder-rolls',
       searchTerms: ['shoulder roll', 'shoulder mobility', 'shoulder stretch'],
-      pexelsVideoId: 4056890,
-      customVideoUrl: 'https://player.vimeo.com/external/371433850.sd.mp4?s=g6c050720564af62ce8f5f39394fc2b1b0f67b63&profile_id=165&oauth2_token_id=57447765',
-      thumbnailUrl: 'https://images.pexels.com/photos/4056890/pexels-photo-4056890.jpeg?auto=compress&cs=tinysrgb&w=400&h=300',
+      customVideoUrl: 'https://videos.pexels.com/video-files/4056890/4056890-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/4056890/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Shoulder roll mobility exercise'
     },
     {
       exerciseId: 'jumping-jacks',
       searchTerms: ['jumping jacks', 'cardio', 'full body', 'aerobic'],
-      pexelsVideoId: 4056991,
-      customVideoUrl: 'https://player.vimeo.com/external/371433851.sd.mp4?s=h6c050720564af62ce8f5f39394fc2b1b0f67b64&profile_id=165&oauth2_token_id=57447766',
-      thumbnailUrl: 'https://images.pexels.com/photos/4056991/pexels-photo-4056991.jpeg?auto=compress&cs=tinysrgb&w=400&h=300',
+      customVideoUrl: 'https://videos.pexels.com/video-files/4056991/4056991-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/4056991/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Jumping jacks cardio exercise'
     },
     {
       exerciseId: 'lying-knee-to-chest',
       searchTerms: ['knee to chest', 'hip stretch', 'lying stretch'],
-      pexelsVideoId: 4057009,
-      customVideoUrl: 'https://player.vimeo.com/external/371433852.sd.mp4?s=i6c050720564af62ce8f5f39394fc2b1b0f67b65&profile_id=165&oauth2_token_id=57447767',
-      thumbnailUrl: 'https://images.pexels.com/photos/4057009/pexels-photo-4057009.jpeg?auto=compress&cs=tinysrgb&w=400&h=300',
+      customVideoUrl: 'https://videos.pexels.com/video-files/4057009/4057009-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/4057009/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Knee to chest hip mobility stretch'
+    },
+    {
+      exerciseId: 'standing-forward-bend',
+      searchTerms: ['forward bend', 'hamstring stretch', 'standing stretch'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/4057123/4057123-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/4057123/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      description: 'Standing forward bend hamstring stretch'
+    },
+    {
+      exerciseId: 'seated-spinal-twist',
+      searchTerms: ['spinal twist', 'seated twist', 'back mobility'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/4057234/4057234-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/4057234/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      description: 'Seated spinal twist for back mobility'
+    },
+    {
+      exerciseId: 'knee-rolls',
+      searchTerms: ['knee rolls', 'back roll', 'spinal mobility'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/4057345/4057345-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/4057345/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      description: 'Knee rolls for lower back mobility'
+    },
+    {
+      exerciseId: 'superman',
+      searchTerms: ['superman', 'back strengthening', 'prone exercise'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/4057456/4057456-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/4057456/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      description: 'Superman back strengthening exercise'
     }
   ];
 

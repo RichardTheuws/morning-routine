@@ -76,14 +76,9 @@ export const AnimationGenerator: React.FC<AnimationGeneratorProps> = ({
           const video = await pexelsVideoService.getVideoForExercise(exerciseId);
           setVideoMapping(video);
           
-          // Auto-select video if available and high quality
-          if (video?.customVideoUrl && viewMode === 'auto') {
-            const isValidVideo = await pexelsVideoService.validateVideoUrl(video.customVideoUrl);
-            if (isValidVideo) {
-              setViewMode('video');
-            } else {
-              setViewMode('animation');
-            }
+          // Always start with animation, let user choose video
+          if (viewMode === 'auto') {
+            setViewMode('animation');
           }
         } catch (videoError) {
           console.error('Video loading failed:', videoError);
