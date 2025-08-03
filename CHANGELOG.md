@@ -58,6 +58,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- **Video Selection System** - Users can now choose from multiple video options for each exercise
+- **Fullscreen Mode** - Expand demonstrations to fullscreen for better visibility
+- **User Video Preferences** - App remembers user's preferred videos for each exercise
+- **Modern Animation System** - Completely redesigned animation renderer with smooth transitions
+- **Enhanced Video Search** - Multiple video options per exercise with custom search capability
+
+### Improved
+- **Video Display** - Larger, more visible video demonstrations
+- **Animation Quality** - Modern design with gradient backgrounds and smooth muscle activation indicators
+- **User Experience** - Better video selection workflow with thumbnail previews
+- **Performance** - Optimized video loading and caching system
+
+### Fixed
+- **Video Loading Errors** - Resolved CORS and URL validation issues
+- **Animation Rendering** - Improved physics-based movement calculations
+- **User Preferences** - Proper storage and retrieval of video selections
+
 ### Planned
 - Additional exercise categories (strength training, cardio)
 - Custom routine builder

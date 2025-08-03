@@ -3,10 +3,11 @@ import { useTranslation } from 'react-i18next';
 import { advancedAnimationEngine, GeneratedAnimation } from '../../services/AdvancedAnimationEngine';
 import { pexelsVideoService, ExerciseVideoMapping } from '../../services/PexelsVideoService';
 import { privacyService } from '../../services/PrivacyService';
-import { PhysicsBasedRenderer } from './PhysicsBasedRenderer';
+import { ModernAnimationRenderer } from './ModernAnimationRenderer';
 import { VideoPlayer } from './VideoPlayer';
+import { VideoSelector } from './VideoSelector';
 import { Button } from '../common/Button';
-import { Play, Zap, Video, Eye } from 'lucide-react';
+import { Play, Zap, Video, Eye, Settings, Maximize } from 'lucide-react';
 
 interface AnimationGeneratorProps {
   exerciseId: string;
@@ -35,6 +36,8 @@ export const AnimationGenerator: React.FC<AnimationGeneratorProps> = ({
   const [error, setError] = useState<string | null>(null);
   const [hasVideoConsent, setHasVideoConsent] = useState(false);
   const [isVideoLoading, setIsVideoLoading] = useState(false);
+  const [showVideoSelector, setShowVideoSelector] = useState(false);
+  const [showFullscreen, setShowFullscreen] = useState(false);
 
   const loadContent = useCallback(async (videoConsent: boolean) => {
     setIsLoading(true);
@@ -180,6 +183,17 @@ export const AnimationGenerator: React.FC<AnimationGeneratorProps> = ({
     }
   };
 
+  const handleVideoSelection = (selectedVideo: ExerciseVideoMapping) => {
+    setVideoMapping(selectedVideo);
+    if (viewMode === 'auto') {
+      setViewMode('video');
+    }
+  };
+
+  const toggleFullscreen = () => {
+    setShowFullscreen(!showFullscreen);
+  };
+
   if (isLoading) {
     return (
       <div className={`w-full h-48 bg-slate-100 rounded-xl flex items-center justify-center ${className}`}>
@@ -209,55 +223,96 @@ export const AnimationGenerator: React.FC<AnimationGeneratorProps> = ({
   const showVideo = viewMode === 'video' && videoMapping?.customVideoUrl && hasVideoConsent;
   const showAnimation = viewMode === 'animation' || (!showVideo && animation);
 
+  const contentComponent = (
+    <>
+      {showVideo && videoMapping && (
+        <VideoPlayer
+          videoUrl={videoMapping.customVideoUrl!}
+          thumbnailUrl={videoMapping.thumbnailUrl || ''}
+          exerciseName={exerciseName}
+          className="w-full h-full"
+          autoplay={false}
+          onPlay={() => pexelsVideoService.trackVideoPerformance(exerciseId, 'play')}
+          onError={() => pexelsVideoService.trackVideoPerformance(exerciseId, 'error')}
+        />
+      )}
+      
+      {showAnimation && animation && (
+        <ModernAnimationRenderer
+          animation={animation}
+          exerciseName={exerciseName}
+          className="w-full h-full"
+          isPlaying={true}
+        />
+      )}
+      
+      {!showVideo && !showAnimation && (
+        <div className="w-full h-full bg-gradient-to-br from-blue-50 to-emerald-50 rounded-xl flex items-center justify-center">
+          <div className="text-center">
+            <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-3 mx-auto">
+              <Play className="w-8 h-8 text-emerald-600" />
+            </div>
+            <div className="text-slate-700 font-medium mb-1">{exerciseName}</div>
+            <div className="text-xs text-slate-500">Follow the written instructions</div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+
   return (
     <div className={`w-full ${className}`}>
       {/* Content area */}
-      <div className="w-full h-48 relative">
-        {showVideo && videoMapping && (
-          <VideoPlayer
-            videoUrl={videoMapping.customVideoUrl!}
-            thumbnailUrl={videoMapping.thumbnailUrl || ''}
-            exerciseName={exerciseName}
-            className="w-full h-full"
-            autoplay={false}
-            onPlay={() => pexelsVideoService.trackVideoPerformance(exerciseId, 'play')}
-            onError={() => pexelsVideoService.trackVideoPerformance(exerciseId, 'error')}
-          />
-        )}
-        
-        {showAnimation && animation && (
-          <PhysicsBasedRenderer
-            animation={animation}
-            exerciseName={exerciseName}
-            className="w-full h-full"
-            isPlaying={true}
-          />
-        )}
-        
-        {!showVideo && !showAnimation && (
-          <div className="w-full h-full bg-gradient-to-br from-blue-50 to-emerald-50 rounded-xl flex items-center justify-center">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-3 mx-auto">
-                <Play className="w-8 h-8 text-emerald-600" />
-              </div>
-              <div className="text-slate-700 font-medium mb-1">{exerciseName}</div>
-              <div className="text-xs text-slate-500">Follow the written instructions</div>
+      <div className={`w-full relative ${showFullscreen ? 'fixed inset-0 z-50 bg-black' : 'h-48'}`}>
+        {showFullscreen ? (
+          <div className="w-full h-full flex items-center justify-center">
+            <div className="w-full max-w-4xl h-full max-h-[80vh]">
+              {contentComponent}
             </div>
+            <Button
+              variant="ghost"
+              onClick={toggleFullscreen}
+              className="absolute top-4 right-4 text-white hover:bg-white hover:bg-opacity-20"
+              icon={Maximize}
+            />
           </div>
+        ) : (
+          <>
+            {contentComponent}
+            
+            {/* Fullscreen button */}
+            <Button
+              variant="ghost"
+              onClick={toggleFullscreen}
+              className="absolute top-2 right-2 bg-black bg-opacity-50 text-white hover:bg-opacity-70"
+              icon={Maximize}
+              size="sm"
+            />
+          </>
         )}
       </div>
 
       {/* View mode controls */}
-      <div className="mt-3 flex items-center justify-center gap-2">
+      <div className="mt-3 flex items-center justify-center gap-2 flex-wrap">
         {videoMapping?.customVideoUrl && hasVideoConsent && (
-          <Button
-            variant={viewMode === 'video' ? 'primary' : 'outline'}
-            size="sm"
-            icon={Video}
-            onClick={() => handleViewModeChange('video')}
-          >
-            Video
-          </Button>
+          <>
+            <Button
+              variant={viewMode === 'video' ? 'primary' : 'outline'}
+              size="sm"
+              icon={Video}
+              onClick={() => handleViewModeChange('video')}
+            >
+              Video
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              icon={Settings}
+              onClick={() => setShowVideoSelector(true)}
+            >
+              {t('common:language') === 'nl' ? 'Andere video' : 'Choose video'}
+            </Button>
+          </>
         )}
         
         {animation && (
@@ -278,6 +333,17 @@ export const AnimationGenerator: React.FC<AnimationGeneratorProps> = ({
           </div>
         )}
       </div>
+
+      {/* Video Selector Modal */}
+      {showVideoSelector && (
+        <VideoSelector
+          exerciseId={exerciseId}
+          exerciseName={exerciseName}
+          currentVideoUrl={videoMapping?.customVideoUrl}
+          onVideoSelected={handleVideoSelection}
+          onClose={() => setShowVideoSelector(false)}
+        />
+      )}
 
       {/* Exercise metadata */}
       {animation && (

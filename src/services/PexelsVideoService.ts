@@ -115,7 +115,181 @@ class PexelsVideoService {
     }
   ];
 
+  // Get multiple video options for user selection
+  async getMultipleVideoOptions(exerciseId: string, exerciseName: string): Promise<ExerciseVideoMapping[]> {
+    const options: ExerciseVideoMapping[] = [];
+    
+    try {
+      // First, add curated video if available
+      const curatedMapping = this.EXERCISE_VIDEO_MAPPINGS.find(m => m.exerciseId === exerciseId);
+      if (curatedMapping && curatedMapping.customVideoUrl) {
+        options.push({
+          ...curatedMapping,
+          description: `${curatedMapping.description} (Curated)`
+        });
+      }
+      
+      // Then search for additional options via API
+      if (this.PEXELS_API_KEY) {
+        const searchTerms = [
+          exerciseName,
+          `${exerciseName} exercise`,
+          `${exerciseName} workout`,
+          `${exerciseName} fitness`,
+          ...this.getExerciseSearchTerms(exerciseId)
+        ];
+        
+        for (const term of searchTerms.slice(0, 3)) { // Limit to 3 searches
+          try {
+            const videos = await this.searchMultiplePexelsVideos(term, 2); // Get 2 videos per search
+            videos.forEach((video, index) => {
+              const videoFile = this.getBestVideoFile(video.video_files);
+              if (videoFile) {
+                options.push({
+                  exerciseId,
+                  searchTerms: [term],
+                  customVideoUrl: videoFile.link,
+                  thumbnailUrl: video.image,
+                  description: `${exerciseName} - ${term} (${index + 1})`
+                });
+              }
+            });
+          } catch (error) {
+            console.warn(`Search failed for term "${term}":`, error);
+          }
+        }
+      }
+      
+      // Remove duplicates based on video URL
+      const uniqueOptions = options.filter((option, index, self) => 
+        index === self.findIndex(o => o.customVideoUrl === option.customVideoUrl)
+      );
+      
+      return uniqueOptions.slice(0, 9); // Limit to 9 options for UI
+      
+    } catch (error) {
+      console.error('Failed to get multiple video options:', error);
+      return options;
+    }
+  }
+
+  // Search for multiple videos instead of just one
+  private async searchMultiplePexelsVideos(query: string, count: number = 5): Promise<PexelsVideo[]> {
+    if (!this.PEXELS_API_KEY) return [];
+
+    try {
+      const searchQuery = query.includes('exercise') ? query : `${query} exercise fitness workout`;
+      
+      const response = await fetch(`${this.BASE_URL}/search?query=${encodeURIComponent(searchQuery)}&per_page=${count}&orientation=landscape`, {
+        headers: {
+          'Authorization': this.PEXELS_API_KEY
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error(`Pexels API error: ${response.status}`);
+      }
+
+      const data = await response.json();
+      return data.videos?.filter((video: any) => 
+        video.video_files && video.video_files.length > 0
+      ) || [];
+      
+    } catch (error) {
+      console.error('Multiple Pexels search failed:', error);
+      return [];
+    }
+  }
+
+  // Custom search for user-specified terms
+  async searchCustomVideos(searchTerm: string): Promise<ExerciseVideoMapping[]> {
+    if (!this.PEXELS_API_KEY || !searchTerm.trim()) return [];
+    
+    try {
+      const videos = await this.searchMultiplePexelsVideos(searchTerm, 6);
+      return videos.map((video, index) => {
+        const videoFile = this.getBestVideoFile(video.video_files);
+        return {
+          exerciseId: 'custom-search',
+          searchTerms: [searchTerm],
+          customVideoUrl: videoFile?.link || '',
+          thumbnailUrl: video.image,
+          description: `${searchTerm} - Result ${index + 1}`
+        };
+      }).filter(mapping => mapping.customVideoUrl);
+      
+    } catch (error) {
+      console.error('Custom search failed:', error);
+      return [];
+    }
+  }
+
+  // Get exercise-specific search terms
+  private getExerciseSearchTerms(exerciseId: string): string[] {
+    const mapping = this.EXERCISE_VIDEO_MAPPINGS.find(m => m.exerciseId === exerciseId);
+    return mapping?.searchTerms || [];
+  }
+
+  // Save user video preference
+  saveUserVideoPreference(exerciseId: string, videoMapping: ExerciseVideoMapping): void {
+    try {
+      const preferences = this.getUserVideoPreferences();
+      preferences[exerciseId] = {
+        videoUrl: videoMapping.customVideoUrl || '',
+        thumbnailUrl: videoMapping.thumbnailUrl || '',
+        description: videoMapping.description,
+        selectedAt: new Date().toISOString()
+      };
+      
+      localStorage.setItem('user-video-preferences', JSON.stringify(preferences));
+      console.log(`Saved video preference for ${exerciseId}`);
+      
+    } catch (error) {
+      console.error('Failed to save video preference:', error);
+    }
+  }
+
+  // Get user video preferences
+  getUserVideoPreferences(): Record<string, any> {
+    try {
+      const stored = localStorage.getItem('user-video-preferences');
+      return stored ? JSON.parse(stored) : {};
+    } catch (error) {
+      console.error('Failed to get video preferences:', error);
+      return {};
+    }
+  }
+
+  // Get user's preferred video for an exercise
+  getUserPreferredVideo(exerciseId: string): ExerciseVideoMapping | null {
+    try {
+      const preferences = this.getUserVideoPreferences();
+      const preference = preferences[exerciseId];
+      
+      if (preference && preference.videoUrl) {
+        return {
+          exerciseId,
+          searchTerms: [],
+          customVideoUrl: preference.videoUrl,
+          thumbnailUrl: preference.thumbnailUrl,
+          description: preference.description || `${exerciseId} (User Selected)`
+        };
+      }
+      
+      return null;
+    } catch (error) {
+      console.error('Failed to get user preferred video:', error);
+      return null;
+    }
+  }
+
   async getVideoForExercise(exerciseId: string): Promise<ExerciseVideoMapping | null> {
+    // First check user preferences
+    const userPreferred = this.getUserPreferredVideo(exerciseId);
+    if (userPreferred) {
+      return userPreferred;
+    }
+    
     // Prioritize API search for fresh, working video URLs
     if (!this.PEXELS_API_KEY) {
       console.warn('Pexels API key not configured, using fallback content');
