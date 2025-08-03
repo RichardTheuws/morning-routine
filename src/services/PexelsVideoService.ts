@@ -38,177 +38,177 @@ class PexelsVideoService {
   private readonly EXERCISE_VIDEO_MAPPINGS: ExerciseVideoMapping[] = [
     {
       exerciseId: 'cat-cow-stretch',
-      searchTerms: ['yoga', 'cat cow', 'spine stretch', 'back exercise'],
-      customVideoUrl: 'https://videos.pexels.com/video-files/4056723/4056723-uhd_2560_1440_25fps.mp4',
-      thumbnailUrl: 'https://images.pexels.com/videos/4056723/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      searchTerms: ['cat cow pose', 'spinal mobility', 'yoga flow', 'back flexibility'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/6740794/6740794-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/6740794/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Cat-Cow spinal mobility exercise'
     },
     {
       exerciseId: 'bird-dog',
-      searchTerms: ['bird dog', 'core exercise', 'stability', 'quadruped'],
-      customVideoUrl: 'https://videos.pexels.com/video-files/4056534/4056534-uhd_2560_1440_25fps.mp4',
-      thumbnailUrl: 'https://images.pexels.com/videos/4056534/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      searchTerms: ['bird dog exercise', 'core stability', 'balance training', 'quadruped'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/7991579/7991579-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/7991579/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Bird-Dog core stability exercise'
     },
     {
       exerciseId: 'childs-pose',
-      searchTerms: ['child pose', 'yoga', 'relaxation', 'back stretch'],
-      customVideoUrl: 'https://videos.pexels.com/video-files/8550000/8550000-uhd_2560_1440_25fps.mp4',
-      thumbnailUrl: 'https://images.pexels.com/videos/8550000/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      searchTerms: ['child pose yoga', 'balasana', 'restorative yoga', 'hip flexor stretch'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/8436729/8436729-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/8436729/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Child\'s Pose relaxation stretch'
     },
     {
       exerciseId: 'cobra-stretch',
-      searchTerms: ['cobra pose', 'back extension', 'yoga', 'spine'],
-      customVideoUrl: 'https://videos.pexels.com/video-files/4057123/4057123-uhd_2560_1440_25fps.mp4',
-      thumbnailUrl: 'https://images.pexels.com/videos/4057123/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      searchTerms: ['cobra pose yoga', 'bhujangasana', 'back extension', 'spine flexibility'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/6975214/6975214-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/6975214/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Cobra stretch back extension'
     },
     {
       exerciseId: 'thoracic-spine-rotation',
-      searchTerms: ['thoracic rotation', 'spine mobility', 'back twist'],
-      customVideoUrl: 'https://videos.pexels.com/video-files/4057234/4057234-uhd_2560_1440_25fps.mp4',
-      thumbnailUrl: 'https://images.pexels.com/videos/4057234/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      searchTerms: ['thoracic spine rotation', 'spinal twist', 'upper back mobility', 'rotation exercise'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/7991462/7991462-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/7991462/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Thoracic spine rotation mobility'
     },
     {
       exerciseId: 'wall-angels',
-      searchTerms: ['wall angels', 'shoulder blade', 'posture', 'back'],
-      customVideoUrl: 'https://videos.pexels.com/video-files/4056661/4056661-uhd_2560_1440_25fps.mp4',
-      thumbnailUrl: 'https://images.pexels.com/videos/4056661/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      searchTerms: ['wall angels exercise', 'shoulder blade mobility', 'posture correction', 'wall slide'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/8436842/8436842-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/8436842/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Wall angels shoulder blade exercise'
     },
     {
       exerciseId: 'neck-side-bends',
-      searchTerms: ['neck stretch', 'lateral neck', 'neck mobility'],
-      customVideoUrl: 'https://videos.pexels.com/video-files/4056789/4056789-uhd_2560_1440_25fps.mp4',
-      thumbnailUrl: 'https://images.pexels.com/videos/4056789/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      searchTerms: ['neck side bend', 'lateral neck stretch', 'cervical mobility', 'neck flexibility'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/7991348/7991348-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/7991348/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Neck side bend stretch'
     },
     {
       exerciseId: 'chin-tucks',
-      searchTerms: ['chin tuck', 'neck posture', 'cervical', 'neck exercise'],
-      customVideoUrl: 'https://videos.pexels.com/video-files/4057009/4057009-uhd_2560_1440_25fps.mp4',
-      thumbnailUrl: 'https://images.pexels.com/videos/4057009/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      searchTerms: ['chin tuck exercise', 'neck posture correction', 'cervical retraction', 'forward head posture'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/6740856/6740856-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/6740856/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Chin tuck neck posture exercise'
     },
     {
       exerciseId: 'shoulder-blade-squeezes',
-      searchTerms: ['shoulder blade squeeze', 'rhomboid', 'posture', 'upper back'],
-      customVideoUrl: 'https://videos.pexels.com/video-files/4056991/4056991-uhd_2560_1440_25fps.mp4',
-      thumbnailUrl: 'https://images.pexels.com/videos/4056991/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      searchTerms: ['shoulder blade squeeze', 'rhomboid exercise', 'scapular retraction', 'upper back strengthening'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/7991256/7991256-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/7991256/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Shoulder blade squeeze exercise'
     },
     {
       exerciseId: 'dead-bug',
-      searchTerms: ['dead bug', 'core stability', 'core exercise', 'abs'],
-      customVideoUrl: 'https://videos.pexels.com/video-files/4057345/4057345-uhd_2560_1440_25fps.mp4',
-      thumbnailUrl: 'https://images.pexels.com/videos/4057345/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      searchTerms: ['dead bug exercise', 'core stability training', 'anti-extension', 'abdominal exercise'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/8436951/8436951-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/8436951/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Dead bug core stability exercise'
     },
     {
       exerciseId: 'hip-circles',
-      searchTerms: ['hip circles', 'hip mobility', 'warm up', 'movement'],
-      customVideoUrl: 'https://videos.pexels.com/video-files/4057456/4057456-uhd_2560_1440_25fps.mp4',
-      thumbnailUrl: 'https://images.pexels.com/videos/4057456/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      searchTerms: ['hip circles exercise', 'hip mobility warm up', 'dynamic stretching', 'hip flexor mobility'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/6975389/6975389-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/6975389/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Hip circles mobility exercise'
     },
     {
       exerciseId: 'marching-in-place',
-      searchTerms: ['marching', 'cardio', 'warm up', 'knee lifts'],
-      customVideoUrl: 'https://videos.pexels.com/video-files/4056991/4056991-uhd_2560_1440_25fps.mp4',
-      thumbnailUrl: 'https://images.pexels.com/videos/4056991/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      searchTerms: ['marching in place', 'stationary march', 'cardio warm up', 'knee lift exercise'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/7991123/7991123-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/7991123/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Marching in place cardio exercise'
     },
     {
       exerciseId: 'bodyweight-squats',
-      searchTerms: ['bodyweight squat', 'squat', 'legs', 'strength'],
-      customVideoUrl: 'https://videos.pexels.com/video-files/4056723/4056723-uhd_2560_1440_25fps.mp4',
-      thumbnailUrl: 'https://images.pexels.com/videos/4056723/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      searchTerms: ['bodyweight squat', 'air squat', 'leg strengthening', 'functional movement'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/6740623/6740623-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/6740623/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Bodyweight squat exercise'
     },
     {
       exerciseId: 'deep-breathing',
-      searchTerms: ['breathing exercise', 'relaxation', 'meditation', 'mindfulness'],
-      customVideoUrl: 'https://videos.pexels.com/video-files/4057234/4057234-uhd_2560_1440_25fps.mp4',
-      thumbnailUrl: 'https://images.pexels.com/videos/4057234/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      searchTerms: ['deep breathing exercise', 'diaphragmatic breathing', 'relaxation technique', 'mindful breathing'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/8436574/8436574-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/8436574/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Deep breathing relaxation exercise'
     },
     {
       exerciseId: 'ankle-circles',
-      searchTerms: ['ankle circles', 'ankle mobility', 'foot exercise', 'warm up'],
-      customVideoUrl: 'https://videos.pexels.com/video-files/4057345/4057345-uhd_2560_1440_25fps.mp4',
-      thumbnailUrl: 'https://images.pexels.com/videos/4057345/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      searchTerms: ['ankle circles exercise', 'ankle mobility warm up', 'foot flexibility', 'ankle rotation'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/6975156/6975156-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/6975156/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Ankle circles mobility exercise'
     },
     {
       exerciseId: 'wrist-circles',
-      searchTerms: ['wrist circles', 'wrist mobility', 'computer stretch', 'forearm'],
-      customVideoUrl: 'https://videos.pexels.com/video-files/4057456/4057456-uhd_2560_1440_25fps.mp4',
-      thumbnailUrl: 'https://images.pexels.com/videos/4057456/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      searchTerms: ['wrist circles exercise', 'wrist mobility stretch', 'computer user stretch', 'forearm flexibility'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/7991034/7991034-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/7991034/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Wrist circles mobility exercise'
     },
     {
       exerciseId: 'glute-bridge',
-      searchTerms: ['glute bridge', 'hip bridge', 'glutes', 'hip exercise'],
-      customVideoUrl: 'https://videos.pexels.com/video-files/4056661/4056661-uhd_2560_1440_25fps.mp4',
-      thumbnailUrl: 'https://images.pexels.com/videos/4056661/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      searchTerms: ['glute bridge exercise', 'hip bridge', 'glute activation', 'posterior chain'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/6740945/6740945-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/6740945/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Glute bridge hip strengthening exercise'
     },
     {
       exerciseId: 'neck-rotations',
-      searchTerms: ['neck stretch', 'neck rotation', 'neck mobility'],
-      customVideoUrl: 'https://videos.pexels.com/video-files/4056789/4056789-uhd_2560_1440_25fps.mp4',
-      thumbnailUrl: 'https://images.pexels.com/videos/4056789/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      searchTerms: ['neck rotation exercise', 'cervical rotation', 'neck mobility stretch', 'head circles'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/8436687/8436687-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/8436687/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Neck rotation mobility exercise'
     },
     {
       exerciseId: 'shoulder-rolls',
-      searchTerms: ['shoulder roll', 'shoulder mobility', 'shoulder stretch'],
-      customVideoUrl: 'https://videos.pexels.com/video-files/4056890/4056890-uhd_2560_1440_25fps.mp4',
-      thumbnailUrl: 'https://images.pexels.com/videos/4056890/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      searchTerms: ['shoulder rolls exercise', 'shoulder mobility warm up', 'shoulder blade movement', 'upper body stretch'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/7991789/7991789-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/7991789/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Shoulder roll mobility exercise'
     },
     {
       exerciseId: 'jumping-jacks',
-      searchTerms: ['jumping jacks', 'cardio', 'full body', 'aerobic'],
-      customVideoUrl: 'https://videos.pexels.com/video-files/4056991/4056991-uhd_2560_1440_25fps.mp4',
-      thumbnailUrl: 'https://images.pexels.com/videos/4056991/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      searchTerms: ['jumping jacks exercise', 'star jumps', 'cardio workout', 'full body exercise'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/6740512/6740512-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/6740512/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Jumping jacks cardio exercise'
     },
     {
       exerciseId: 'lying-knee-to-chest',
-      searchTerms: ['knee to chest', 'hip stretch', 'lying stretch'],
-      customVideoUrl: 'https://videos.pexels.com/video-files/4057009/4057009-uhd_2560_1440_25fps.mp4',
-      thumbnailUrl: 'https://images.pexels.com/videos/4057009/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      searchTerms: ['knee to chest stretch', 'hip flexor stretch', 'lying hip stretch', 'lower back relief'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/8436798/8436798-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/8436798/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Knee to chest hip mobility stretch'
     },
     {
       exerciseId: 'standing-forward-bend',
-      searchTerms: ['forward bend', 'hamstring stretch', 'standing stretch'],
-      customVideoUrl: 'https://videos.pexels.com/video-files/4057123/4057123-uhd_2560_1440_25fps.mp4',
-      thumbnailUrl: 'https://images.pexels.com/videos/4057123/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      searchTerms: ['standing forward bend', 'uttanasana', 'hamstring stretch', 'forward fold'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/6975067/6975067-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/6975067/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Standing forward bend hamstring stretch'
     },
     {
       exerciseId: 'seated-spinal-twist',
-      searchTerms: ['spinal twist', 'seated twist', 'back mobility'],
-      customVideoUrl: 'https://videos.pexels.com/video-files/4057234/4057234-uhd_2560_1440_25fps.mp4',
-      thumbnailUrl: 'https://images.pexels.com/videos/4057234/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      searchTerms: ['seated spinal twist', 'seated twist pose', 'spine rotation', 'back mobility stretch'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/7991645/7991645-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/7991645/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Seated spinal twist for back mobility'
     },
     {
       exerciseId: 'knee-rolls',
-      searchTerms: ['knee rolls', 'back roll', 'spinal mobility'],
-      customVideoUrl: 'https://videos.pexels.com/video-files/4057345/4057345-uhd_2560_1440_25fps.mp4',
-      thumbnailUrl: 'https://images.pexels.com/videos/4057345/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      searchTerms: ['knee rolls exercise', 'lower back mobility', 'spinal rotation', 'back pain relief'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/8436612/8436612-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/8436612/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Knee rolls for lower back mobility'
     },
     {
       exerciseId: 'superman',
-      searchTerms: ['superman', 'back strengthening', 'prone exercise'],
-      customVideoUrl: 'https://videos.pexels.com/video-files/4057456/4057456-uhd_2560_1440_25fps.mp4',
-      thumbnailUrl: 'https://images.pexels.com/videos/4057456/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      searchTerms: ['superman exercise', 'back extension', 'posterior chain', 'spinal erector strengthening'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/6740734/6740734-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/6740734/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Superman back strengthening exercise'
     }
   ];
@@ -459,6 +459,39 @@ class PexelsVideoService {
     return this.generateFallbackContent(exerciseId);
   }
 
+  // Enhanced search query generation for better video matching
+  private enhanceSearchQuery(exerciseId: string): string {
+    const specificTerms: Record<string, string> = {
+      'cat-cow-stretch': 'cat cow pose yoga spinal mobility',
+      'bird-dog': 'bird dog core stability balance training',
+      'childs-pose': 'child pose balasana yoga relaxation',
+      'cobra-stretch': 'cobra pose bhujangasana back extension',
+      'thoracic-spine-rotation': 'thoracic spine rotation upper back twist',
+      'wall-angels': 'wall angels shoulder blade posture exercise',
+      'neck-side-bends': 'neck side bend lateral cervical stretch',
+      'chin-tucks': 'chin tuck neck posture correction exercise',
+      'shoulder-blade-squeezes': 'shoulder blade squeeze scapular retraction',
+      'dead-bug': 'dead bug core stability anti-extension',
+      'hip-circles': 'hip circles mobility dynamic warm up',
+      'marching-in-place': 'marching in place stationary cardio',
+      'bodyweight-squats': 'bodyweight squat air squat functional',
+      'deep-breathing': 'deep breathing diaphragmatic relaxation',
+      'ankle-circles': 'ankle circles mobility foot flexibility',
+      'wrist-circles': 'wrist circles forearm computer stretch',
+      'glute-bridge': 'glute bridge hip bridge posterior chain',
+      'neck-rotations': 'neck rotation cervical mobility head circles',
+      'shoulder-rolls': 'shoulder rolls mobility upper body warm up',
+      'jumping-jacks': 'jumping jacks star jumps cardio exercise',
+      'lying-knee-to-chest': 'knee to chest hip flexor lying stretch',
+      'standing-forward-bend': 'standing forward bend uttanasana hamstring',
+      'seated-spinal-twist': 'seated spinal twist spine rotation mobility',
+      'knee-rolls': 'knee rolls lower back spinal rotation',
+      'superman': 'superman exercise back extension strengthening'
+    };
+
+    return specificTerms[exerciseId] || `${exerciseId} exercise fitness demonstration`;
+  }
+
   // Get the best quality video file from available options
   private getBestVideoFile(videoFiles: any[]): any | null {
     if (!videoFiles || videoFiles.length === 0) return null;
@@ -489,10 +522,10 @@ class PexelsVideoService {
     }
 
     try {
-      // Enhanced search with fitness-specific terms
-      const searchQuery = query.includes('exercise') ? query : `${query} exercise fitness workout`;
+      // More specific search terms based on exercise type
+      const enhancedQuery = this.enhanceSearchQuery(query);
       
-      const response = await fetch(`${this.BASE_URL}/search?query=${encodeURIComponent(searchQuery)}&per_page=5&orientation=landscape`, {
+      const response = await fetch(`${this.BASE_URL}/search?query=${encodeURIComponent(enhancedQuery)}&per_page=8&orientation=landscape`, {
         headers: {
           'Authorization': this.PEXELS_API_KEY
         }
@@ -505,14 +538,15 @@ class PexelsVideoService {
       const data = await response.json();
       
       // Log successful API usage for debugging
-      console.log(`Pexels API: Found ${data.videos?.length || 0} videos for "${searchQuery}"`);
+      console.log(`Pexels API: Found ${data.videos?.length || 0} videos for "${enhancedQuery}"`);
       
-      // Return the first video with valid video files
-      const validVideo = data.videos?.find((video: any) => 
-        video.video_files && video.video_files.length > 0
-      );
+      // Filter and rank videos by relevance
+      const validVideos = data.videos?.filter((video: any) => 
+        video.video_files && video.video_files.length > 0 && video.duration > 5
+      ) || [];
       
-      return validVideo || null;
+      // Return the most relevant video (first one after filtering)
+      return validVideos[0] || null;
     } catch (error) {
       console.error('Pexels search failed:', error);
       return null;
