@@ -650,7 +650,6 @@ export const exercises: Exercise[] = [
         "animation_instruction_en": "Person performs alternating single-leg glute bridge, emphasizing stable hips and slow, controlled movement."
       }
     }
-  }
   },
   {
     "id": "standing-forward-bend",
@@ -1187,4 +1186,5 @@ export const exercises: Exercise[] = [
         "animation_instruction_en": "Superman with swimming motion, arms alternate, legs stay up, highlight core stability."
       }
     }
+  }
 ];
