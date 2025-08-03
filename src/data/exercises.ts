@@ -1,1189 +1,2115 @@
-import { Exercise } from '../types/Exercise';
-
-export const exercises: Exercise[] = [
+export const exercises = [
+  // Existing exercises (enhanced)
   {
     "id": "cat-cow-stretch",
-    "name_nl": "Cat-Cow Stretch",
+    "name_nl": "Kat-Koe Stretch",
     "name_en": "Cat-Cow Stretch",
-    "category": ["Rug", "Nek", "Mobiliteit"],
-    "goals": ["Rugklachten verminderen", "Mobiliteit", "Opwarmen"],
+    "category": ["Back", "Mobility"],
+    "goals": ["Reduce back pain", "Mobility"],
     "levels": {
       "beginner": {
-        "duration": "1m",
-        "sets": 1,
-        "reps": 8,
-        "description_nl": "Rustige mobiliteitsstretch voor rug en nek.",
-        "description_en": "Gentle mobility stretch for back and neck.",
-        "steps_nl": [
-          "Ga op handen en knieën zitten, handen onder schouders, knieën onder heupen.",
-          "Adem in: maak je rug hol, hoofd omhoog (Koe).",
-          "Adem uit: maak je rug bol, kin naar borst (Kat).",
-          "Herhaal rustig, 8 keer."
-        ],
-        "steps_en": [
-          "Get on all fours, hands under shoulders, knees under hips.",
-          "Inhale: arch your back, head up (Cow).",
-          "Exhale: round your back, chin to chest (Cat).",
-          "Repeat slowly, 8 times."
-        ],
-        "tips_nl": ["Beweeg traag en vloeiend.", "Niet forceren.", "Focus op ademhaling."],
-        "tips_en": ["Move slowly and smoothly.", "Don't force.", "Focus on your breathing."],
-        "common_mistakes_nl": ["Te snel bewegen.", "Te veel druk op polsen."],
-        "common_mistakes_en": ["Moving too fast.", "Too much pressure on wrists."],
-        "alternative_nl": "Doe de oefening zittend op een stoel met dezelfde beweging.",
-        "alternative_en": "Perform the movement seated on a chair if necessary.",
-        "animation_instruction_nl": "Lijntekening toont vloeiende overgang van holle naar bolle rug. Highlight rugcurve.",
-        "animation_instruction_en": "Line drawing shows smooth transition from arched to rounded back. Highlight spine curve."
-      },
-      "advanced": {
         "duration": "2m",
         "sets": 1,
-        "reps": 12,
-        "description_nl": "Vloeiender uitvoeren, eventueel met kleine heupbewegingen.",
-        "description_en": "Perform more fluidly, optionally add small hip movements.",
+        "reps": 8,
+        "description_nl": "Zachte ruggengraat mobilisatie op handen en knieën",
+        "description_en": "Gentle spinal mobility on hands and knees",
         "steps_nl": [
-          "Start als beginner.",
-          "Beweeg vloeiender, eventueel heupen licht meebewegen.",
-          "Focus op diepe ademhaling."
+          "Ga op handen en knieën zitten",
+          "Rond je rug naar boven (kat)",
+          "Laat je buik zakken en kijk omhoog (koe)",
+          "Beweeg langzaam tussen beide posities"
         ],
         "steps_en": [
-          "Start as beginner.",
-          "Move more fluidly, optionally add slight hip motion.",
-          "Focus on deep breathing."
+          "Get on hands and knees",
+          "Round your back upward (cat)",
+          "Drop your belly and look up (cow)",
+          "Move slowly between both positions"
         ],
-        "tips_nl": ["Synchroniseer beweging en ademhaling."],
-        "tips_en": ["Synchronize movement and breath."],
-        "common_mistakes_nl": ["Beweging te oppervlakkig, niet op ademhaling letten."],
-        "common_mistakes_en": ["Movement too shallow, not focusing on breath."],
-        "alternative_nl": "Oefen op ellebogen als polsen gevoelig zijn.",
-        "alternative_en": "Try on elbows if wrists are sensitive.",
-        "animation_instruction_nl": "Snellere flow, ademhaling zichtbaar gemaakt (wolkje/kleuren).",
-        "animation_instruction_en": "Faster flow, breathing illustrated (clouds/colors)."
+        "tips_nl": [
+          "Beweeg vanuit je ruggengraat",
+          "Adem in bij koe, uit bij kat",
+          "Geen pijn in de nek"
+        ],
+        "tips_en": [
+          "Move from your spine",
+          "Breathe in on cow, out on cat",
+          "No neck pain"
+        ],
+        "common_mistakes_nl": [
+          "Te snelle bewegingen",
+          "Alleen bewegen vanuit de nek"
+        ],
+        "common_mistakes_en": [
+          "Moving too quickly",
+          "Only moving from the neck"
+        ],
+        "alternative_nl": "Zittend op stoel uitvoeren",
+        "alternative_en": "Perform seated in chair",
+        "animation_instruction_nl": "Persoon op handen en knieën, ruggengraat beweegt van gebogen naar gestrekt, langzame vloeiende beweging",
+        "animation_instruction_en": "Person on hands and knees, spine moves from arched to rounded, slow flowing movement"
+      },
+      "advanced": {
+        "duration": "3m",
+        "sets": 2,
+        "reps": 12,
+        "description_nl": "Uitgebreide ruggengraat mobilisatie met meer herhalingen",
+        "description_en": "Extended spinal mobility with more repetitions",
+        "steps_nl": [
+          "Ga op handen en knieën zitten",
+          "Voer cat-cow beweging uit",
+          "Voeg zijwaartse bewegingen toe",
+          "Combineer met heup cirkels"
+        ],
+        "steps_en": [
+          "Get on hands and knees",
+          "Perform cat-cow movement",
+          "Add lateral movements",
+          "Combine with hip circles"
+        ],
+        "tips_nl": [
+          "Focus op segmentale beweging",
+          "Voel elke wervel bewegen",
+          "Controleer de beweging"
+        ],
+        "tips_en": [
+          "Focus on segmental movement",
+          "Feel each vertebra move",
+          "Control the movement"
+        ],
+        "common_mistakes_nl": [
+          "Te grote bewegingen",
+          "Vergeten te ademen"
+        ],
+        "common_mistakes_en": [
+          "Too large movements",
+          "Forgetting to breathe"
+        ],
+        "alternative_nl": "Staande versie tegen de muur",
+        "alternative_en": "Standing version against wall",
+        "animation_instruction_nl": "Uitgebreide cat-cow met zijwaartse bewegingen en heup cirkels, meer dynamische beweging",
+        "animation_instruction_en": "Extended cat-cow with lateral movements and hip circles, more dynamic movement"
       },
       "expert": {
-        "duration": "3m",
-        "sets": 1,
-        "reps": 20,
-        "description_nl": "Combineer met plankpositie en dynamische yoga-flow.",
-        "description_en": "Combine with plank and dynamic yoga flow.",
+        "duration": "4m",
+        "sets": 3,
+        "reps": 15,
+        "description_nl": "Geavanceerde ruggengraat mobilisatie met variaties",
+        "description_en": "Advanced spinal mobility with variations",
         "steps_nl": [
-          "Start in plank, beweeg naar Cat-Cow.",
-          "Wissel af met Downward Dog voor dynamiek.",
-          "Herhaal in een snelle, gecontroleerde flow."
+          "Begin met basis cat-cow",
+          "Voeg thread the needle toe",
+          "Combineer met side reaches",
+          "Eindig met child's pose flow"
         ],
         "steps_en": [
-          "Start in plank, move into Cat-Cow.",
-          "Alternate with Downward Dog for more dynamics.",
-          "Repeat in a fast, controlled flow."
+          "Start with basic cat-cow",
+          "Add thread the needle",
+          "Combine with side reaches",
+          "End with child's pose flow"
         ],
-        "tips_nl": ["Blijf op houding letten.", "Laat techniek niet verslappen."],
-        "tips_en": ["Keep an eye on posture.", "Don't let technique slip."],
-        "common_mistakes_nl": ["Slordige bewegingen door te hoge snelheid."],
-        "common_mistakes_en": ["Sloppy movements due to too much speed."],
-        "alternative_nl": "Langzamer uitvoeren indien nodig.",
-        "alternative_en": "Perform more slowly if necessary.",
-        "animation_instruction_nl": "Gecombineerde flow-animatie, highlight overgang plank-cat-cow-dog.",
-        "animation_instruction_en": "Combined flow animation, highlight plank-cat-cow-dog transition."
+        "tips_nl": [
+          "Vloeiende overgangen",
+          "Activeer core tijdens beweging",
+          "Varieer het tempo"
+        ],
+        "tips_en": [
+          "Smooth transitions",
+          "Engage core during movement",
+          "Vary the tempo"
+        ],
+        "common_mistakes_nl": [
+          "Te complexe bewegingen",
+          "Verlies van controle"
+        ],
+        "common_mistakes_en": [
+          "Too complex movements",
+          "Loss of control"
+        ],
+        "alternative_nl": "Gebruik yoga blok voor ondersteuning",
+        "alternative_en": "Use yoga block for support",
+        "animation_instruction_nl": "Complexe cat-cow sequentie met thread the needle en side reaches, vloeiende overgangen",
+        "animation_instruction_en": "Complex cat-cow sequence with thread the needle and side reaches, flowing transitions"
       }
     }
   },
   {
     "id": "bird-dog",
-    "name_nl": "Bird-Dog",
-    "name_en": "Bird-Dog",
-    "category": ["Rug", "Core", "Mobiliteit"],
-    "goals": ["Rugklachten verminderen", "Core versterken", "Stabiliteit"],
+    "name_nl": "Bird Dog",
+    "name_en": "Bird Dog",
+    "category": ["Core", "Back", "Stability"],
+    "goals": ["Reduce back pain", "Build strength", "Mobility"],
     "levels": {
       "beginner": {
-        "duration": "1m",
-        "sets": 1,
-        "reps": 8,
-        "description_nl": "Stabiliteitsoefening voor de rug en romp.",
-        "description_en": "Stability exercise for back and core.",
-        "steps_nl": [
-          "Ga op handen en knieën zitten.",
-          "Strek rechterarm naar voren en linkerbeen naar achteren.",
-          "Houd even vast, keer terug naar start.",
-          "Wissel van kant. Herhaal per zijde."
-        ],
-        "steps_en": [
-          "Get on all fours.",
-          "Extend right arm forward and left leg back.",
-          "Hold for a moment, return to start.",
-          "Switch sides. Repeat per side."
-        ],
-        "tips_nl": ["Span buikspieren aan.", "Beweeg rustig en gecontroleerd."],
-        "tips_en": ["Engage your core.", "Move slowly and controlled."],
-        "common_mistakes_nl": ["Rug te hol/bol maken.", "Te snel wisselen."],
-        "common_mistakes_en": ["Arching/rounding the back too much.", "Switching too fast."],
-        "alternative_nl": "Alleen arm of alleen been strekken bij klachten.",
-        "alternative_en": "Only extend arm or leg if needed.",
-        "animation_instruction_nl": "Persoon op handen/knieën, om en om arm en been strekken, highlight stabiliteit.",
-        "animation_instruction_en": "Person on all fours, alternate extending arm and leg, highlight stability."
-      },
-      "advanced": {
         "duration": "2m",
-        "sets": 1,
-        "reps": 12,
-        "description_nl": "Voer beweging vloeiender en met langere houdmomenten uit.",
-        "description_en": "Perform more fluidly and hold longer.",
-        "steps_nl": [
-          "Voer als beginner uit.",
-          "Houd 3 seconden vast per strekking.",
-          "Probeer bekken zo stabiel mogelijk te houden."
-        ],
-        "steps_en": [
-          "Perform as beginner.",
-          "Hold each extension for 3 seconds.",
-          "Try to keep pelvis as stable as possible."
-        ],
-        "tips_nl": ["Niet wiebelen, focus op balans.", "Kijk omlaag."],
-        "tips_en": ["Avoid wobbling, focus on balance.", "Look down."],
-        "common_mistakes_nl": ["Beweging te snel, verlies van balans."],
-        "common_mistakes_en": ["Moving too fast, losing balance."],
-        "alternative_nl": "Voer met steun van kussen onder knieën uit.",
-        "alternative_en": "Support knees with cushion if needed.",
-        "animation_instruction_nl": "Langzamere animatie, focus op stabiel midden.",
-        "animation_instruction_en": "Slower animation, focus on stable core."
-      },
-      "expert": {
-        "duration": "3m",
-        "sets": 1,
-        "reps": 16,
-        "description_nl": "Dynamische flow: voeg push-up toe na elke Bird-Dog.",
-        "description_en": "Dynamic flow: add a push-up after each Bird-Dog.",
-        "steps_nl": [
-          "Uitvoeren als advanced.",
-          "Na iedere Bird-Dog: voer een push-up uit.",
-          "Blijf wisselen van zijde."
-        ],
-        "steps_en": [
-          "Perform as advanced.",
-          "After each Bird-Dog: perform a push-up.",
-          "Keep alternating sides."
-        ],
-        "tips_nl": ["Techniek blijft belangrijk, niet haasten."],
-        "tips_en": ["Technique stays important, don't rush."],
-        "common_mistakes_nl": ["Push-up te snel of te diep."],
-        "common_mistakes_en": ["Push-up too fast or too deep."],
-        "alternative_nl": "Doe push-up op knieën.",
-        "alternative_en": "Do push-up on knees.",
-        "animation_instruction_nl": "Animatie wisselt Bird-Dog met push-up, duidelijke overgangen.",
-        "animation_instruction_en": "Animation alternates Bird-Dog with push-up, clear transitions."
-      }
-    }
-  },
-  {
-    "id": "lying-knee-to-chest",
-    "name_nl": "Liggende knie-naar-borst stretch",
-    "name_en": "Lying Knee-to-Chest Stretch",
-    "category": ["Rug", "Mobiliteit", "Ontspanning"],
-    "goals": ["Rug ontspannen", "Mobiliteit verbeteren", "Voor het slapengaan"],
-    "levels": {
-      "beginner": {
-        "duration": "1m",
         "sets": 1,
         "reps": 6,
-        "description_nl": "Rustige stretch voor de onderrug.",
-        "description_en": "Gentle stretch for the lower back.",
+        "description_nl": "Core stabiliteit oefening op handen en knieën",
+        "description_en": "Core stability exercise on hands and knees",
         "steps_nl": [
-          "Ga op je rug liggen, knieën gebogen, voeten plat op de vloer.",
-          "Breng één knie langzaam richting borst, houd met beide handen vast.",
-          "Houd 10 seconden vast, wissel van been."
+          "Start op handen en knieën",
+          "Strek tegenoverliggende arm en been",
+          "Houd 5 seconden vast",
+          "Wissel van kant"
         ],
         "steps_en": [
-          "Lie on your back, knees bent, feet flat on the floor.",
-          "Slowly bring one knee towards your chest, hold with both hands.",
-          "Hold for 10 seconds, switch legs."
+          "Start on hands and knees",
+          "Extend opposite arm and leg",
+          "Hold for 5 seconds",
+          "Switch sides"
         ],
-        "tips_nl": ["Ontspan schouders en nek.", "Adem rustig door."],
-        "tips_en": ["Relax shoulders and neck.", "Breathe calmly."],
-        "common_mistakes_nl": ["Been te ver doortrekken.", "Rug van de grond trekken."],
-        "common_mistakes_en": ["Pulling leg too far.", "Lifting back off the floor."],
-        "alternative_nl": "Beide knieën tegelijk naar de borst trekken.",
-        "alternative_en": "Pull both knees to the chest if comfortable.",
-        "animation_instruction_nl": "Lijntekening: persoon op rug, knie naar borst, om en om.",
-        "animation_instruction_en": "Line drawing: person lying, knee to chest, alternating sides."
+        "tips_nl": [
+          "Houd heupen recht",
+          "Span je core aan",
+          "Kijk naar de grond"
+        ],
+        "tips_en": [
+          "Keep hips level",
+          "Engage your core",
+          "Look at the ground"
+        ],
+        "common_mistakes_nl": [
+          "Heupen draaien",
+          "Te hoge arm/been"
+        ],
+        "common_mistakes_en": [
+          "Rotating hips",
+          "Arm/leg too high"
+        ],
+        "alternative_nl": "Alleen arm of alleen been strekken",
+        "alternative_en": "Extend only arm or only leg",
+        "animation_instruction_nl": "Persoon op handen en knieën, strek linkerarm en rechterbeen, houd stabiel, wissel naar rechterarm en linkerbeen",
+        "animation_instruction_en": "Person on hands and knees, extend left arm and right leg, hold stable, switch to right arm and left leg"
       },
       "advanced": {
-        "duration": "2m",
-        "sets": 1,
-        "reps": 8,
-        "description_nl": "Dynamische stretch: beide knieën tegelijk richting borst.",
-        "description_en": "Dynamic stretch: both knees to chest together.",
-        "steps_nl": [
-          "Voer uit als beginner.",
-          "Breng beide knieën tegelijk naar de borst, houd even vast.",
-          "Rol lichtjes heen en weer voor extra ontspanning."
-        ],
-        "steps_en": [
-          "Perform as beginner.",
-          "Bring both knees to chest together, hold briefly.",
-          "Rock gently side to side for extra relaxation."
-        ],
-        "tips_nl": ["Niet forceren, bewegen op eigen tempo."],
-        "tips_en": ["Don't force, move at your own pace."],
-        "common_mistakes_nl": ["Heupen te hoog optillen."],
-        "common_mistakes_en": ["Lifting hips too high."],
-        "alternative_nl": "Beweging kleiner houden bij pijn.",
-        "alternative_en": "Make movement smaller if experiencing pain.",
-        "animation_instruction_nl": "Beide knieën naar borst, lichte rolbeweging zichtbaar.",
-        "animation_instruction_en": "Both knees to chest, slight rocking visible."
-      },
-      "expert": {
         "duration": "3m",
         "sets": 2,
         "reps": 10,
-        "description_nl": "Afwisselend één been en beide benen, meer nadruk op ritmisch bewegen.",
-        "description_en": "Alternating one and both legs, focus on rhythmic movement.",
+        "description_nl": "Uitgebreide bird dog met langere holds",
+        "description_en": "Extended bird dog with longer holds",
         "steps_nl": [
-          "Wissel af tussen één knie en beide knieën naar de borst.",
-          "Beweeg in een rustig ritme, houd steeds kort vast.",
-          "Adem diep in en uit tijdens de stretch."
+          "Voer basis bird dog uit",
+          "Houd 10 seconden vast",
+          "Voeg kleine bewegingen toe",
+          "Focus op stabiliteit"
         ],
         "steps_en": [
-          "Alternate between one knee and both knees to chest.",
-          "Move at a steady rhythm, hold briefly each time.",
-          "Breathe deeply in and out during the stretch."
+          "Perform basic bird dog",
+          "Hold for 10 seconds",
+          "Add small movements",
+          "Focus on stability"
         ],
-        "tips_nl": ["Let op soepele overgangen.", "Niet forceren."],
-        "tips_en": ["Ensure smooth transitions.", "Don't force."],
-        "common_mistakes_nl": ["Overhaaste bewegingen."],
-        "common_mistakes_en": ["Moving too hastily."],
-        "alternative_nl": "Blijf bij alleen één knie als beide niet prettig is.",
-        "alternative_en": "Stick to one knee only if both is uncomfortable.",
-        "animation_instruction_nl": "Dynamische animatie afwisselend één en beide knieën naar borst.",
-        "animation_instruction_en": "Dynamic animation alternating one and both knees to chest."
+        "tips_nl": [
+          "Minimale beweging in romp",
+          "Adem normaal door",
+          "Voel de core werken"
+        ],
+        "tips_en": [
+          "Minimal torso movement",
+          "Breathe normally",
+          "Feel the core working"
+        ],
+        "common_mistakes_nl": [
+          "Adem inhouden",
+          "Te veel beweging"
+        ],
+        "common_mistakes_en": [
+          "Holding breath",
+          "Too much movement"
+        ],
+        "alternative_nl": "Op forearms uitvoeren",
+        "alternative_en": "Perform on forearms",
+        "animation_instruction_nl": "Bird dog met langere holds en kleine gecontroleerde bewegingen, focus op stabiliteit",
+        "animation_instruction_en": "Bird dog with longer holds and small controlled movements, focus on stability"
+      },
+      "expert": {
+        "duration": "4m",
+        "sets": 3,
+        "reps": 12,
+        "description_nl": "Geavanceerde bird dog met instabiliteit",
+        "description_en": "Advanced bird dog with instability",
+        "steps_nl": [
+          "Bird dog op instabiel oppervlak",
+          "Voeg resistance band toe",
+          "Combineer met crunches",
+          "Dynamische variaties"
+        ],
+        "steps_en": [
+          "Bird dog on unstable surface",
+          "Add resistance band",
+          "Combine with crunches",
+          "Dynamic variations"
+        ],
+        "tips_nl": [
+          "Behoud controle",
+          "Langzame bewegingen",
+          "Core constant actief"
+        ],
+        "tips_en": [
+          "Maintain control",
+          "Slow movements",
+          "Core constantly active"
+        ],
+        "common_mistakes_nl": [
+          "Te snel bewegen",
+          "Verlies van vorm"
+        ],
+        "common_mistakes_en": [
+          "Moving too fast",
+          "Loss of form"
+        ],
+        "alternative_nl": "Gebruik kussen voor instabiliteit",
+        "alternative_en": "Use pillow for instability",
+        "animation_instruction_nl": "Geavanceerde bird dog met crunches en dynamische bewegingen, hoge core activatie",
+        "animation_instruction_en": "Advanced bird dog with crunches and dynamic movements, high core activation"
+      }
+    }
+  },
+  // NEW ESSENTIAL EXERCISES
+  {
+    "id": "childs-pose",
+    "name_nl": "Kinderhouding",
+    "name_en": "Child's Pose",
+    "category": ["Back", "Relaxation", "Mobility"],
+    "goals": ["Reduce back pain", "Relaxation", "Mobility"],
+    "levels": {
+      "beginner": {
+        "duration": "1m",
+        "sets": 1,
+        "reps": 1,
+        "description_nl": "Rustgevende stretch voor de rug en heupen",
+        "description_en": "Restorative stretch for back and hips",
+        "steps_nl": [
+          "Kniel op de grond",
+          "Zit terug op je hielen",
+          "Strek armen naar voren",
+          "Laat voorhoofd rusten op grond"
+        ],
+        "steps_en": [
+          "Kneel on the ground",
+          "Sit back on your heels",
+          "Stretch arms forward",
+          "Rest forehead on ground"
+        ],
+        "tips_nl": [
+          "Ontspan volledig",
+          "Adem diep en rustig",
+          "Laat zwaartekracht werken"
+        ],
+        "tips_en": [
+          "Relax completely",
+          "Breathe deeply and calmly",
+          "Let gravity work"
+        ],
+        "common_mistakes_nl": [
+          "Spanning in schouders",
+          "Oncomfortabele knieën"
+        ],
+        "common_mistakes_en": [
+          "Tension in shoulders",
+          "Uncomfortable knees"
+        ],
+        "alternative_nl": "Kussen tussen benen voor comfort",
+        "alternative_en": "Pillow between legs for comfort",
+        "animation_instruction_nl": "Persoon knielt, zit terug op hielen, armen gestrekt naar voren, voorhoofd op grond, ontspannen houding",
+        "animation_instruction_en": "Person kneels, sits back on heels, arms stretched forward, forehead on ground, relaxed posture"
+      },
+      "advanced": {
+        "duration": "2m",
+        "sets": 1,
+        "reps": 1,
+        "description_nl": "Uitgebreide child's pose met arm variaties",
+        "description_en": "Extended child's pose with arm variations",
+        "steps_nl": [
+          "Begin in child's pose",
+          "Beweeg armen naar één kant",
+          "Houd 30 seconden",
+          "Wissel naar andere kant"
+        ],
+        "steps_en": [
+          "Start in child's pose",
+          "Move arms to one side",
+          "Hold for 30 seconds",
+          "Switch to other side"
+        ],
+        "tips_nl": [
+          "Voel stretch in zijkant",
+          "Blijf ontspannen",
+          "Diep ademen"
+        ],
+        "tips_en": [
+          "Feel stretch in side",
+          "Stay relaxed",
+          "Deep breathing"
+        ],
+        "common_mistakes_nl": [
+          "Te veel kracht",
+          "Vergeten te ademen"
+        ],
+        "common_mistakes_en": [
+          "Too much force",
+          "Forgetting to breathe"
+        ],
+        "alternative_nl": "Armen langs lichaam",
+        "alternative_en": "Arms alongside body",
+        "animation_instruction_nl": "Child's pose met armen naar links en rechts, zijwaartse stretch, langzame overgangen",
+        "animation_instruction_en": "Child's pose with arms to left and right, lateral stretch, slow transitions"
+      },
+      "expert": {
+        "duration": "3m",
+        "sets": 1,
+        "reps": 1,
+        "description_nl": "Dynamische child's pose flow",
+        "description_en": "Dynamic child's pose flow",
+        "steps_nl": [
+          "Child's pose naar cat-cow",
+          "Terug naar child's pose",
+          "Voeg thread the needle toe",
+          "Vloeiende bewegingen"
+        ],
+        "steps_en": [
+          "Child's pose to cat-cow",
+          "Back to child's pose",
+          "Add thread the needle",
+          "Flowing movements"
+        ],
+        "tips_nl": [
+          "Vloeiende overgangen",
+          "Luister naar je lichaam",
+          "Geen haast"
+        ],
+        "tips_en": [
+          "Smooth transitions",
+          "Listen to your body",
+          "No rush"
+        ],
+        "common_mistakes_nl": [
+          "Te snelle bewegingen",
+          "Geforceerde posities"
+        ],
+        "common_mistakes_en": [
+          "Too fast movements",
+          "Forced positions"
+        ],
+        "alternative_nl": "Blijf in statische pose",
+        "alternative_en": "Stay in static pose",
+        "animation_instruction_nl": "Dynamische flow van child's pose naar cat-cow en thread the needle, vloeiende bewegingen",
+        "animation_instruction_en": "Dynamic flow from child's pose to cat-cow and thread the needle, flowing movements"
       }
     }
   },
   {
-    "id": "neck-rotations",
-    "name_nl": "Nekrotaties",
-    "name_en": "Neck Rotations",
-    "category": ["Nek", "Schouders", "Mobiliteit"],
-    "goals": ["Nekpijn verminderen", "Mobiliteit", "Ontspanning"],
+    "id": "cobra-stretch",
+    "name_nl": "Cobra Stretch",
+    "name_en": "Cobra Stretch",
+    "category": ["Back", "Mobility"],
+    "goals": ["Reduce back pain", "Mobility"],
     "levels": {
       "beginner": {
         "duration": "1m",
         "sets": 1,
         "reps": 5,
-        "description_nl": "Rustige draaiingen van de nek om stijfheid te verminderen.",
-        "description_en": "Gentle neck rotations to reduce stiffness.",
+        "description_nl": "Zachte rugstrekking liggend op buik",
+        "description_en": "Gentle back extension lying on stomach",
         "steps_nl": [
-          "Zit of sta rechtop, schouders laag.",
-          "Draai langzaam je hoofd van oor naar oor.",
-          "Maak grote, zachte cirkels met de kin richting borst.",
-          "Doe 5 cirkels linksom, dan 5 rechtsom."
+          "Lig op je buik",
+          "Plaats handen onder schouders",
+          "Duw zacht omhoog",
+          "Houd 10 seconden"
         ],
         "steps_en": [
-          "Sit or stand upright, shoulders relaxed.",
-          "Slowly rotate your head from ear to ear.",
-          "Make large, gentle circles, chin toward chest.",
-          "Do 5 circles left, then 5 right."
+          "Lie on your stomach",
+          "Place hands under shoulders",
+          "Push gently upward",
+          "Hold for 10 seconds"
         ],
-        "tips_nl": ["Beweeg langzaam, geen scherpe pijn.", "Houd schouders ontspannen."],
-        "tips_en": ["Move slowly, stop with any sharp pain.", "Keep shoulders relaxed."],
-        "common_mistakes_nl": ["Te snel draaien.", "Schouders optrekken."],
-        "common_mistakes_en": ["Rotating too fast.", "Lifting shoulders."],
-        "alternative_nl": "Kleinere cirkels maken bij pijn of stijfheid.",
-        "alternative_en": "Make smaller circles if experiencing pain or stiffness.",
-        "animation_instruction_nl": "Lijntekening hoofd, langzaam ronddraaiend, pijlen geven richting aan.",
-        "animation_instruction_en": "Line drawing of head, slowly rotating, arrows indicate direction."
+        "tips_nl": [
+          "Gebruik rugspieren, niet armen",
+          "Houd heupen op grond",
+          "Geen pijn in onderrug"
+        ],
+        "tips_en": [
+          "Use back muscles, not arms",
+          "Keep hips on ground",
+          "No lower back pain"
+        ],
+        "common_mistakes_nl": [
+          "Te hoog omhoog",
+          "Alleen armen gebruiken"
+        ],
+        "common_mistakes_en": [
+          "Going too high",
+          "Using only arms"
+        ],
+        "alternative_nl": "Blijf op onderarmen",
+        "alternative_en": "Stay on forearms",
+        "animation_instruction_nl": "Persoon ligt op buik, duwt zacht omhoog met handen, ruggengraat strekt, heupen blijven op grond",
+        "animation_instruction_en": "Person lies on stomach, pushes gently up with hands, spine extends, hips stay on ground"
       },
       "advanced": {
         "duration": "2m",
-        "sets": 1,
+        "sets": 2,
         "reps": 8,
-        "description_nl": "Vloeiender, grotere bewegingen, eventueel met lichte schouderrol na elke cirkel.",
-        "description_en": "More fluid, larger circles, optional light shoulder roll after each rotation.",
+        "description_nl": "Uitgebreide cobra met meer extensie",
+        "description_en": "Extended cobra with more extension",
         "steps_nl": [
-          "Voer de basisbeweging uit.",
-          "Maak de cirkels geleidelijk groter.",
-          "Voeg na elke cirkel een schouderrol toe."
+          "Begin in cobra positie",
+          "Strek verder omhoog",
+          "Houd 15 seconden",
+          "Langzaam naar beneden"
         ],
         "steps_en": [
-          "Perform the basic movement.",
-          "Gradually make the circles larger.",
-          "Add a shoulder roll after each circle."
+          "Start in cobra position",
+          "Extend further up",
+          "Hold for 15 seconds",
+          "Slowly lower down"
         ],
-        "tips_nl": ["Volg het tempo van je ademhaling.", "Kijk vooruit na elke rotatie."],
-        "tips_en": ["Follow the pace of your breath.", "Look ahead after each rotation."],
-        "common_mistakes_nl": ["Trekken aan de nekspieren."],
-        "common_mistakes_en": ["Pulling on neck muscles."],
-        "alternative_nl": "Doe afwisselend links/rechts alleen als volledig draaien niet prettig is.",
-        "alternative_en": "Alternate only left/right if full rotations are uncomfortable.",
-        "animation_instruction_nl": "Hoofd maakt grotere, vloeiende cirkels, schouderrol zichtbaar.",
-        "animation_instruction_en": "Head makes larger, fluid circles, shoulder roll visible."
+        "tips_nl": [
+          "Activeer bilspieren",
+          "Schouderbladen naar beneden",
+          "Gecontroleerde beweging"
+        ],
+        "tips_en": [
+          "Activate glutes",
+          "Shoulder blades down",
+          "Controlled movement"
+        ],
+        "common_mistakes_nl": [
+          "Schouders naar oren",
+          "Te snelle beweging"
+        ],
+        "common_mistakes_en": [
+          "Shoulders to ears",
+          "Too fast movement"
+        ],
+        "alternative_nl": "Gebruik blok onder borst",
+        "alternative_en": "Use block under chest",
+        "animation_instruction_nl": "Uitgebreide cobra met meer rugextensie, geactiveerde bilspieren, gecontroleerde beweging",
+        "animation_instruction_en": "Extended cobra with more back extension, activated glutes, controlled movement"
       },
       "expert": {
         "duration": "3m",
-        "sets": 1,
-        "reps": 12,
-        "description_nl": "Dynamische flow, combineren met diepe ademhaling en stretch van armen boven hoofd.",
-        "description_en": "Dynamic flow, combine with deep breathing and stretching arms overhead.",
+        "sets": 3,
+        "reps": 10,
+        "description_nl": "Dynamische cobra met variaties",
+        "description_en": "Dynamic cobra with variations",
         "steps_nl": [
-          "Start als advanced.",
-          "Na elke nekcirkel, strek beide armen boven je hoofd en adem diep in.",
-          "Laat armen zakken en ontspan."
+          "Cobra naar upward dog",
+          "Voeg zijwaartse bewegingen toe",
+          "Combineer met push-up beweging",
+          "Vloeiende transities"
         ],
         "steps_en": [
-          "Start as advanced.",
-          "After each neck circle, stretch both arms overhead and inhale deeply.",
-          "Lower arms and relax."
+          "Cobra to upward dog",
+          "Add lateral movements",
+          "Combine with push-up movement",
+          "Flowing transitions"
         ],
-        "tips_nl": ["Blijf ademhaling en beweging combineren.", "Focus op ontspanning."],
-        "tips_en": ["Keep combining breath and movement.", "Focus on relaxation."],
-        "common_mistakes_nl": ["Armen snel laten vallen, te veel spanning vasthouden."],
-        "common_mistakes_en": ["Dropping arms too quickly, holding too much tension."],
-        "alternative_nl": "Armen op schoot houden als strekken lastig is.",
-        "alternative_en": "Keep arms on lap if stretching is difficult.",
-        "animation_instruction_nl": "Hoofd rotatie met armbeweging in slow-motion.",
-        "animation_instruction_en": "Head rotation with arm movement in slow-motion."
+        "tips_nl": [
+          "Kracht uit hele lichaam",
+          "Behoud uitlijning",
+          "Adem door beweging"
+        ],
+        "tips_en": [
+          "Power from whole body",
+          "Maintain alignment",
+          "Breathe through movement"
+        ],
+        "common_mistakes_nl": [
+          "Verlies van controle",
+          "Te complexe bewegingen"
+        ],
+        "common_mistakes_en": [
+          "Loss of control",
+          "Too complex movements"
+        ],
+        "alternative_nl": "Blijf bij basis cobra",
+        "alternative_en": "Stay with basic cobra",
+        "animation_instruction_nl": "Dynamische cobra flow naar upward dog met zijwaartse bewegingen, krachtige rugextensie",
+        "animation_instruction_en": "Dynamic cobra flow to upward dog with lateral movements, powerful back extension"
       }
     }
   },
   {
-    "id": "shoulder-rolls",
-    "name_nl": "Schouderrollen",
-    "name_en": "Shoulder Rolls",
-    "category": ["Schouders", "Nek", "Mobiliteit"],
-    "goals": ["Spanning loslaten", "Opwarmen", "Schouderklachten voorkomen"],
+    "id": "thoracic-spine-rotation",
+    "name_nl": "Thoracale Wervelkolom Rotatie",
+    "name_en": "Thoracic Spine Rotation",
+    "category": ["Back", "Mobility"],
+    "goals": ["Reduce back pain", "Mobility"],
+    "levels": {
+      "beginner": {
+        "duration": "2m",
+        "sets": 1,
+        "reps": 8,
+        "description_nl": "Zachte rotatie van de bovenrug",
+        "description_en": "Gentle rotation of the upper back",
+        "steps_nl": [
+          "Ga op handen en knieën",
+          "Plaats één hand achter hoofd",
+          "Draai elleboog naar plafond",
+          "Keer terug en wissel"
+        ],
+        "steps_en": [
+          "Get on hands and knees",
+          "Place one hand behind head",
+          "Rotate elbow to ceiling",
+          "Return and switch"
+        ],
+        "tips_nl": [
+          "Draai vanuit bovenrug",
+          "Heupen blijven stil",
+          "Volg elleboog met ogen"
+        ],
+        "tips_en": [
+          "Rotate from upper back",
+          "Hips stay still",
+          "Follow elbow with eyes"
+        ],
+        "common_mistakes_nl": [
+          "Hele lichaam draait mee",
+          "Te snelle beweging"
+        ],
+        "common_mistakes_en": [
+          "Whole body rotates",
+          "Too fast movement"
+        ],
+        "alternative_nl": "Zittend op stoel uitvoeren",
+        "alternative_en": "Perform seated in chair",
+        "animation_instruction_nl": "Persoon op handen en knieën, hand achter hoofd, elleboog draait naar plafond, thoracale rotatie",
+        "animation_instruction_en": "Person on hands and knees, hand behind head, elbow rotates to ceiling, thoracic rotation"
+      },
+      "advanced": {
+        "duration": "3m",
+        "sets": 2,
+        "reps": 12,
+        "description_nl": "Uitgebreide thoracale rotatie met meer range",
+        "description_en": "Extended thoracic rotation with more range",
+        "steps_nl": [
+          "Voer basis rotatie uit",
+          "Voeg extra rotatie toe",
+          "Houd eindpositie vast",
+          "Langzame terugkeer"
+        ],
+        "steps_en": [
+          "Perform basic rotation",
+          "Add extra rotation",
+          "Hold end position",
+          "Slow return"
+        ],
+        "tips_nl": [
+          "Maximale rotatie zoeken",
+          "Geen pijn forceren",
+          "Adem in rotatie"
+        ],
+        "tips_en": [
+          "Seek maximum rotation",
+          "Don't force pain",
+          "Breathe into rotation"
+        ],
+        "common_mistakes_nl": [
+          "Geforceerde beweging",
+          "Adem inhouden"
+        ],
+        "common_mistakes_en": [
+          "Forced movement",
+          "Holding breath"
+        ],
+        "alternative_nl": "Gebruik handdoek voor weerstand",
+        "alternative_en": "Use towel for resistance",
+        "animation_instruction_nl": "Uitgebreide thoracale rotatie met meer range of motion, langere holds",
+        "animation_instruction_en": "Extended thoracic rotation with more range of motion, longer holds"
+      },
+      "expert": {
+        "duration": "4m",
+        "sets": 3,
+        "reps": 15,
+        "description_nl": "Geavanceerde thoracale mobiliteit sequentie",
+        "description_en": "Advanced thoracic mobility sequence",
+        "steps_nl": [
+          "Combineer rotatie met flexie",
+          "Voeg reach-through toe",
+          "Dynamische bewegingen",
+          "Multi-directionele mobiliteit"
+        ],
+        "steps_en": [
+          "Combine rotation with flexion",
+          "Add reach-through",
+          "Dynamic movements",
+          "Multi-directional mobility"
+        ],
+        "tips_nl": [
+          "Vloeiende combinaties",
+          "Alle richtingen bewegen",
+          "Controleer de beweging"
+        ],
+        "tips_en": [
+          "Smooth combinations",
+          "Move in all directions",
+          "Control the movement"
+        ],
+        "common_mistakes_nl": [
+          "Te complexe patronen",
+          "Verlies van controle"
+        ],
+        "common_mistakes_en": [
+          "Too complex patterns",
+          "Loss of control"
+        ],
+        "alternative_nl": "Eenvoudiger houden",
+        "alternative_en": "Keep it simpler",
+        "animation_instruction_nl": "Complexe thoracale mobiliteit met rotatie, flexie en reach-through bewegingen",
+        "animation_instruction_en": "Complex thoracic mobility with rotation, flexion and reach-through movements"
+      }
+    }
+  },
+  {
+    "id": "wall-angels",
+    "name_nl": "Muur Engelen",
+    "name_en": "Wall Angels",
+    "category": ["Back", "Shoulders"],
+    "goals": ["Reduce back pain", "Reduce neck pain", "Build strength"],
+    "levels": {
+      "beginner": {
+        "duration": "2m",
+        "sets": 1,
+        "reps": 10,
+        "description_nl": "Schouderblad mobiliteit tegen de muur",
+        "description_en": "Shoulder blade mobility against the wall",
+        "steps_nl": [
+          "Sta met rug tegen muur",
+          "Armen in 'W' positie",
+          "Schuif armen omhoog naar 'Y'",
+          "Langzaam terug naar 'W'"
+        ],
+        "steps_en": [
+          "Stand with back against wall",
+          "Arms in 'W' position",
+          "Slide arms up to 'Y'",
+          "Slowly back to 'W'"
+        ],
+        "tips_nl": [
+          "Houd contact met muur",
+          "Schouderbladen naar beneden",
+          "Langzame beweging"
+        ],
+        "tips_en": [
+          "Keep contact with wall",
+          "Shoulder blades down",
+          "Slow movement"
+        ],
+        "common_mistakes_nl": [
+          "Armen van muur af",
+          "Schouders omhoog"
+        ],
+        "common_mistakes_en": [
+          "Arms off the wall",
+          "Shoulders up"
+        ],
+        "alternative_nl": "Kleinere bewegingen maken",
+        "alternative_en": "Make smaller movements",
+        "animation_instruction_nl": "Persoon tegen muur, armen bewegen van W naar Y positie, schouderbladen actief",
+        "animation_instruction_en": "Person against wall, arms move from W to Y position, shoulder blades active"
+      },
+      "advanced": {
+        "duration": "3m",
+        "sets": 2,
+        "reps": 15,
+        "description_nl": "Uitgebreide wall angels met meer controle",
+        "description_en": "Extended wall angels with more control",
+        "steps_nl": [
+          "Voer basis beweging uit",
+          "Voeg pauzes toe",
+          "Focus op schouderbladen",
+          "Langzamere bewegingen"
+        ],
+        "steps_en": [
+          "Perform basic movement",
+          "Add pauses",
+          "Focus on shoulder blades",
+          "Slower movements"
+        ],
+        "tips_nl": [
+          "Voel spieren werken",
+          "Perfecte vorm behouden",
+          "Gecontroleerde beweging"
+        ],
+        "tips_en": [
+          "Feel muscles working",
+          "Maintain perfect form",
+          "Controlled movement"
+        ],
+        "common_mistakes_nl": [
+          "Te snelle beweging",
+          "Verlies van controle"
+        ],
+        "common_mistakes_en": [
+          "Too fast movement",
+          "Loss of control"
+        ],
+        "alternative_nl": "Voeg lichte weerstand toe",
+        "alternative_en": "Add light resistance",
+        "animation_instruction_nl": "Langzame wall angels met pauzes, focus op schouderblad controle",
+        "animation_instruction_en": "Slow wall angels with pauses, focus on shoulder blade control"
+      },
+      "expert": {
+        "duration": "4m",
+        "sets": 3,
+        "reps": 20,
+        "description_nl": "Geavanceerde wall angels met variaties",
+        "description_en": "Advanced wall angels with variations",
+        "steps_nl": [
+          "Basis wall angels",
+          "Voeg single arm toe",
+          "Combineer met squat",
+          "Isometrische holds"
+        ],
+        "steps_en": [
+          "Basic wall angels",
+          "Add single arm",
+          "Combine with squat",
+          "Isometric holds"
+        ],
+        "tips_nl": [
+          "Uitdagende variaties",
+          "Behoud perfecte vorm",
+          "Core blijft actief"
+        ],
+        "tips_en": [
+          "Challenging variations",
+          "Maintain perfect form",
+          "Core stays active"
+        ],
+        "common_mistakes_nl": [
+          "Te moeilijke variaties",
+          "Vorm opofferen"
+        ],
+        "common_mistakes_en": [
+          "Too difficult variations",
+          "Sacrificing form"
+        ],
+        "alternative_nl": "Blijf bij basis versie",
+        "alternative_en": "Stay with basic version",
+        "animation_instruction_nl": "Geavanceerde wall angels met single arm variaties en squat combinaties",
+        "animation_instruction_en": "Advanced wall angels with single arm variations and squat combinations"
+      }
+    }
+  },
+  {
+    "id": "neck-side-bends",
+    "name_nl": "Nek Zijbewegingen",
+    "name_en": "Neck Side Bends",
+    "category": ["Neck", "Mobility"],
+    "goals": ["Reduce neck pain", "Mobility"],
+    "levels": {
+      "beginner": {
+        "duration": "1m",
+        "sets": 1,
+        "reps": 8,
+        "description_nl": "Zachte zijwaartse nek stretch",
+        "description_en": "Gentle lateral neck stretch",
+        "steps_nl": [
+          "Zit of sta rechtop",
+          "Breng oor naar schouder",
+          "Houd 15 seconden",
+          "Wissel van kant"
+        ],
+        "steps_en": [
+          "Sit or stand upright",
+          "Bring ear to shoulder",
+          "Hold for 15 seconds",
+          "Switch sides"
+        ],
+        "tips_nl": [
+          "Geen kracht gebruiken",
+          "Andere schouder laag houden",
+          "Zachte stretch voelen"
+        ],
+        "tips_en": [
+          "Don't use force",
+          "Keep other shoulder low",
+          "Feel gentle stretch"
+        ],
+        "common_mistakes_nl": [
+          "Schouder omhoog trekken",
+          "Te veel kracht"
+        ],
+        "common_mistakes_en": [
+          "Pulling shoulder up",
+          "Too much force"
+        ],
+        "alternative_nl": "Hand op hoofd voor extra stretch",
+        "alternative_en": "Hand on head for extra stretch",
+        "animation_instruction_nl": "Persoon brengt oor naar schouder, zachte zijwaartse nek stretch, andere schouder laag",
+        "animation_instruction_en": "Person brings ear to shoulder, gentle lateral neck stretch, other shoulder low"
+      },
+      "advanced": {
+        "duration": "2m",
+        "sets": 2,
+        "reps": 10,
+        "description_nl": "Uitgebreide nek zijbewegingen met variaties",
+        "description_en": "Extended neck side bends with variations",
+        "steps_nl": [
+          "Basis zijbeweging",
+          "Voeg lichte hand druk toe",
+          "Combineer met rotatie",
+          "Langere holds"
+        ],
+        "steps_en": [
+          "Basic side bend",
+          "Add light hand pressure",
+          "Combine with rotation",
+          "Longer holds"
+        ],
+        "tips_nl": [
+          "Zeer zachte druk",
+          "Luister naar lichaam",
+          "Geen pijn forceren"
+        ],
+        "tips_en": [
+          "Very gentle pressure",
+          "Listen to body",
+          "Don't force pain"
+        ],
+        "common_mistakes_nl": [
+          "Te veel druk",
+          "Snelle bewegingen"
+        ],
+        "common_mistakes_en": [
+          "Too much pressure",
+          "Fast movements"
+        ],
+        "alternative_nl": "Zonder hand druk",
+        "alternative_en": "Without hand pressure",
+        "animation_instruction_nl": "Nek zijbewegingen met lichte hand druk en rotatie combinaties",
+        "animation_instruction_en": "Neck side bends with light hand pressure and rotation combinations"
+      },
+      "expert": {
+        "duration": "3m",
+        "sets": 3,
+        "reps": 12,
+        "description_nl": "Geavanceerde nek mobiliteit sequentie",
+        "description_en": "Advanced neck mobility sequence",
+        "steps_nl": [
+          "Combineer alle richtingen",
+          "Voeg weerstand toe",
+          "Dynamische bewegingen",
+          "Proprioceptieve training"
+        ],
+        "steps_en": [
+          "Combine all directions",
+          "Add resistance",
+          "Dynamic movements",
+          "Proprioceptive training"
+        ],
+        "tips_nl": [
+          "Gecontroleerde bewegingen",
+          "Alle vlakken trainen",
+          "Veiligheid eerst"
+        ],
+        "tips_en": [
+          "Controlled movements",
+          "Train all planes",
+          "Safety first"
+        ],
+        "common_mistakes_nl": [
+          "Te agressieve training",
+          "Pijn negeren"
+        ],
+        "common_mistakes_en": [
+          "Too aggressive training",
+          "Ignoring pain"
+        ],
+        "alternative_nl": "Blijf bij basis bewegingen",
+        "alternative_en": "Stay with basic movements",
+        "animation_instruction_nl": "Complexe nek mobiliteit met multi-directionele bewegingen en lichte weerstand",
+        "animation_instruction_en": "Complex neck mobility with multi-directional movements and light resistance"
+      }
+    }
+  },
+  {
+    "id": "chin-tucks",
+    "name_nl": "Kin Intrekken",
+    "name_en": "Chin Tucks",
+    "category": ["Neck", "Posture"],
+    "goals": ["Reduce neck pain", "Build strength"],
     "levels": {
       "beginner": {
         "duration": "1m",
         "sets": 1,
         "reps": 10,
-        "description_nl": "Langzame grote cirkels met beide schouders naar voren en naar achteren.",
-        "description_en": "Slow, large circles with both shoulders forward and backward.",
+        "description_nl": "Nek houding verbetering oefening",
+        "description_en": "Neck posture improvement exercise",
         "steps_nl": [
-          "Sta of zit rechtop.",
-          "Haal schouders omhoog richting oren.",
-          "Draai ze langzaam naar achter en omlaag, dan naar voren en omhoog.",
-          "Herhaal 10x vooruit, 10x achteruit."
+          "Zit of sta rechtop",
+          "Trek kin naar achteren",
+          "Maak dubbele kin",
+          "Houd 5 seconden"
         ],
         "steps_en": [
-          "Stand or sit upright.",
-          "Lift shoulders up toward ears.",
-          "Roll them slowly back and down, then forward and up.",
-          "Repeat 10x forward, 10x backward."
+          "Sit or stand upright",
+          "Pull chin backward",
+          "Make double chin",
+          "Hold for 5 seconds"
         ],
-        "tips_nl": ["Maak de cirkel zo groot mogelijk.", "Ontspan de nek."],
-        "tips_en": ["Make the circle as big as possible.", "Relax the neck."],
-        "common_mistakes_nl": ["Te kleine bewegingen.", "Te snel uitvoeren."],
-        "common_mistakes_en": ["Movements too small.", "Going too fast."],
-        "alternative_nl": "Één schouder tegelijk als beide lastig is.",
-        "alternative_en": "One shoulder at a time if both is difficult.",
-        "animation_instruction_nl": "Twee schouders maken simultaan grote cirkels, pijlen geven richting aan.",
-        "animation_instruction_en": "Both shoulders make large circles simultaneously, arrows indicate direction."
+        "tips_nl": [
+          "Denk aan lange nek",
+          "Kruin naar plafond",
+          "Zachte beweging"
+        ],
+        "tips_en": [
+          "Think long neck",
+          "Crown to ceiling",
+          "Gentle movement"
+        ],
+        "common_mistakes_nl": [
+          "Hoofd naar beneden",
+          "Te veel kracht"
+        ],
+        "common_mistakes_en": [
+          "Head down",
+          "Too much force"
+        ],
+        "alternative_nl": "Tegen muur uitvoeren",
+        "alternative_en": "Perform against wall",
+        "animation_instruction_nl": "Persoon trekt kin naar achteren, maakt dubbele kin, nek verlengt",
+        "animation_instruction_en": "Person pulls chin backward, makes double chin, neck lengthens"
       },
       "advanced": {
         "duration": "2m",
         "sets": 2,
         "reps": 15,
-        "description_nl": "Grotere cirkels, afwisselend één schouder tegelijk.",
-        "description_en": "Larger circles, alternating one shoulder at a time.",
+        "description_nl": "Uitgebreide chin tucks met weerstand",
+        "description_en": "Extended chin tucks with resistance",
         "steps_nl": [
-          "Begin als beginner.",
-          "Maak afwisselend alleen met linker- of rechterschouder een cirkel.",
-          "Verhoog tempo na 10 herhalingen."
+          "Basis chin tuck",
+          "Voeg hand weerstand toe",
+          "Langere holds",
+          "Meer herhalingen"
         ],
         "steps_en": [
-          "Start as beginner.",
-          "Alternate making circles with left and right shoulder.",
-          "Increase speed after 10 reps."
+          "Basic chin tuck",
+          "Add hand resistance",
+          "Longer holds",
+          "More repetitions"
         ],
-        "tips_nl": ["Let op symmetrie, beide schouders evenveel rollen."],
-        "tips_en": ["Ensure symmetry, roll both shoulders equally."],
-        "common_mistakes_nl": ["Over de pijn heen bewegen."],
-        "common_mistakes_en": ["Moving through pain."],
-        "alternative_nl": "Tempo omlaag als het zwaar wordt.",
-        "alternative_en": "Lower the pace if it gets too difficult.",
-        "animation_instruction_nl": "Eerst beide tegelijk, dan om en om, tempo zichtbaar versnellen.",
-        "animation_instruction_en": "First both together, then alternating, speed visibly increases."
+        "tips_nl": [
+          "Zachte weerstand",
+          "Behoud uitlijning",
+          "Voel spieren werken"
+        ],
+        "tips_en": [
+          "Gentle resistance",
+          "Maintain alignment",
+          "Feel muscles working"
+        ],
+        "common_mistakes_nl": [
+          "Te veel weerstand",
+          "Verkeerde richting"
+        ],
+        "common_mistakes_en": [
+          "Too much resistance",
+          "Wrong direction"
+        ],
+        "alternative_nl": "Zonder weerstand",
+        "alternative_en": "Without resistance",
+        "animation_instruction_nl": "Chin tucks met lichte hand weerstand, langere holds",
+        "animation_instruction_en": "Chin tucks with light hand resistance, longer holds"
       },
       "expert": {
         "duration": "3m",
         "sets": 3,
         "reps": 20,
-        "description_nl": "Combineren met nekrotaties en armzwaaien voor volledige schouderactivatie.",
-        "description_en": "Combine with neck rotations and arm swings for full shoulder activation.",
+        "description_nl": "Geavanceerde nek stabilisatie training",
+        "description_en": "Advanced neck stabilization training",
         "steps_nl": [
-          "Voer advanced uit.",
-          "Na elke 5 cirkels: hoofd langzaam draaien en armen zijwaarts zwaaien.",
-          "Herhaal cyclus tot 20 herhalingen."
+          "Chin tucks in verschillende posities",
+          "Combineer met oog bewegingen",
+          "Voeg instabiliteit toe",
+          "Functionele patronen"
         ],
         "steps_en": [
-          "Perform advanced.",
-          "After every 5 circles: slowly rotate head and swing arms sideways.",
-          "Repeat cycle for 20 reps."
+          "Chin tucks in different positions",
+          "Combine with eye movements",
+          "Add instability",
+          "Functional patterns"
         ],
-        "tips_nl": ["Focus op vloeiende overgangen."],
-        "tips_en": ["Focus on smooth transitions."],
-        "common_mistakes_nl": ["Bewegingen worden te slordig na vermoeidheid."],
-        "common_mistakes_en": ["Movements become sloppy when tired."],
-        "alternative_nl": "Minder armzwaaien indien schouderklachten.",
-        "alternative_en": "Fewer arm swings if shoulder pain occurs.",
-        "animation_instruction_nl": "Animatie toont combinatiebewegingen met arm- en nekactie.",
-        "animation_instruction_en": "Animation shows combination moves with arm and neck action."
+        "tips_nl": [
+          "Uitdagende posities",
+          "Behoud controle",
+          "Functioneel trainen"
+        ],
+        "tips_en": [
+          "Challenging positions",
+          "Maintain control",
+          "Train functionally"
+        ],
+        "common_mistakes_nl": [
+          "Te complex maken",
+          "Veiligheid vergeten"
+        ],
+        "common_mistakes_en": [
+          "Making too complex",
+          "Forgetting safety"
+        ],
+        "alternative_nl": "Basis versie houden",
+        "alternative_en": "Keep basic version",
+        "animation_instruction_nl": "Geavanceerde chin tucks met oog bewegingen en verschillende posities",
+        "animation_instruction_en": "Advanced chin tucks with eye movements and different positions"
       }
     }
   },
   {
-    "id": "jumping-jacks",
-    "name_nl": "Jumping Jacks",
-    "name_en": "Jumping Jacks",
-    "category": ["Cardio", "Vetverbranding", "Opwarmen"],
-    "goals": ["Vetverbranding", "Conditie verbeteren", "Energie boost"],
+    "id": "shoulder-blade-squeezes",
+    "name_nl": "Schouderblad Knijpen",
+    "name_en": "Shoulder Blade Squeezes",
+    "category": ["Shoulders", "Back", "Posture"],
+    "goals": ["Reduce neck pain", "Build strength", "Reduce back pain"],
     "levels": {
       "beginner": {
         "duration": "1m",
         "sets": 1,
-        "reps": 20,
-        "description_nl": "Klassieke cardio-oefening voor opwarming en vetverbranding.",
-        "description_en": "Classic cardio exercise for warm-up and fat burning.",
+        "reps": 12,
+        "description_nl": "Schouderbladen naar elkaar toe knijpen",
+        "description_en": "Squeeze shoulder blades together",
         "steps_nl": [
-          "Sta rechtop, armen langs je lichaam, voeten bij elkaar.",
-          "Spring omhoog en spreid benen, breng armen boven hoofd.",
-          "Spring terug naar startpositie.",
-          "Herhaal in een gelijkmatig tempo."
+          "Zit of sta rechtop",
+          "Armen langs lichaam",
+          "Knijp schouderbladen samen",
+          "Houd 5 seconden"
         ],
         "steps_en": [
-          "Stand upright, arms at sides, feet together.",
-          "Jump up spreading legs, bring arms overhead.",
-          "Jump back to starting position.",
-          "Repeat at a steady pace."
+          "Sit or stand upright",
+          "Arms alongside body",
+          "Squeeze shoulder blades together",
+          "Hold for 5 seconds"
         ],
-        "tips_nl": ["Land zacht op voorvoeten.", "Houd tempo rustig."],
-        "tips_en": ["Land softly on the balls of your feet.", "Keep pace moderate."],
-        "common_mistakes_nl": ["Te hard landen.", "Armen niet volledig boven hoofd."],
-        "common_mistakes_en": ["Landing too hard.", "Not bringing arms fully overhead."],
-        "alternative_nl": "Stap in plaats van springen (Low-impact).",
-        "alternative_en": "Step instead of jumping (Low-impact).",
-        "animation_instruction_nl": "Lijntekening springend figuur, armen/benen spreiden en sluiten.",
-        "animation_instruction_en": "Line drawing figure jumping, arms/legs spreading and closing."
+        "tips_nl": [
+          "Denk aan potlood tussen bladen",
+          "Schouders laag houden",
+          "Borst naar voren"
+        ],
+        "tips_en": [
+          "Think pencil between blades",
+          "Keep shoulders low",
+          "Chest forward"
+        ],
+        "common_mistakes_nl": [
+          "Schouders omhoog",
+          "Te veel kracht"
+        ],
+        "common_mistakes_en": [
+          "Shoulders up",
+          "Too much force"
+        ],
+        "alternative_nl": "Armen gebogen voor meer gevoel",
+        "alternative_en": "Bent arms for more feeling",
+        "animation_instruction_nl": "Persoon knijpt schouderbladen samen, borst opent, schouders laag",
+        "animation_instruction_en": "Person squeezes shoulder blades together, chest opens, shoulders low"
       },
       "advanced": {
         "duration": "2m",
-        "sets": 1,
-        "reps": 40,
-        "description_nl": "Sneller tempo, focus op explosieve bewegingen.",
-        "description_en": "Faster pace, focus on explosive movements.",
+        "sets": 2,
+        "reps": 15,
+        "description_nl": "Uitgebreide schouderblad activatie",
+        "description_en": "Extended shoulder blade activation",
         "steps_nl": [
-          "Voer uit als beginner.",
-          "Verhoog het tempo geleidelijk.",
-          "Focus op explosieve sprongen."
+          "Basis squeeze beweging",
+          "Voeg arm bewegingen toe",
+          "Langere holds",
+          "Verschillende posities"
         ],
         "steps_en": [
-          "Perform as beginner.",
-          "Gradually increase the pace.",
-          "Focus on explosive jumps."
+          "Basic squeeze movement",
+          "Add arm movements",
+          "Longer holds",
+          "Different positions"
         ],
-        "tips_nl": ["Beweeg van kerncentrum.", "Blijf ademhalen."],
-        "tips_en": ["Move from your core.", "Keep breathing."],
-        "common_mistakes_nl": ["Te moe worden, techniek verslappen."],
-        "common_mistakes_en": ["Getting too tired, letting technique slip."],
-        "alternative_nl": "Pauzes tussendoor nemen indien nodig.",
-        "alternative_en": "Take breaks in between if needed.",
-        "animation_instruction_nl": "Snellere animatie, emphasis op explosieve beweging.",
-        "animation_instruction_en": "Faster animation, emphasis on explosive movement."
+        "tips_nl": [
+          "Varieer arm posities",
+          "Voel spieren werken",
+          "Behoud controle"
+        ],
+        "tips_en": [
+          "Vary arm positions",
+          "Feel muscles working",
+          "Maintain control"
+        ],
+        "common_mistakes_nl": [
+          "Vorm verliezen",
+          "Te snelle beweging"
+        ],
+        "common_mistakes_en": [
+          "Losing form",
+          "Too fast movement"
+        ],
+        "alternative_nl": "Gebruik elastiek voor weerstand",
+        "alternative_en": "Use elastic for resistance",
+        "animation_instruction_nl": "Schouderblad squeezes met verschillende arm posities, langere holds",
+        "animation_instruction_en": "Shoulder blade squeezes with different arm positions, longer holds"
       },
       "expert": {
         "duration": "3m",
-        "sets": 2,
-        "reps": 30,
-        "description_nl": "Geavanceerde variaties: X-Jacks, squat-jacks combinaties.",
-        "description_en": "Advanced variations: X-Jacks, squat-jack combinations.",
+        "sets": 3,
+        "reps": 20,
+        "description_nl": "Geavanceerde schouderblad stabilisatie",
+        "description_en": "Advanced shoulder blade stabilization",
         "steps_nl": [
-          "Start als advanced.",
-          "Voeg squat toe: spring naar squat-positie, dan jumping jack.",
-          "Wissel af met X-pattern (kruisen van armen/benen)."
+          "Dynamische squeeze patronen",
+          "Combineer met andere bewegingen",
+          "Voeg weerstand toe",
+          "Functionele integratie"
         ],
         "steps_en": [
-          "Start as advanced.",
-          "Add squat: jump to squat position, then jumping jack.",
-          "Alternate with X-pattern (crossing arms/legs)."
+          "Dynamic squeeze patterns",
+          "Combine with other movements",
+          "Add resistance",
+          "Functional integration"
         ],
-        "tips_nl": ["Blijf gecontroleerd, ook bij variaties."],
-        "tips_en": ["Stay controlled, even with variations."],
-        "common_mistakes_nl": ["Variaties te ingewikkeld maken."],
-        "common_mistakes_en": ["Making variations too complex."],
-        "alternative_nl": "Blijf bij basis jumping jacks.",
-        "alternative_en": "Stick to basic jumping jacks.",
-        "animation_instruction_nl": "Animatie toont variaties: squat-jack en X-pattern.",
-        "animation_instruction_en": "Animation shows variations: squat-jack and X-pattern."
+        "tips_nl": [
+          "Complexe patronen",
+          "Behoud kwaliteit",
+          "Functioneel trainen"
+        ],
+        "tips_en": [
+          "Complex patterns",
+          "Maintain quality",
+          "Train functionally"
+        ],
+        "common_mistakes_nl": [
+          "Te complex maken",
+          "Kwaliteit opofferen"
+        ],
+        "common_mistakes_en": [
+          "Making too complex",
+          "Sacrificing quality"
+        ],
+        "alternative_nl": "Eenvoudiger houden",
+        "alternative_en": "Keep it simpler",
+        "animation_instruction_nl": "Dynamische schouderblad squeezes met weerstand en functionele bewegingen",
+        "animation_instruction_en": "Dynamic shoulder blade squeezes with resistance and functional movements"
       }
     }
   },
   {
-    "id": "glute-bridge",
-    "name_nl": "Bruggetje (Glute bridge)",
-    "name_en": "Glute Bridge",
-    "category": ["Rug", "Core", "Benen"],
-    "goals": ["Rug versterken", "Core activeren", "Heupmobiliteit"],
+    "id": "dead-bug",
+    "name_nl": "Dead Bug",
+    "name_en": "Dead Bug",
+    "category": ["Core", "Stability"],
+    "goals": ["Build strength", "Reduce back pain"],
+    "levels": {
+      "beginner": {
+        "duration": "2m",
+        "sets": 1,
+        "reps": 8,
+        "description_nl": "Core stabiliteit oefening liggend op rug",
+        "description_en": "Core stability exercise lying on back",
+        "steps_nl": [
+          "Lig op rug, knieën gebogen",
+          "Armen naar plafond",
+          "Strek tegenoverliggende arm en been",
+          "Keer terug en wissel"
+        ],
+        "steps_en": [
+          "Lie on back, knees bent",
+          "Arms to ceiling",
+          "Extend opposite arm and leg",
+          "Return and switch"
+        ],
+        "tips_nl": [
+          "Onderrug op grond houden",
+          "Langzame bewegingen",
+          "Core constant actief"
+        ],
+        "tips_en": [
+          "Keep lower back on ground",
+          "Slow movements",
+          "Core constantly active"
+        ],
+        "common_mistakes_nl": [
+          "Rug van grond",
+          "Te snelle beweging"
+        ],
+        "common_mistakes_en": [
+          "Back off ground",
+          "Too fast movement"
+        ],
+        "alternative_nl": "Alleen arm of alleen been bewegen",
+        "alternative_en": "Move only arm or only leg",
+        "animation_instruction_nl": "Persoon ligt op rug, strek linkerarm en rechterbeen, core actief, onderrug op grond",
+        "animation_instruction_en": "Person lies on back, extend left arm and right leg, core active, lower back on ground"
+      },
+      "advanced": {
+        "duration": "3m",
+        "sets": 2,
+        "reps": 12,
+        "description_nl": "Uitgebreide dead bug met meer controle",
+        "description_en": "Extended dead bug with more control",
+        "steps_nl": [
+          "Basis dead bug beweging",
+          "Langzamere bewegingen",
+          "Langere holds",
+          "Focus op stabiliteit"
+        ],
+        "steps_en": [
+          "Basic dead bug movement",
+          "Slower movements",
+          "Longer holds",
+          "Focus on stability"
+        ],
+        "tips_nl": [
+          "Perfecte vorm behouden",
+          "Voel core werken",
+          "Adem door beweging"
+        ],
+        "tips_en": [
+          "Maintain perfect form",
+          "Feel core working",
+          "Breathe through movement"
+        ],
+        "common_mistakes_nl": [
+          "Vorm verliezen",
+          "Adem inhouden"
+        ],
+        "common_mistakes_en": [
+          "Losing form",
+          "Holding breath"
+        ],
+        "alternative_nl": "Gebruik handdoek onder rug",
+        "alternative_en": "Use towel under back",
+        "animation_instruction_nl": "Langzame dead bug met perfecte vorm, langere holds, core stabiliteit",
+        "animation_instruction_en": "Slow dead bug with perfect form, longer holds, core stability"
+      },
+      "expert": {
+        "duration": "4m",
+        "sets": 3,
+        "reps": 15,
+        "description_nl": "Geavanceerde dead bug variaties",
+        "description_en": "Advanced dead bug variations",
+        "steps_nl": [
+          "Voeg weerstand toe",
+          "Combineer met andere bewegingen",
+          "Instabiele ondergrond",
+          "Complexe patronen"
+        ],
+        "steps_en": [
+          "Add resistance",
+          "Combine with other movements",
+          "Unstable surface",
+          "Complex patterns"
+        ],
+        "tips_nl": [
+          "Uitdagende variaties",
+          "Behoud controle",
+          "Kwaliteit boven kwantiteit"
+        ],
+        "tips_en": [
+          "Challenging variations",
+          "Maintain control",
+          "Quality over quantity"
+        ],
+        "common_mistakes_nl": [
+          "Te moeilijke variaties",
+          "Controle verliezen"
+        ],
+        "common_mistakes_en": [
+          "Too difficult variations",
+          "Losing control"
+        ],
+        "alternative_nl": "Blijf bij basis versie",
+        "alternative_en": "Stay with basic version",
+        "animation_instruction_nl": "Geavanceerde dead bug met weerstand en complexe bewegingspatronen",
+        "animation_instruction_en": "Advanced dead bug with resistance and complex movement patterns"
+      }
+    }
+  },
+  {
+    "id": "hip-circles",
+    "name_nl": "Heup Cirkels",
+    "name_en": "Hip Circles",
+    "category": ["Mobility", "Hips"],
+    "goals": ["Mobility", "Energy boost"],
     "levels": {
       "beginner": {
         "duration": "1m",
         "sets": 1,
-        "reps": 10,
-        "description_nl": "Actieve oefening voor onderrug, billen en core.",
-        "description_en": "Active exercise for lower back, glutes, and core.",
+        "reps": 8,
+        "description_nl": "Zachte heup mobilisatie bewegingen",
+        "description_en": "Gentle hip mobility movements",
         "steps_nl": [
-          "Ga op je rug liggen, knieën gebogen, voeten op heupbreedte plat op de grond.",
-          "Plaats je armen ontspannen naast je lichaam.",
-          "Duw je heupen langzaam omhoog tot je lichaam een rechte lijn vormt van schouders tot knieën.",
-          "Houd bovenin 2 seconden vast, span je billen goed aan.",
-          "Laat de heupen rustig weer zakken naar de grond."
+          "Sta rechtop, handen op heupen",
+          "Maak kleine cirkels met heupen",
+          "8 keer naar rechts",
+          "8 keer naar links"
         ],
         "steps_en": [
-          "Lie on your back, knees bent, feet hip-width apart and flat on the floor.",
-          "Place your arms relaxed at your sides.",
-          "Slowly push your hips up until your body forms a straight line from shoulders to knees.",
-          "Hold at the top for 2 seconds, squeezing your glutes.",
-          "Lower your hips gently back to the floor."
+          "Stand upright, hands on hips",
+          "Make small circles with hips",
+          "8 times to the right",
+          "8 times to the left"
         ],
         "tips_nl": [
-          "Duw vanuit je hielen, niet vanuit de tenen.",
-          "Span je buikspieren licht aan tijdens de beweging.",
-          "Zorg dat je knieën niet naar buiten vallen."
+          "Begin klein, wordt groter",
+          "Langzame bewegingen",
+          "Voel de mobiliteit"
         ],
         "tips_en": [
-          "Push through your heels, not your toes.",
-          "Lightly engage your core during the movement.",
-          "Keep your knees from splaying outwards."
+          "Start small, get bigger",
+          "Slow movements",
+          "Feel the mobility"
         ],
         "common_mistakes_nl": [
-          "Heupen niet volledig omhoog brengen.",
-          "Rug te hol maken bovenin.",
-          "Te snel bewegen zonder controle."
+          "Te grote cirkels meteen",
+          "Te snelle beweging"
         ],
         "common_mistakes_en": [
-          "Not lifting hips high enough.",
-          "Overarching the back at the top.",
-          "Moving too quickly without control."
+          "Too big circles immediately",
+          "Too fast movement"
         ],
-        "alternative_nl": "Plaats een kussen onder je onderrug als extra steun, of maak de beweging kleiner bij rugklachten.",
-        "alternative_en": "Place a pillow under your lower back for extra support, or make the movement smaller if you have back issues.",
-        "animation_instruction_nl": "Lijntekening van persoon die heupen rustig omhoog en omlaag duwt, met focus op rechte lijn van schouders tot knieën. Highlight billen en core bovenin.",
-        "animation_instruction_en": "Line drawing of a person gently lifting and lowering the hips, emphasizing a straight line from shoulders to knees. Highlight glutes and core at the top."
+        "alternative_nl": "Houd vast aan stoel voor balans",
+        "alternative_en": "Hold chair for balance",
+        "animation_instruction_nl": "Persoon maakt kleine heup cirkels, handen op heupen, langzame beweging",
+        "animation_instruction_en": "Person makes small hip circles, hands on hips, slow movement"
       },
       "advanced": {
         "duration": "2m",
         "sets": 2,
         "reps": 12,
-        "description_nl": "Voer de oefening langzamer en met extra spanning bovenin uit.",
-        "description_en": "Perform more slowly with extra squeeze at the top.",
+        "description_nl": "Uitgebreide heup cirkels met meer range",
+        "description_en": "Extended hip circles with more range",
         "steps_nl": [
-          "Voer de oefening uit zoals bij beginner.",
-          "Houd bovenin elke herhaling 5 seconden vast en knijp je billen goed samen.",
-          "Laat je billen volledig tot de vloer zakken tussen herhalingen.",
-          "Duw je heupen krachtig omhoog en controleer de neerwaartse beweging."
+          "Grotere heup cirkels",
+          "Varieer de snelheid",
+          "Voeg figuur-8 toe",
+          "Verschillende richtingen"
         ],
         "steps_en": [
-          "Perform the exercise as described for beginner.",
-          "Hold at the top of each rep for 5 seconds, squeezing your glutes.",
-          "Let your glutes touch the floor fully between repetitions.",
-          "Push hips up powerfully and control the downward motion."
+          "Larger hip circles",
+          "Vary the speed",
+          "Add figure-8",
+          "Different directions"
         ],
         "tips_nl": [
-          "Voel de spanning in de hamstrings en billen.",
-          "Houd de schouders op de grond."
+          "Volledige range of motion",
+          "Controleer de beweging",
+          "Voel alle richtingen"
         ],
         "tips_en": [
-          "Feel the tension in your hamstrings and glutes.",
-          "Keep your shoulders on the ground."
+          "Full range of motion",
+          "Control the movement",
+          "Feel all directions"
         ],
         "common_mistakes_nl": [
-          "Rug te hol trekken bovenin.",
-          "Heupen niet volledig laten zakken."
+          "Verlies van controle",
+          "Te snelle overgangen"
         ],
         "common_mistakes_en": [
-          "Overarching back at the top.",
-          "Not lowering hips fully between reps."
+          "Loss of control",
+          "Too fast transitions"
         ],
-        "alternative_nl": "Plaats je voeten iets verder uit elkaar voor meer stabiliteit.",
-        "alternative_en": "Place your feet slightly further apart for more stability.",
-        "animation_instruction_nl": "Langzame beweging, extra lange houdmomenten zichtbaar bovenin. Highlight het aanspannen van de billen.",
-        "animation_instruction_en": "Slow movement, extra-long holds visible at the top. Highlight squeezing of the glutes."
+        "alternative_nl": "Eén richting per keer",
+        "alternative_en": "One direction at a time",
+        "animation_instruction_nl": "Grotere heup cirkels met figuur-8 patronen, meer dynamische beweging",
+        "animation_instruction_en": "Larger hip circles with figure-8 patterns, more dynamic movement"
       },
       "expert": {
         "duration": "3m",
-        "sets": 2,
-        "reps": 16,
-        "description_nl": "Eenbenige glute bridge (om en om), extra focus op stabiliteit.",
-        "description_en": "Single-leg glute bridge (alternate legs), extra focus on stability.",
+        "sets": 3,
+        "reps": 15,
+        "description_nl": "Geavanceerde heup mobiliteit sequentie",
+        "description_en": "Advanced hip mobility sequence",
         "steps_nl": [
-          "Voer de oefening uit als bij advanced.",
-          "Til één voet van de grond, strek het been uit terwijl je de heupen omhoog duwt.",
-          "Houd bovenin 2 seconden vast, houd heupen recht.",
-          "Laat langzaam zakken, wissel van been na elke herhaling of set.",
-          "Let op dat je bekken niet scheef zakt."
+          "Complexe heup patronen",
+          "Combineer met andere bewegingen",
+          "Multi-directionele cirkels",
+          "Dynamische flows"
         ],
         "steps_en": [
-          "Perform the exercise as in advanced.",
-          "Lift one foot off the ground, extend the leg while lifting hips.",
-          "Hold at the top for 2 seconds, keep hips level.",
-          "Lower slowly, switch legs after each rep or set.",
-          "Ensure your pelvis doesn't drop to one side."
+          "Complex hip patterns",
+          "Combine with other movements",
+          "Multi-directional circles",
+          "Dynamic flows"
         ],
         "tips_nl": [
-          "Zorg dat beide heupen op gelijke hoogte blijven.",
-          "Blijf rustig ademen en beweeg gecontroleerd."
+          "Vloeiende overgangen",
+          "Alle vlakken gebruiken",
+          "Creatieve patronen"
         ],
         "tips_en": [
-          "Keep both hips at equal height.",
-          "Continue breathing calmly and move with control."
+          "Smooth transitions",
+          "Use all planes",
+          "Creative patterns"
         ],
         "common_mistakes_nl": [
-          "Heupen zakken naar één kant.",
-          "Beweging wordt te snel uitgevoerd.",
-          "Rug wordt hol getrokken bij vermoeidheid."
+          "Te complex maken",
+          "Kwaliteit verliezen"
         ],
         "common_mistakes_en": [
-          "Hips drop to one side.",
-          "Movement is performed too quickly.",
-          "Back is arched at the top when tired."
+          "Making too complex",
+          "Losing quality"
         ],
-        "alternative_nl": "Blijf beide voeten op de grond als het te zwaar wordt.",
-        "alternative_en": "Keep both feet on the floor if it becomes too difficult.",
-        "animation_instruction_nl": "Persoon voert beurtelings eenbenige glute bridge uit, met accent op stabiele heupen en langzame, gecontroleerde beweging.",
-        "animation_instruction_en": "Person performs alternating single-leg glute bridge, emphasizing stable hips and slow, controlled movement."
+        "alternative_nl": "Eenvoudiger houden",
+        "alternative_en": "Keep it simpler",
+        "animation_instruction_nl": "Complexe heup mobiliteit met multi-directionele cirkels en dynamische flows",
+        "animation_instruction_en": "Complex hip mobility with multi-directional circles and dynamic flows"
       }
     }
   },
   {
-    "id": "standing-forward-bend",
-    "name_nl": "Staande vooroverbuiging",
-    "name_en": "Standing Forward Bend",
-    "category": ["Rug", "Hamstrings", "Mobiliteit"],
-    "goals": ["Rug ontspannen", "Hamstrings rekken", "Mobiliteit"],
+    "id": "marching-in-place",
+    "name_nl": "Marcheren op Plaats",
+    "name_en": "Marching in Place",
+    "category": ["Cardio", "Energy"],
+    "goals": ["Energy boost", "Fat loss"],
     "levels": {
       "beginner": {
         "duration": "1m",
         "sets": 1,
-        "reps": 5,
-        "description_nl": "Rustige stretch voor de onderrug en hamstrings.",
-        "description_en": "Gentle stretch for lower back and hamstrings.",
+        "reps": 20,
+        "description_nl": "Zachte cardio activatie door marcheren",
+        "description_en": "Gentle cardio activation through marching",
         "steps_nl": [
-          "Sta rechtop, voeten op heupbreedte.",
-          "Adem in en reik omhoog met beide armen.",
-          "Adem uit en buig langzaam voorover vanuit de heupen, handen richting grond.",
-          "Houd je knieën licht gebogen als je rug of hamstrings stijf aanvoelen.",
-          "Kom langzaam weer omhoog, rol wervel voor wervel uit."
+          "Sta rechtop",
+          "Til knieën op naar heup hoogte",
+          "Wissel armen mee",
+          "Behoud ritme"
         ],
         "steps_en": [
-          "Stand upright, feet hip-width apart.",
-          "Inhale and reach up with both arms.",
-          "Exhale and slowly bend forward from your hips, hands toward the floor.",
-          "Keep your knees slightly bent if your back or hamstrings feel tight.",
-          "Slowly come back up, rolling up vertebra by vertebra."
+          "Stand upright",
+          "Lift knees to hip height",
+          "Swing arms alternately",
+          "Maintain rhythm"
         ],
         "tips_nl": [
-          "Laat het hoofd ontspannen hangen.",
-          "Buig je knieën indien nodig.",
-          "Stop bij pijn - rek moet prettig aanvoelen."
+          "Begin langzaam",
+          "Houd goede houding",
+          "Adem regelmatig"
         ],
         "tips_en": [
-          "Let your head hang relaxed.",
-          "Bend your knees if needed.",
-          "Stop if painful - stretch should feel pleasant."
+          "Start slowly",
+          "Keep good posture",
+          "Breathe regularly"
         ],
         "common_mistakes_nl": [
-          "Niet vanuit de heupen buigen maar vanuit de rug.",
-          "Te ver forceren richting de grond.",
-          "Adem inhouden tijdens de stretch."
+          "Te hoge knieën",
+          "Voorover leunen"
         ],
         "common_mistakes_en": [
-          "Bending from the back instead of the hips.",
-          "Forcing too far toward the floor.",
-          "Holding breath during the stretch."
+          "Knees too high",
+          "Leaning forward"
         ],
-        "alternative_nl": "Rustig tot halverwege voorover buigen als volledig niet lukt, of plaats handen op schenen.",
-        "alternative_en": "Bend halfway if a full bend is too much, or place hands on shins.",
-        "animation_instruction_nl": "Lijntekening van een persoon die langzaam voorover buigt vanuit heupen en weer omhoog rolt, highlight hamstrings en onderrug.",
-        "animation_instruction_en": "Line drawing of a person slowly bending forward from hips and rolling back up, highlight hamstrings and lower back."
+        "alternative_nl": "Lagere knieën voor comfort",
+        "alternative_en": "Lower knees for comfort",
+        "animation_instruction_nl": "Persoon markeert op plaats, knieën naar heup hoogte, armen zwaaien mee",
+        "animation_instruction_en": "Person marches in place, knees to hip height, arms swing alternately"
       },
       "advanced": {
+        "duration": "2m",
+        "sets": 2,
+        "reps": 30,
+        "description_nl": "Intensievere marcheer bewegingen",
+        "description_en": "More intensive marching movements",
+        "steps_nl": [
+          "Sneller marcheren",
+          "Hogere knieën",
+          "Actievere arm bewegingen",
+          "Varieer het tempo"
+        ],
+        "steps_en": [
+          "March faster",
+          "Higher knees",
+          "More active arm movements",
+          "Vary the tempo"
+        ],
+        "tips_nl": [
+          "Houd energie hoog",
+          "Controleer de beweging",
+          "Voel hartslag stijgen"
+        ],
+        "tips_en": [
+          "Keep energy high",
+          "Control the movement",
+          "Feel heart rate rise"
+        ],
+        "common_mistakes_nl": [
+          "Te snel te vroeg",
+          "Vorm verliezen"
+        ],
+        "common_mistakes_en": [
+          "Too fast too early",
+          "Losing form"
+        ],
+        "alternative_nl": "Voeg arm cirkels toe",
+        "alternative_en": "Add arm circles",
+        "animation_instruction_nl": "Snellere marcheer bewegingen met hogere knieën en actievere armen",
+        "animation_instruction_en": "Faster marching movements with higher knees and more active arms"
+      },
+      "expert": {
+        "duration": "3m",
+        "sets": 3,
+        "reps": 40,
+        "description_nl": "Hoge intensiteit marcheer variaties",
+        "description_en": "High intensity marching variations",
+        "steps_nl": [
+          "Voeg sprongetjes toe",
+          "Combineer met arm bewegingen",
+          "Interval training",
+          "Maximale intensiteit"
+        ],
+        "steps_en": [
+          "Add small jumps",
+          "Combine with arm movements",
+          "Interval training",
+          "Maximum intensity"
+        ],
+        "tips_nl": [
+          "Hoge intensiteit",
+          "Korte rust periodes",
+          "Luister naar lichaam"
+        ],
+        "tips_en": [
+          "High intensity",
+          "Short rest periods",
+          "Listen to body"
+        ],
+        "common_mistakes_nl": [
+          "Te lang vol gas",
+          "Veiligheid vergeten"
+        ],
+        "common_mistakes_en": [
+          "Full speed too long",
+          "Forgetting safety"
+        ],
+        "alternative_nl": "Blijf bij basis marcheren",
+        "alternative_en": "Stay with basic marching",
+        "animation_instruction_nl": "Hoge intensiteit marcheren met sprongetjes en complexe arm bewegingen",
+        "animation_instruction_en": "High intensity marching with small jumps and complex arm movements"
+      }
+    }
+  },
+  {
+    "id": "bodyweight-squats",
+    "name_nl": "Lichaamsgewicht Squats",
+    "name_en": "Bodyweight Squats",
+    "category": ["Strength", "Legs"],
+    "goals": ["Build strength", "Fat loss", "Energy boost"],
+    "levels": {
+      "beginner": {
+        "duration": "2m",
+        "sets": 1,
+        "reps": 10,
+        "description_nl": "Basis squat beweging voor beensterkte",
+        "description_en": "Basic squat movement for leg strength",
+        "steps_nl": [
+          "Sta met voeten heup-breed",
+          "Zak door knieën en heupen",
+          "Houd borst omhoog",
+          "Duw door hielen omhoog"
+        ],
+        "steps_en": [
+          "Stand with feet hip-width",
+          "Lower through knees and hips",
+          "Keep chest up",
+          "Push through heels up"
+        ],
+        "tips_nl": [
+          "Knieën volgen tenen",
+          "Gewicht op hielen",
+          "Controleer de beweging"
+        ],
+        "tips_en": [
+          "Knees follow toes",
+          "Weight on heels",
+          "Control the movement"
+        ],
+        "common_mistakes_nl": [
+          "Knieën naar binnen",
+          "Te diep gaan"
+        ],
+        "common_mistakes_en": [
+          "Knees caving in",
+          "Going too deep"
+        ],
+        "alternative_nl": "Squat naar stoel",
+        "alternative_en": "Squat to chair",
+        "animation_instruction_nl": "Persoon zakt door knieën en heupen, borst omhoog, duwt door hielen omhoog",
+        "animation_instruction_en": "Person lowers through knees and hips, chest up, pushes through heels up"
+      },
+      "advanced": {
+        "duration": "3m",
+        "sets": 2,
+        "reps": 15,
+        "description_nl": "Uitgebreide squats met meer diepte",
+        "description_en": "Extended squats with more depth",
+        "steps_nl": [
+          "Diepere squat positie",
+          "Langzamere bewegingen",
+          "Voeg pauzes toe",
+          "Focus op vorm"
+        ],
+        "steps_en": [
+          "Deeper squat position",
+          "Slower movements",
+          "Add pauses",
+          "Focus on form"
+        ],
+        "tips_nl": [
+          "Volledige range of motion",
+          "Voel spieren werken",
+          "Behoud balans"
+        ],
+        "tips_en": [
+          "Full range of motion",
+          "Feel muscles working",
+          "Maintain balance"
+        ],
+        "common_mistakes_nl": [
+          "Te snel bewegen",
+          "Balans verliezen"
+        ],
+        "common_mistakes_en": [
+          "Moving too fast",
+          "Losing balance"
+        ],
+        "alternative_nl": "Houd vast voor balans",
+        "alternative_en": "Hold for balance",
+        "animation_instruction_nl": "Diepere squats met langzamere bewegingen en pauzes in onderste positie",
+        "animation_instruction_en": "Deeper squats with slower movements and pauses in bottom position"
+      },
+      "expert": {
+        "duration": "4m",
+        "sets": 3,
+        "reps": 20,
+        "description_nl": "Geavanceerde squat variaties",
+        "description_en": "Advanced squat variations",
+        "steps_nl": [
+          "Voeg jump squats toe",
+          "Single leg squats",
+          "Verschillende standen",
+          "Plyometrische elementen"
+        ],
+        "steps_en": [
+          "Add jump squats",
+          "Single leg squats",
+          "Different stances",
+          "Plyometric elements"
+        ],
+        "tips_nl": [
+          "Uitdagende variaties",
+          "Behoud perfecte vorm",
+          "Progressieve overbelasting"
+        ],
+        "tips_en": [
+          "Challenging variations",
+          "Maintain perfect form",
+          "Progressive overload"
+        ],
+        "common_mistakes_nl": [
+          "Te moeilijke variaties",
+          "Vorm opofferen"
+        ],
+        "common_mistakes_en": [
+          "Too difficult variations",
+          "Sacrificing form"
+        ],
+        "alternative_nl": "Blijf bij basis squats",
+        "alternative_en": "Stay with basic squats",
+        "animation_instruction_nl": "Geavanceerde squat variaties met jump squats en single leg bewegingen",
+        "animation_instruction_en": "Advanced squat variations with jump squats and single leg movements"
+      }
+    }
+  },
+  {
+    "id": "deep-breathing",
+    "name_nl": "Diepe Ademhaling",
+    "name_en": "Deep Breathing",
+    "category": ["Relaxation", "Stress"],
+    "goals": ["Relaxation", "Energy boost"],
+    "levels": {
+      "beginner": {
         "duration": "2m",
         "sets": 1,
         "reps": 8,
-        "description_nl": "Probeer handen plat op de vloer te leggen, houd benen meer gestrekt.",
-        "description_en": "Try to place hands flat on the floor, keep legs straighter.",
+        "description_nl": "Ontspannende ademhalings oefening",
+        "description_en": "Relaxing breathing exercise",
         "steps_nl": [
-          "Voer als beginner uit.",
-          "Laat handen zo ver mogelijk richting vloer zakken.",
-          "Blijf 5-10 seconden onderin hangen, adem diep in en uit.",
-          "Kom langzaam weer omhoog, wervel voor wervel."
+          "Zit of lig comfortabel",
+          "Adem 4 tellen in door neus",
+          "Houd 4 tellen vast",
+          "Adem 6 tellen uit door mond"
         ],
         "steps_en": [
-          "Perform as beginner.",
-          "Lower hands as far toward the floor as possible.",
-          "Hang for 5-10 seconds at the bottom, breathing deeply.",
-          "Slowly come back up, vertebra by vertebra."
+          "Sit or lie comfortably",
+          "Breathe in 4 counts through nose",
+          "Hold for 4 counts",
+          "Breathe out 6 counts through mouth"
         ],
         "tips_nl": [
-          "Voel rek, maar geen pijn.",
-          "Zorg dat de beweging vloeiend blijft.",
-          "Gebruik zwaartekracht om dieper te komen."
+          "Ontspan volledig",
+          "Focus op ademhaling",
+          "Laat gedachten gaan"
         ],
         "tips_en": [
-          "Feel a stretch, but no pain.",
-          "Keep the movement smooth.",
-          "Use gravity to go deeper."
+          "Relax completely",
+          "Focus on breathing",
+          "Let thoughts go"
         ],
         "common_mistakes_nl": [
-          "Benen overstrekken.",
-          "Schouders optrekken.",
-          "Te snel bewegen."
+          "Te geforceerd ademen",
+          "Spanning vasthouden"
         ],
         "common_mistakes_en": [
-          "Hyperextending the legs.",
-          "Shrugging the shoulders.",
-          "Moving too quickly."
+          "Breathing too forced",
+          "Holding tension"
         ],
-        "alternative_nl": "Plaats handen op schenen of yoga blokken bij te veel spanning.",
-        "alternative_en": "Place hands on shins or yoga blocks if too much tension.",
-        "animation_instruction_nl": "Diepere buiging zichtbaar, houdmomenten onderin, handen richting vloer, highlight flexibiliteit.",
-        "animation_instruction_en": "Deeper bend visible, holds at the bottom, hands toward floor, highlight flexibility."
-      },
-      "expert": {
-        "duration": "3m",
-        "sets": 1,
-        "reps": 10,
-        "description_nl": "Voeg een lichte sway of twist toe onderin voor dynamiek.",
-        "description_en": "Add a gentle sway or twist at the bottom for dynamic stretch.",
-        "steps_nl": [
-          "Buig als advanced.",
-          "Pak afwisselend de linker- en rechter enkel vast en draai romp lichtjes mee.",
-          "Kom steeds terug naar het midden.",
-          "Rol langzaam op na afronding."
-        ],
-        "steps_en": [
-          "Bend as advanced.",
-          "Alternate grabbing left and right ankle, gently twisting torso.",
-          "Return to center each time.",
-          "Roll up slowly after finishing."
-        ],
-        "tips_nl": [
-          "Beweeg langzaam en controleer de draai.",
-          "Focus op ontspannen ademhaling.",
-          "Luister naar je lichaam."
-        ],
-        "tips_en": [
-          "Move slowly and control the twist.",
-          "Focus on relaxed breathing.",
-          "Listen to your body."
-        ],
-        "common_mistakes_nl": [
-          "Te snel draaien of trekken aan de enkels.",
-          "Verlies van balans door te veel beweging."
-        ],
-        "common_mistakes_en": [
-          "Twisting or pulling at the ankles too quickly.",
-          "Losing balance from too much movement."
-        ],
-        "alternative_nl": "Blijf bij de gewone vooroverbuiging als twisten te zwaar is.",
-        "alternative_en": "Stick to the standard forward bend if twisting is too difficult.",
-        "animation_instruction_nl": "Onderin kleine sway/twist zichtbaar, om en om naar enkels, vloeiende beweging.",
-        "animation_instruction_en": "Gentle sway/twist at the bottom, alternating toward ankles, flowing movement."
-      }
-    }
-  },
-  {
-    "id": "seated-spinal-twist",
-    "name_nl": "Zittende wervelkolom twist",
-    "name_en": "Seated Spinal Twist",
-    "category": ["Rug", "Mobiliteit", "Ontspanning"],
-    "goals": ["Rug mobiliseren", "Romp draaien", "Ontspanning"],
-    "levels": {
-      "beginner": {
-        "duration": "1m",
-        "sets": 1,
-        "reps": 2,
-        "description_nl": "Lichte twist voor mobiliteit in de rug.",
-        "description_en": "Gentle twist for spinal mobility.",
-        "steps_nl": [
-          "Ga rechtop zitten met beide benen gestrekt.",
-          "Plaats je rechtervoet aan de buitenkant van je linkerknie.",
-          "Draai je romp naar rechts, plaats je linker elleboog aan de buitenkant van je rechterknie.",
-          "Kijk over je rechterschouder, houd 15 seconden vast, wissel van kant."
-        ],
-        "steps_en": [
-          "Sit upright with both legs extended.",
-          "Place your right foot outside your left knee.",
-          "Twist your torso to the right, placing your left elbow outside your right knee.",
-          "Look over your right shoulder, hold for 15 seconds, then switch sides."
-        ],
-        "tips_nl": [
-          "Houd beide zitbotten op de grond.",
-          "Beweeg alleen zover als comfortabel voelt.",
-          "Adem rustig door tijdens de twist."
-        ],
-        "tips_en": [
-          "Keep both sit bones on the floor.",
-          "Only twist as far as feels comfortable.",
-          "Breathe calmly during the twist."
-        ],
-        "common_mistakes_nl": [
-          "Bekken optillen.",
-          "Te veel forceren in de draai.",
-          "Schouders optrekken."
-        ],
-        "common_mistakes_en": [
-          "Lifting the pelvis.",
-          "Forcing the twist too much.",
-          "Shrugging the shoulders."
-        ],
-        "alternative_nl": "Buig onderste been voor meer comfort, of zit op een kussen.",
-        "alternative_en": "Bend bottom leg for more comfort, or sit on a cushion.",
-        "animation_instruction_nl": "Lijntekening met langzame draai, highlight van de wervelkolom, ademhaling zichtbaar.",
-        "animation_instruction_en": "Line drawing with slow twist, spine highlighted, breathing visible."
+        "alternative_nl": "Kortere tellingen gebruiken",
+        "alternative_en": "Use shorter counts",
+        "animation_instruction_nl": "Persoon ademt diep en rustig, buik beweegt mee, ontspannen houding",
+        "animation_instruction_en": "Person breathes deeply and calmly, belly moves with breath, relaxed posture"
       },
       "advanced": {
-        "duration": "2m",
-        "sets": 1,
-        "reps": 3,
-        "description_nl": "Maak de draai dieper, focus op lengte maken in de rug.",
-        "description_en": "Deepen the twist, focus on elongating the spine.",
-        "steps_nl": [
-          "Voer als beginner uit.",
-          "Bij elke ademhaling verleng je de rug bij inademen en draai je iets dieper uit bij uitademen.",
-          "Houd 20-30 seconden per kant vast."
-        ],
-        "steps_en": [
-          "Perform as beginner.",
-          "With each inhale, lengthen the spine, with each exhale, deepen the twist.",
-          "Hold 20-30 seconds per side."
-        ],
-        "tips_nl": [
-          "Strek de kruin omhoog bij draaien.",
-          "Adem diep in de buik.",
-          "Voel de ruimte tussen de wervels."
-        ],
-        "tips_en": [
-          "Reach the crown of your head upward as you twist.",
-          "Breathe deeply into your belly.",
-          "Feel the space between vertebrae."
-        ],
-        "common_mistakes_nl": [
-          "Rond maken van de rug.",
-          "Op schouders duwen.",
-          "Adem inhouden."
-        ],
-        "common_mistakes_en": [
-          "Rounding the back.",
-          "Pushing with the shoulders.",
-          "Holding breath."
-        ],
-        "alternative_nl": "Draai minder diep, houd de onderrug lang.",
-        "alternative_en": "Twist less deeply, keep lower back long.",
-        "animation_instruction_nl": "Diepe twist, duidelijk verschil tussen lengte en rotatie, ademhaling gesynchroniseerd.",
-        "animation_instruction_en": "Deep twist, clear difference between length and rotation, breathing synchronized."
-      },
-      "expert": {
-        "duration": "3m",
-        "sets": 1,
-        "reps": 4,
-        "description_nl": "Voeg lichte zijwaartse buiging toe aan de twist voor extra rek.",
-        "description_en": "Add a gentle side bend to the twist for extra stretch.",
-        "steps_nl": [
-          "Voer advanced uit.",
-          "Na de twist, buig licht zijwaarts over het opgetrokken been.",
-          "Kom langzaam terug naar het midden, herhaal per kant."
-        ],
-        "steps_en": [
-          "Perform as advanced.",
-          "After the twist, gently side bend over the raised knee.",
-          "Slowly return to center, repeat for both sides."
-        ],
-        "tips_nl": [
-          "Beweeg in een vloeiende lijn.",
-          "Let op je ademhaling.",
-          "Combineer twist en zijbuiging geleidelijk."
-        ],
-        "tips_en": [
-          "Move in a smooth line.",
-          "Pay attention to your breathing.",
-          "Combine twist and side bend gradually."
-        ],
-        "common_mistakes_nl": [
-          "Trekken aan knie voor extra draai.",
-          "Twisten met teveel kracht.",
-          "Te snelle overgangen."
-        ],
-        "common_mistakes_en": [
-          "Pulling on knee for extra twist.",
-          "Twisting with too much force.",
-          "Too rapid transitions."
-        ],
-        "alternative_nl": "Alleen de twist zonder zijwaartse buiging.",
-        "alternative_en": "Only the twist, without side bend.",
-        "animation_instruction_nl": "Twist met lichte zijwaartse buiging, beweging in slow-motion, vloeiende overgangen.",
-        "animation_instruction_en": "Twist with gentle side bend, movement in slow-motion, flowing transitions."
-      }
-    }
-  },
-  {
-    "id": "knee-rolls",
-    "name_nl": "Knieën rollen (rugrol)",
-    "name_en": "Knee Rolls (Back Roll)",
-    "category": ["Rug", "Mobiliteit", "Ontspanning"],
-    "goals": ["Lage rug losmaken", "Mobiliteit", "Ontspanning"],
-    "levels": {
-      "beginner": {
-        "duration": "1m",
-        "sets": 1,
-        "reps": 6,
-        "description_nl": "Zachte rotatie van de onderrug om spanning los te laten.",
-        "description_en": "Gentle rotation of the lower back to relieve tension.",
-        "steps_nl": [
-          "Ga op je rug liggen met knieën gebogen en voeten op de vloer.",
-          "Spreid je armen in een T-vorm.",
-          "Laat beide knieën langzaam naar links zakken terwijl je hoofd naar rechts draait.",
-          "Breng knieën terug naar het midden, herhaal naar rechts."
-        ],
-        "steps_en": [
-          "Lie on your back, knees bent, feet on the floor.",
-          "Spread your arms in a T-shape.",
-          "Slowly lower both knees to the left while turning your head to the right.",
-          "Bring knees back to center, repeat to the right."
-        ],
-        "tips_nl": [
-          "Beweeg langzaam, gebruik ademhaling om te ontspannen.",
-          "Houd schouders op de grond.",
-          "Laat zwaartekracht het werk doen."
-        ],
-        "tips_en": [
-          "Move slowly, use your breath to relax.",
-          "Keep shoulders on the ground.",
-          "Let gravity do the work."
-        ],
-        "common_mistakes_nl": [
-          "Te snel bewegen, rug los van de vloer trekken.",
-          "Knieën forceren richting grond."
-        ],
-        "common_mistakes_en": [
-          "Moving too quickly, lifting back off the floor.",
-          "Forcing knees toward the ground."
-        ],
-        "alternative_nl": "Knieën minder ver laten zakken bij stijfheid, of plaats kussen tussen knieën.",
-        "alternative_en": "Lower knees less far if stiff, or place pillow between knees.",
-        "animation_instruction_nl": "Ruglig, knieën rollen van links naar rechts, hoofd draait tegengesteld, langzame beweging.",
-        "animation_instruction_en": "Supine, knees roll left to right, head turns opposite, slow movement."
-      },
-      "advanced": {
-        "duration": "2m",
-        "sets": 1,
-        "reps": 10,
-        "description_nl": "Vergroot de bewegingsuitslag, houd knieën bij elkaar.",
-        "description_en": "Increase range of motion, keep knees together.",
-        "steps_nl": [
-          "Voer als beginner uit.",
-          "Laat knieën verder richting vloer zakken.",
-          "Houd 5 seconden onderin vast bij elke zijde."
-        ],
-        "steps_en": [
-          "Perform as beginner.",
-          "Lower knees further toward the floor.",
-          "Hold at the bottom for 5 seconds on each side."
-        ],
-        "tips_nl": [
-          "Adem diep in bij terugrollen naar midden.",
-          "Voel de stretch in de onderrug.",
-          "Ontspan bewust alle spieren."
-        ],
-        "tips_en": [
-          "Inhale deeply when returning to center.",
-          "Feel the stretch in the lower back.",
-          "Consciously relax all muscles."
-        ],
-        "common_mistakes_nl": [
-          "Knieën uit elkaar laten vallen.",
-          "Schouders van de grond tillen."
-        ],
-        "common_mistakes_en": [
-          "Letting knees separate.",
-          "Lifting shoulders off the ground."
-        ],
-        "alternative_nl": "Voeten verder uit elkaar plaatsen voor stabiliteit.",
-        "alternative_en": "Place feet wider for stability.",
-        "animation_instruction_nl": "Grotere bewegingen, pauze onderin, focus op volledige ontspanning, highlight onderrug.",
-        "animation_instruction_en": "Larger movements, pause at bottom, focus on full relaxation, highlight lower back."
-      },
-      "expert": {
-        "duration": "3m",
-        "sets": 1,
-        "reps": 14,
-        "description_nl": "Breng knieën richting oksel voor diepe stretch.",
-        "description_en": "Bring knees toward armpit for a deeper stretch.",
-        "steps_nl": [
-          "Voer als advanced uit.",
-          "Breng knieën richting oksel bij elke kant.",
-          "Blijf de schouders plat op de grond houden."
-        ],
-        "steps_en": [
-          "Perform as advanced.",
-          "Bring knees toward armpit on each side.",
-          "Keep shoulders flat on the floor."
-        ],
-        "tips_nl": [
-          "Blijf rustig doorademen.",
-          "Voel de diepe stretch in de rug.",
-          "Gebruik tegengestelde hoofdbeweging voor balans."
-        ],
-        "tips_en": [
-          "Keep breathing calmly.",
-          "Feel the deep stretch in the back.",
-          "Use opposite head movement for balance."
-        ],
-        "common_mistakes_nl": [
-          "Schouders van de vloer halen.",
-          "Te veel kracht gebruiken."
-        ],
-        "common_mistakes_en": [
-          "Lifting shoulders off the floor.",
-          "Using too much force."
-        ],
-        "alternative_nl": "Breng knieën minder ver als het te intens wordt.",
-        "alternative_en": "Bring knees less far if it becomes too intense.",
-        "animation_instruction_nl": "Diepe rol, knieën richting oksel, langzaam uitgevoerd, maximale stretch zichtbaar.",
-        "animation_instruction_en": "Deep roll, knees toward armpit, performed slowly, maximum stretch visible."
-      }
-    }
-  },
-  {
-    "id": "superman",
-    "name_nl": "Superman",
-    "name_en": "Superman",
-    "category": ["Rug", "Core", "Kracht"],
-    "goals": ["Rug versterken", "Core activeren", "Houding verbeteren"],
-    "levels": {
-      "beginner": {
-        "duration": "1m",
-        "sets": 1,
-        "reps": 6,
-        "description_nl": "Versterkende oefening voor de hele rug.",
-        "description_en": "Strengthening exercise for the entire back.",
-        "steps_nl": [
-          "Ga op je buik liggen, armen voor je uitgestrekt.",
-          "Til beide armen en benen een klein stukje van de grond.",
-          "Houd 2 seconden vast, laat rustig zakken.",
-          "Rust kort tussen herhalingen."
-        ],
-        "steps_en": [
-          "Lie on your stomach, arms stretched out in front.",
-          "Lift both arms and legs slightly off the ground.",
-          "Hold for 2 seconds, then lower gently.",
-          "Rest briefly between repetitions."
-        ],
-        "tips_nl": [
-          "Span billen en schouders licht aan.",
-          "Adem uit bij het optillen.",
-          "Kijk naar de grond om nek te beschermen."
-        ],
-        "tips_en": [
-          "Squeeze glutes and shoulder blades gently.",
-          "Exhale as you lift.",
-          "Look down to protect your neck."
-        ],
-        "common_mistakes_nl": [
-          "Trekken in de onderrug.",
-          "Hoofd te ver optillen.",
-          "Adem inhouden."
-        ],
-        "common_mistakes_en": [
-          "Pulling in the lower back.",
-          "Lifting head too high.",
-          "Holding breath."
-        ],
-        "alternative_nl": "Alleen armen of alleen benen optillen, of plaats kussen onder buik.",
-        "alternative_en": "Lift only arms or only legs, or place pillow under stomach.",
-        "animation_instruction_nl": "Persoon op buik, tilt langzaam armen en benen omhoog, kort vasthouden, highlight rugspieren.",
-        "animation_instruction_en": "Person on stomach, slowly lifts arms and legs, holds briefly, highlight back muscles."
-      },
-      "advanced": {
-        "duration": "2m",
-        "sets": 1,
-        "reps": 10,
-        "description_nl": "Blijf langer in de hoogste positie, strek de armen goed.",
-        "description_en": "Hold longer at the highest position, fully extend arms.",
-        "steps_nl": [
-          "Voer als beginner uit.",
-          "Houd bovenin 5 seconden vast per herhaling.",
-          "Span het hele lichaam aan.",
-          "Focus op kwaliteit boven kwantiteit."
-        ],
-        "steps_en": [
-          "Perform as beginner.",
-          "Hold at the top for 5 seconds per repetition.",
-          "Engage the entire body.",
-          "Focus on quality over quantity."
-        ],
-        "tips_nl": [
-          "Voel de spieren in je rug werken.",
-          "Houd ademhaling gelijkmatig.",
-          "Strek vingers en tenen actief uit."
-        ],
-        "tips_en": [
-          "Feel the muscles in your back working.",
-          "Keep breathing steady.",
-          "Actively extend fingers and toes."
-        ],
-        "common_mistakes_nl": [
-          "Te hoog optillen en compenseren.",
-          "Spanning verliezen tijdens vasthouden."
-        ],
-        "common_mistakes_en": [
-          "Lifting too high and compensating.",
-          "Losing tension during the hold."
-        ],
-        "alternative_nl": "Kortere houdmomenten als 5 seconden te zwaar is.",
-        "alternative_en": "Shorter holds if 5 seconds is too difficult.",
-        "animation_instruction_nl": "Langere houdmomenten zichtbaar, meer spanning in rugspieren, gecontroleerde beweging.",
-        "animation_instruction_en": "Longer holds visible, more tension in back muscles, controlled movement."
-      },
-      "expert": {
         "duration": "3m",
         "sets": 2,
-        "reps": 8,
-        "description_nl": "Voeg dynamische bewegingen toe: zwembeweging met armen.",
-        "description_en": "Add dynamic movements: swimming motion with arms.",
+        "reps": 10,
+        "description_nl": "Uitgebreide ademhalings technieken",
+        "description_en": "Extended breathing techniques",
         "steps_nl": [
-          "Til armen en benen op zoals advanced.",
-          "Maak afwisselende zwembewegingen met armen terwijl je omhoog blijft.",
-          "Houd benen stabiel omhoog.",
-          "Voer 8 zwembewegingen uit per herhaling."
+          "Langere adem cycli",
+          "Voeg visualisatie toe",
+          "Box breathing techniek",
+          "Diepere ontspanning"
         ],
         "steps_en": [
-          "Lift arms and legs as in advanced.",
-          "Make alternating swimming motions with arms while staying up.",
-          "Keep legs stable and elevated.",
-          "Perform 8 swimming motions per repetition."
+          "Longer breath cycles",
+          "Add visualization",
+          "Box breathing technique",
+          "Deeper relaxation"
         ],
         "tips_nl": [
-          "Houd core strak tijdens beweging.",
-          "Beweeg armen gecontroleerd.",
-          "Blijf doorademen tijdens de beweging."
+          "Geduldig blijven",
+          "Natuurlijk laten gaan",
+          "Voel de kalmte"
         ],
         "tips_en": [
-          "Keep core tight during movement.",
-          "Move arms in a controlled manner.",
-          "Keep breathing during the movement."
+          "Stay patient",
+          "Let it flow naturally",
+          "Feel the calmness"
         ],
         "common_mistakes_nl": [
-          "Benen laten zakken tijdens armbeweging.",
-          "Te snelle armbeweging.",
-          "Verlies van rugspanning."
+          "Te complex maken",
+          "Ongeduldig worden"
         ],
         "common_mistakes_en": [
-          "Letting legs drop during arm movement.",
-          "Too rapid arm movement.",
-          "Loss of back tension."
+          "Making too complex",
+          "Getting impatient"
         ],
-        "alternative_nl": "Statische hold zonder armbeweging als dynamiek te zwaar is.",
-        "alternative_en": "Static hold without arm movement if dynamics are too difficult.",
-        "animation_instruction_nl": "Superman met zwembeweging, armen alterneren, benen blijven omhoog, highlight core stabiliteit.",
-        "animation_instruction_en": "Superman with swimming motion, arms alternate, legs stay up, highlight core stability."
+        "alternative_nl": "Eenvoudige 4-4-4 ademhaling",
+        "alternative_en": "Simple 4-4-4 breathing",
+        "animation_instruction_nl": "Uitgebreide ademhaling met langere cycli en visualisatie elementen",
+        "animation_instruction_en": "Extended breathing with longer cycles and visualization elements"
+      },
+      "expert": {
+        "duration": "5m",
+        "sets": 1,
+        "reps": 15,
+        "description_nl": "Geavanceerde mindfulness ademhaling",
+        "description_en": "Advanced mindfulness breathing",
+        "steps_nl": [
+          "Combineer met meditatie",
+          "Verschillende technieken",
+          "Body scan integratie",
+          "Diepe mindfulness"
+        ],
+        "steps_en": [
+          "Combine with meditation",
+          "Different techniques",
+          "Body scan integration",
+          "Deep mindfulness"
+        ],
+        "tips_nl": [
+          "Volledig aanwezig zijn",
+          "Oordelen loslaten",
+          "Diepe vrede vinden"
+        ],
+        "tips_en": [
+          "Be fully present",
+          "Let go of judgment",
+          "Find deep peace"
+        ],
+        "common_mistakes_nl": [
+          "Te veel denken",
+          "Perfectie nastreven"
+        ],
+        "common_mistakes_en": [
+          "Thinking too much",
+          "Striving for perfection"
+        ],
+        "alternative_nl": "Eenvoudige ademhaling houden",
+        "alternative_en": "Keep simple breathing",
+        "animation_instruction_nl": "Geavanceerde mindfulness ademhaling met meditatie en body scan elementen",
+        "animation_instruction_en": "Advanced mindfulness breathing with meditation and body scan elements"
+      }
+    }
+  },
+  {
+    "id": "ankle-circles",
+    "name_nl": "Enkel Cirkels",
+    "name_en": "Ankle Circles",
+    "category": ["Mobility", "Feet"],
+    "goals": ["Mobility"],
+    "levels": {
+      "beginner": {
+        "duration": "1m",
+        "sets": 1,
+        "reps": 8,
+        "description_nl": "Zachte enkel mobilisatie bewegingen",
+        "description_en": "Gentle ankle mobility movements",
+        "steps_nl": [
+          "Zit comfortabel",
+          "Til één voet op",
+          "Maak langzame cirkels",
+          "Wissel van richting en voet"
+        ],
+        "steps_en": [
+          "Sit comfortably",
+          "Lift one foot",
+          "Make slow circles",
+          "Switch direction and foot"
+        ],
+        "tips_nl": [
+          "Langzame bewegingen",
+          "Volledige cirkel maken",
+          "Voel de mobiliteit"
+        ],
+        "tips_en": [
+          "Slow movements",
+          "Make full circle",
+          "Feel the mobility"
+        ],
+        "common_mistakes_nl": [
+          "Te snelle beweging",
+          "Onvolledige cirkels"
+        ],
+        "common_mistakes_en": [
+          "Too fast movement",
+          "Incomplete circles"
+        ],
+        "alternative_nl": "Beide voeten tegelijk",
+        "alternative_en": "Both feet together",
+        "animation_instruction_nl": "Persoon maakt langzame enkel cirkels, volledige range of motion",
+        "animation_instruction_en": "Person makes slow ankle circles, full range of motion"
+      },
+      "advanced": {
+        "duration": "2m",
+        "sets": 2,
+        "reps": 12,
+        "description_nl": "Uitgebreide enkel mobiliteit",
+        "description_en": "Extended ankle mobility",
+        "steps_nl": [
+          "Grotere cirkels maken",
+          "Voeg flexie/extensie toe",
+          "Verschillende richtingen",
+          "Meer herhalingen"
+        ],
+        "steps_en": [
+          "Make larger circles",
+          "Add flexion/extension",
+          "Different directions",
+          "More repetitions"
+        ],
+        "tips_nl": [
+          "Maximale range gebruiken",
+          "Alle richtingen bewegen",
+          "Voel de stretch"
+        ],
+        "tips_en": [
+          "Use maximum range",
+          "Move in all directions",
+          "Feel the stretch"
+        ],
+        "common_mistakes_nl": [
+          "Te beperkte beweging",
+          "Eén richting vergeten"
+        ],
+        "common_mistakes_en": [
+          "Too limited movement",
+          "Forgetting one direction"
+        ],
+        "alternative_nl": "Gebruik handdoek voor weerstand",
+        "alternative_en": "Use towel for resistance",
+        "animation_instruction_nl": "Uitgebreide enkel cirkels met flexie/extensie en verschillende richtingen",
+        "animation_instruction_en": "Extended ankle circles with flexion/extension and different directions"
+      },
+      "expert": {
+        "duration": "3m",
+        "sets": 3,
+        "reps": 15,
+        "description_nl": "Geavanceerde voet en enkel mobiliteit",
+        "description_en": "Advanced foot and ankle mobility",
+        "steps_nl": [
+          "Combineer met teen bewegingen",
+          "Voeg balans element toe",
+          "Functionele patronen",
+          "Proprioceptieve training"
+        ],
+        "steps_en": [
+          "Combine with toe movements",
+          "Add balance element",
+          "Functional patterns",
+          "Proprioceptive training"
+        ],
+        "tips_nl": [
+          "Complexe bewegingen",
+          "Balans uitdagen",
+          "Functioneel trainen"
+        ],
+        "tips_en": [
+          "Complex movements",
+          "Challenge balance",
+          "Train functionally"
+        ],
+        "common_mistakes_nl": [
+          "Te complex maken",
+          "Balans verliezen"
+        ],
+        "common_mistakes_en": [
+          "Making too complex",
+          "Losing balance"
+        ],
+        "alternative_nl": "Eenvoudige cirkels houden",
+        "alternative_en": "Keep simple circles",
+        "animation_instruction_nl": "Geavanceerde voet mobiliteit met teen bewegingen en balans elementen",
+        "animation_instruction_en": "Advanced foot mobility with toe movements and balance elements"
+      }
+    }
+  },
+  {
+    "id": "wrist-circles",
+    "name_nl": "Pols Cirkels",
+    "name_en": "Wrist Circles",
+    "category": ["Mobility", "Arms"],
+    "goals": ["Mobility", "Reduce neck pain"],
+    "levels": {
+      "beginner": {
+        "duration": "1m",
+        "sets": 1,
+        "reps": 8,
+        "description_nl": "Zachte pols mobilisatie voor computer gebruikers",
+        "description_en": "Gentle wrist mobility for computer users",
+        "steps_nl": [
+          "Strek armen naar voren",
+          "Maak langzame pols cirkels",
+          "8 keer naar rechts",
+          "8 keer naar links"
+        ],
+        "steps_en": [
+          "Extend arms forward",
+          "Make slow wrist circles",
+          "8 times to the right",
+          "8 times to the left"
+        ],
+        "tips_nl": [
+          "Langzame bewegingen",
+          "Voel de stretch",
+          "Ontspan schouders"
+        ],
+        "tips_en": [
+          "Slow movements",
+          "Feel the stretch",
+          "Relax shoulders"
+        ],
+        "common_mistakes_nl": [
+          "Te snelle beweging",
+          "Schouders gespannen"
+        ],
+        "common_mistakes_en": [
+          "Too fast movement",
+          "Tense shoulders"
+        ],
+        "alternative_nl": "Één pols per keer",
+        "alternative_en": "One wrist at a time",
+        "animation_instruction_nl": "Persoon maakt langzame pols cirkels, armen gestrekt, ontspannen schouders",
+        "animation_instruction_en": "Person makes slow wrist circles, arms extended, relaxed shoulders"
+      },
+      "advanced": {
+        "duration": "2m",
+        "sets": 2,
+        "reps": 12,
+        "description_nl": "Uitgebreide pols en onderarm mobiliteit",
+        "description_en": "Extended wrist and forearm mobility",
+        "steps_nl": [
+          "Voeg flexie/extensie toe",
+          "Verschillende arm posities",
+          "Vingers spreiden",
+          "Meer variatie"
+        ],
+        "steps_en": [
+          "Add flexion/extension",
+          "Different arm positions",
+          "Spread fingers",
+          "More variation"
+        ],
+        "tips_nl": [
+          "Alle richtingen bewegen",
+          "Voel onderarm stretch",
+          "Varieer de posities"
+        ],
+        "tips_en": [
+          "Move in all directions",
+          "Feel forearm stretch",
+          "Vary the positions"
+        ],
+        "common_mistakes_nl": [
+          "Beperkte beweging",
+          "Eentonige patronen"
+        ],
+        "common_mistakes_en": [
+          "Limited movement",
+          "Monotonous patterns"
+        ],
+        "alternative_nl": "Focus op één beweging",
+        "alternative_en": "Focus on one movement",
+        "animation_instruction_nl": "Uitgebreide pols mobiliteit met flexie/extensie en verschillende posities",
+        "animation_instruction_en": "Extended wrist mobility with flexion/extension and different positions"
+      },
+      "expert": {
+        "duration": "3m",
+        "sets": 3,
+        "reps": 15,
+        "description_nl": "Geavanceerde hand en pols conditioning",
+        "description_en": "Advanced hand and wrist conditioning",
+        "steps_nl": [
+          "Voeg weerstand toe",
+          "Functionele bewegingen",
+          "Grip strength elementen",
+          "Complexe patronen"
+        ],
+        "steps_en": [
+          "Add resistance",
+          "Functional movements",
+          "Grip strength elements",
+          "Complex patterns"
+        ],
+        "tips_nl": [
+          "Uitdagende variaties",
+          "Functioneel trainen",
+          "Kracht en mobiliteit"
+        ],
+        "tips_en": [
+          "Challenging variations",
+          "Train functionally",
+          "Strength and mobility"
+        ],
+        "common_mistakes_nl": [
+          "Te veel weerstand",
+          "Pijn negeren"
+        ],
+        "common_mistakes_en": [
+          "Too much resistance",
+          "Ignoring pain"
+        ],
+        "alternative_nl": "Eenvoudige cirkels houden",
+        "alternative_en": "Keep simple circles",
+        "animation_instruction_nl": "Geavanceerde pols conditioning met weerstand en functionele bewegingen",
+        "animation_instruction_en": "Advanced wrist conditioning with resistance and functional movements"
       }
     }
   }

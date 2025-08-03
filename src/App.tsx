@@ -87,7 +87,7 @@ function AppContent() {
 
   const handleRoutineComplete = () => {
     // Calculate total duration of selected exercises
-    const totalDuration = exercises.slice(0, 3).reduce((total, exercise) => {
+    const totalDuration = selectedExercises.reduce((total, exercise) => {
       const duration = exercise.levels[selectedLevel].duration;
       const minutes = parseInt(duration.replace('m', ''));
       return total + minutes;
@@ -97,7 +97,29 @@ function AppContent() {
     setCurrentState('dashboard');
   };
 
-  const selectedExercises = exercises.slice(0, 3); // For demo, use first 3 exercises
+  // Select exercises based on user goals and level
+  const selectedExercises = React.useMemo(() => {
+    if (selectedGoals.length === 0) {
+      return exercises.slice(0, 5); // Default selection
+    }
+    
+    // Filter exercises based on selected goals
+    const filteredExercises = exercises.filter(exercise => 
+      exercise.goals.some(goal => selectedGoals.includes(goal))
+    );
+    
+    // If we have enough filtered exercises, use them
+    if (filteredExercises.length >= 4) {
+      return filteredExercises.slice(0, 6); // Take up to 6 exercises
+    }
+    
+    // Otherwise, supplement with general exercises
+    const generalExercises = exercises.filter(exercise => 
+      !filteredExercises.includes(exercise)
+    );
+    
+    return [...filteredExercises, ...generalExercises].slice(0, 5);
+  }, [selectedGoals]);
 
   switch (currentState) {
     case 'welcome':

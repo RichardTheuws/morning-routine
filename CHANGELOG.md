@@ -5,6 +5,43 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2025-01-27
+
+### Added
+- **20 Essential New Exercises** - Comprehensive exercise library expansion
+  - **Back & Posture (8 exercises)**: Child's Pose, Cobra Stretch, Thoracic Spine Rotation, Wall Angels
+  - **Neck & Shoulders (4 exercises)**: Neck Side Bends, Chin Tucks, Shoulder Blade Squeezes
+  - **Core & Stability (2 exercises)**: Dead Bug with advanced variations
+  - **Mobility (4 exercises)**: Hip Circles, Ankle Circles, Wrist Circles
+  - **Cardio & Energy (2 exercises)**: Marching in Place, Bodyweight Squats
+  - **Relaxation (1 exercise)**: Deep Breathing with mindfulness techniques
+
+### Improved
+- **Exercise Selection Algorithm** - Routines now intelligently select exercises based on user goals
+- **Goal-Based Filtering** - Exercises are filtered and prioritized based on selected goals
+- **Exercise Variety** - Each goal now has sufficient exercise options for varied routines
+- **Video Mappings** - Added video demonstrations for all new exercises
+- **Difficulty Progression** - Each exercise has proper beginner → advanced → expert progression
+
+### Enhanced
+- **Exercise Database** - Now contains 25+ complete exercises (up from 11)
+- **Goal Coverage** - All 7 goals now have dedicated exercises:
+  - Back Pain: 12 exercises
+  - Neck Pain: 8 exercises  
+  - Mobility: 15 exercises
+  - Strength: 8 exercises
+  - Energy: 6 exercises
+  - Fat Loss: 4 exercises
+  - Relaxation: 3 exercises
+- **Animation Instructions** - Detailed animation instructions for AI-generated demonstrations
+- **Safety Guidelines** - Comprehensive tips, common mistakes, and alternatives for each exercise
+
+### Technical
+- **Smart Exercise Selection** - Algorithm selects 4-6 exercises based on user goals
+- **Fallback System** - Graceful fallback when insufficient goal-specific exercises
+- **Video Integration** - All new exercises integrated with Pexels video system
+- **Multilingual Support** - All new exercises fully translated (Dutch/English)
+
 ## [1.1.2] - 2025-01-27
 
 ### Fixed

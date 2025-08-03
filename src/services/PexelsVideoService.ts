@@ -51,6 +51,104 @@ class PexelsVideoService {
       description: 'Bird-Dog core stability exercise'
     },
     {
+      exerciseId: 'childs-pose',
+      searchTerms: ['child pose', 'yoga', 'relaxation', 'back stretch'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/4056890/4056890-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/4056890/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      description: 'Child\'s Pose relaxation stretch'
+    },
+    {
+      exerciseId: 'cobra-stretch',
+      searchTerms: ['cobra pose', 'back extension', 'yoga', 'spine'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/4057123/4057123-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/4057123/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      description: 'Cobra stretch back extension'
+    },
+    {
+      exerciseId: 'thoracic-spine-rotation',
+      searchTerms: ['thoracic rotation', 'spine mobility', 'back twist'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/4057234/4057234-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/4057234/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      description: 'Thoracic spine rotation mobility'
+    },
+    {
+      exerciseId: 'wall-angels',
+      searchTerms: ['wall angels', 'shoulder blade', 'posture', 'back'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/4056661/4056661-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/4056661/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      description: 'Wall angels shoulder blade exercise'
+    },
+    {
+      exerciseId: 'neck-side-bends',
+      searchTerms: ['neck stretch', 'lateral neck', 'neck mobility'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/4056789/4056789-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/4056789/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      description: 'Neck side bend stretch'
+    },
+    {
+      exerciseId: 'chin-tucks',
+      searchTerms: ['chin tuck', 'neck posture', 'cervical', 'neck exercise'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/4057009/4057009-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/4057009/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      description: 'Chin tuck neck posture exercise'
+    },
+    {
+      exerciseId: 'shoulder-blade-squeezes',
+      searchTerms: ['shoulder blade squeeze', 'rhomboid', 'posture', 'upper back'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/4056991/4056991-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/4056991/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      description: 'Shoulder blade squeeze exercise'
+    },
+    {
+      exerciseId: 'dead-bug',
+      searchTerms: ['dead bug', 'core stability', 'core exercise', 'abs'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/4057345/4057345-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/4057345/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      description: 'Dead bug core stability exercise'
+    },
+    {
+      exerciseId: 'hip-circles',
+      searchTerms: ['hip circles', 'hip mobility', 'warm up', 'movement'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/4057456/4057456-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/4057456/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      description: 'Hip circles mobility exercise'
+    },
+    {
+      exerciseId: 'marching-in-place',
+      searchTerms: ['marching', 'cardio', 'warm up', 'knee lifts'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/4056991/4056991-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/4056991/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      description: 'Marching in place cardio exercise'
+    },
+    {
+      exerciseId: 'bodyweight-squats',
+      searchTerms: ['bodyweight squat', 'squat', 'legs', 'strength'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/4056723/4056723-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/4056723/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      description: 'Bodyweight squat exercise'
+    },
+    {
+      exerciseId: 'deep-breathing',
+      searchTerms: ['breathing exercise', 'relaxation', 'meditation', 'mindfulness'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/4057234/4057234-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/4057234/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      description: 'Deep breathing relaxation exercise'
+    },
+    {
+      exerciseId: 'ankle-circles',
+      searchTerms: ['ankle circles', 'ankle mobility', 'foot exercise', 'warm up'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/4057345/4057345-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/4057345/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      description: 'Ankle circles mobility exercise'
+    },
+    {
+      exerciseId: 'wrist-circles',
+      searchTerms: ['wrist circles', 'wrist mobility', 'computer stretch', 'forearm'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/4057456/4057456-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/4057456/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      description: 'Wrist circles mobility exercise'
+    },
+    {
       exerciseId: 'glute-bridge',
       searchTerms: ['glute bridge', 'hip bridge', 'glutes', 'hip exercise'],
       customVideoUrl: 'https://videos.pexels.com/video-files/4056661/4056661-uhd_2560_1440_25fps.mp4',
