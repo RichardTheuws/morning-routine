@@ -17,12 +17,35 @@ cd morning-routine-app
 npm install
 ```
 
-3. **Start development server**
+3. **Set up environment variables**
+```bash
+cp .env.example .env
+```
+
+4. **Get your Pexels API key** (required for video demonstrations)
+   - Create a free account at [pexels.com](https://www.pexels.com)
+   - Go to [pexels.com/api](https://www.pexels.com/api/)
+   - Click "Get Started" and follow the registration steps
+   - Copy your API key and add it to your `.env` file:
+   ```
+   VITE_PEXELS_API_KEY=your_api_key_here
+   ```
+
+5. **Start development server**
 ```bash
 npm run dev
 ```
 
-4. **Open http://localhost:5173**
+6. **Open http://localhost:5173**
+
+### Without Pexels API Key
+
+The app will work without a Pexels API key, but:
+- ✅ **Animations will work** - AI-generated SVG demonstrations
+- ❌ **No video demonstrations** - Only curated videos will be available
+- ⚠️ **Limited content** - Some exercises may not have visual demonstrations
+
+For the best experience, we recommend getting a free Pexels API key.
 
 ## 📋 Types of Contributions
 

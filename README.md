@@ -39,6 +39,14 @@ A privacy-first, open source Progressive Web App (PWA) for creating and followin
 
 ## 🚀 Quick Start
 
+### Prerequisites
+
+For video demonstrations, you'll need a free Pexels API key:
+
+1. **Create a Pexels account** at [pexels.com](https://www.pexels.com)
+2. **Get your API key** at [pexels.com/api](https://www.pexels.com/api/)
+3. **Copy your API key** (it looks like: `aJ6Ng9GbHjTQZKwvyaYFdLGfnBeRBGXfvUy0OY0wugm7HjGebQoVVhho`)
+
 ### Run Locally
 
 ```bash
@@ -48,6 +56,10 @@ cd morning-routine-app
 
 # Install dependencies
 npm install
+
+# Set up environment variables
+cp .env.example .env
+# Edit .env and add your Pexels API key
 
 # Start development server
 npm run dev
@@ -72,6 +84,8 @@ The app is a static PWA and can be deployed on:
 - **Vercel**
 - **GitHub Pages**
 - **Any static hosting service**
+
+**Note:** For video demonstrations in production, make sure to set the `VITE_PEXELS_API_KEY` environment variable in your hosting platform.
 
 ## 🏗️ Tech Stack
 

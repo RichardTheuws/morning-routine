@@ -198,8 +198,8 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onBack }) => {
             </p>
             <p>
               {isLanguageDutch
-                ? '✓ Pexels API integratie voor professionele video demonstraties'
-                : '✓ Pexels API integration for professional video demonstrations'
+                ? '✓ Pexels API integratie voor professionele video demonstraties (API key vereist)'
+                : '✓ Pexels API integration for professional video demonstrations (API key required)'
               }
             </p>
           </div>
