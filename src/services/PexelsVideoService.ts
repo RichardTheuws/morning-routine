@@ -53,8 +53,8 @@ class PexelsVideoService {
     {
       exerciseId: 'childs-pose',
       searchTerms: ['child pose', 'yoga', 'relaxation', 'back stretch'],
-      customVideoUrl: 'https://videos.pexels.com/video-files/4056890/4056890-uhd_2560_1440_25fps.mp4',
-      thumbnailUrl: 'https://images.pexels.com/videos/4056890/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      customVideoUrl: 'https://videos.pexels.com/video-files/8550000/8550000-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/8550000/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Child\'s Pose relaxation stretch'
     },
     {
