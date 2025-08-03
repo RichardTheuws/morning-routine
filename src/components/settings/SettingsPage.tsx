@@ -207,7 +207,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onBack }) => {
             variant="outline" 
             icon={Github} 
             className="w-full mt-4"
-            onClick={() => window.open('https://github.com/your-username/morning-routine-app', '_blank')}
+            onClick={() => window.open('https://github.com/richardtheuws/morning-routine', '_blank')}
           >
             {isLanguageDutch ? 'Bekijk op GitHub' : 'View on GitHub'}
           </Button>
@@ -229,6 +229,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onBack }) => {
             className="w-full"
             onClick={() => {
               localStorage.removeItem('morning-routine-onboarded');
+              localStorage.removeItem('morning-routine-preferences');
               window.location.reload();
             }}
           >

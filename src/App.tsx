@@ -47,27 +47,91 @@ function AppContent() {
 
   // Select exercises based on user goals and level - MUST be at top level before any returns
   const selectedExercises = React.useMemo(() => {
+    console.log('Selecting exercises for goals:', selectedGoals, 'duration:', selectedDuration);
+    
     if (selectedGoals.length === 0) {
-      return exercises.slice(0, 5); // Default selection
+      // Default selection for first-time users
+      return exercises.slice(0, Math.min(5, exercises.length));
     }
     
-    // Filter exercises based on selected goals
+    // Step 1: Filter exercises based on selected goals
     const filteredExercises = exercises.filter(exercise => 
       exercise.goals.some(goal => selectedGoals.includes(goal))
     );
     
-    // If we have enough filtered exercises, use them
-    if (filteredExercises.length >= 4) {
-      return filteredExercises.slice(0, 6); // Take up to 6 exercises
+    console.log('Filtered exercises by goals:', filteredExercises.length);
+    
+    // Step 2: Calculate target number of exercises based on duration
+    // Assume average exercise takes 2-3 minutes
+    const targetExerciseCount = Math.max(3, Math.min(8, Math.floor(selectedDuration / 2.5)));
+    
+    console.log('Target exercise count for', selectedDuration, 'minutes:', targetExerciseCount);
+    
+    let finalExercises: typeof exercises = [];
+    
+    // Step 3: Prioritize goal-specific exercises
+    if (filteredExercises.length >= targetExerciseCount) {
+      // We have enough goal-specific exercises
+      finalExercises = filteredExercises.slice(0, targetExerciseCount);
+    } else {
+      // Need to supplement with general exercises
+      finalExercises = [...filteredExercises];
+      
+      // Add general exercises that don't conflict with goals
+      const generalExercises = exercises.filter(exercise => 
+        !filteredExercises.includes(exercise) &&
+        // Prefer exercises that are generally beneficial
+        (exercise.goals.includes('Mobility') || 
+         exercise.goals.includes('Reduce back pain') ||
+         exercise.category.includes('Mobility'))
+      );
+      
+      const remainingSlots = targetExerciseCount - finalExercises.length;
+      finalExercises = [...finalExercises, ...generalExercises.slice(0, remainingSlots)];
+      
+      // If still not enough, add any remaining exercises
+      if (finalExercises.length < targetExerciseCount) {
+        const anyRemaining = exercises.filter(ex => !finalExercises.includes(ex));
+        finalExercises = [...finalExercises, ...anyRemaining.slice(0, targetExerciseCount - finalExercises.length)];
+      }
     }
     
-    // Otherwise, supplement with general exercises
-    const generalExercises = exercises.filter(exercise => 
-      !filteredExercises.includes(exercise)
-    );
+    console.log('Final selected exercises:', finalExercises.map(ex => ex.name_en));
+    return finalExercises;
+  }, [selectedGoals, selectedDuration]);
+
+  // Save user preferences when they complete onboarding
+  const saveUserPreferences = (goals: string[], level: UserLevel, duration: number) => {
+    try {
+      const preferences = {
+        goals,
+        level,
+        duration,
+        savedAt: new Date().toISOString()
+      };
+      localStorage.setItem('morning-routine-preferences', JSON.stringify(preferences));
+      console.log('Saved user preferences:', preferences);
+    } catch (error) {
+      console.error('Failed to save preferences:', error);
+    }
+  };
+
+  // Load user preferences on app start
+  React.useEffect(() => {
+    try {
+      const saved = localStorage.getItem('morning-routine-preferences');
+      if (saved) {
+        const preferences = JSON.parse(saved);
+        console.log('Loaded user preferences:', preferences);
+        setSelectedGoals(preferences.goals || []);
+        setSelectedLevel(preferences.level || 'beginner');
+        setSelectedDuration(preferences.duration || 10);
+      }
+    } catch (error) {
+      console.error('Failed to load preferences:', error);
+    }
+  }, []);
     
-    return [...filteredExercises, ...generalExercises].slice(0, 5);
-  }, [selectedGoals]);
 
   // Show privacy consent first if needed
   if (showConsentDialog) {
@@ -94,9 +158,11 @@ function AppContent() {
   }
 
   const handleOnboardingComplete = (goals: string[], level: UserLevel, duration: number) => {
+    console.log('Onboarding completed with:', { goals, level, duration });
     setSelectedGoals(goals);
     setSelectedLevel(level);
     setSelectedDuration(duration);
+    saveUserPreferences(goals, level, duration);
     try {
       localStorage.setItem('morning-routine-onboarded', 'true');
     } catch (error) {

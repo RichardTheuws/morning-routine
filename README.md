@@ -51,8 +51,8 @@ For video demonstrations, you'll need a free Pexels API key:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/morning-routine-app.git
-cd morning-routine-app
+git clone https://github.com/richardtheuws/morning-routine.git
+cd morning-routine
 
 # Install dependencies
 npm install
