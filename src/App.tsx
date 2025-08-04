@@ -215,12 +215,7 @@ function AppContent() {
     });
     
     return ordered;
-      }
-    }
-    
-    console.log('🎉 Final selected exercises:', finalExercises.map(ex => `${ex.name_en} (${ex.goals.join(', ')})`));
-    return finalExercises;
-  }, [selectedGoals, selectedDuration]);
+  };
 
   // Save user preferences when they complete onboarding
   const saveUserPreferences = (goals: string[], level: UserLevel, duration: number) => {
