@@ -68,17 +68,21 @@ export const RoutineSession: React.FC<RoutineSessionProps> = ({
   };
 
   const handleCompleteExercise = () => {
+    console.log('✅ Exercise completed:', exerciseName);
     setCompletedExercises(prev => new Set(prev).add(currentExerciseIndex));
     
     if (currentExerciseIndex < exercises.length - 1) {
+      console.log('➡️ Moving to next exercise');
       setCurrentExerciseIndex(prev => prev + 1);
       setIsRunning(false);
     } else {
+      console.log('🎉 All exercises completed!');
       onComplete();
     }
   };
 
   const handleSkip = () => {
+    console.log('⏭️ Exercise skipped:', exerciseName);
     if (currentExerciseIndex < exercises.length - 1) {
       setCurrentExerciseIndex(prev => prev + 1);
       setIsRunning(false);
@@ -88,6 +92,7 @@ export const RoutineSession: React.FC<RoutineSessionProps> = ({
   };
 
   if (!currentExercise) {
+    console.error('❌ No current exercise found!');
     return null;
   }
 
@@ -129,13 +134,13 @@ export const RoutineSession: React.FC<RoutineSessionProps> = ({
               <h3 className="font-semibold text-slate-900 mb-2">
                 {language === 'nl' ? 'Stappen:' : 'Steps:'}
               </h3>
-              <ol className="space-y-2">
+              <ol className="space-y-2 text-sm">
                 {steps?.map((step, index) => (
                   <li key={index} className="flex gap-3">
                     <span className="flex-shrink-0 w-6 h-6 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium flex items-center justify-center">
                       {index + 1}
                     </span>
-                    <span className="text-slate-700">{step}</span>
+                    <span className="text-slate-700 leading-relaxed">{step}</span>
                   </li>
                 ))}
               </ol>
@@ -145,11 +150,11 @@ export const RoutineSession: React.FC<RoutineSessionProps> = ({
               <h3 className="font-semibold text-slate-900 mb-2">
                 {language === 'nl' ? 'Tips:' : 'Tips:'}
               </h3>
-              <ul className="space-y-1">
+              <ul className="space-y-1 text-sm">
                 {tips?.map((tip, index) => (
-                  <li key={index} className="text-sm text-slate-600 flex items-start gap-2">
+                  <li key={index} className="text-slate-600 flex items-start gap-2">
                     <span className="text-emerald-500">•</span>
-                    {tip}
+                    <span className="leading-relaxed">{tip}</span>
                   </li>
                 ))}
               </ul>

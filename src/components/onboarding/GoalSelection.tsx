@@ -10,13 +10,13 @@ interface GoalSelectionProps {
 }
 
 const availableGoals = [
-  { id: 'backPain', key: 'goals.backPain' },
-  { id: 'neckPain', key: 'goals.neckPain' },
-  { id: 'fatLoss', key: 'goals.fatLoss' },
-  { id: 'mobility', key: 'goals.mobility' },
-  { id: 'energy', key: 'goals.energy' },
-  { id: 'strength', key: 'goals.strength' },
-  { id: 'relaxation', key: 'goals.relaxation' }
+  { id: 'Reduce back pain', key: 'goals.backPain' },
+  { id: 'Reduce neck pain', key: 'goals.neckPain' },
+  { id: 'Fat loss', key: 'goals.fatLoss' },
+  { id: 'Mobility', key: 'goals.mobility' },
+  { id: 'Energy boost', key: 'goals.energy' },
+  { id: 'Build strength', key: 'goals.strength' },
+  { id: 'Relaxation', key: 'goals.relaxation' }
 ];
 
 export const GoalSelection: React.FC<GoalSelectionProps> = ({ onNext, onBack }) => {

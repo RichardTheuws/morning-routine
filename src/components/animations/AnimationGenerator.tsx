@@ -44,14 +44,19 @@ export const AnimationGenerator: React.FC<AnimationGeneratorProps> = ({
     setError(null);
     setIsVideoLoading(true);
     
+    console.log(`🎬 Loading content for exercise: ${exerciseId} (${exerciseName})`);
+    console.log(`📹 Video consent: ${videoConsent}`);
+    
     try {
       // Generate cache key for animation
       const cacheKey = `${exerciseId}-${level}-${animationInstruction.substring(0, 50)}`;
+      console.log(`🔑 Cache key: ${cacheKey}`);
       
       // Try to get cached animation first
       let generatedAnimation = advancedAnimationEngine.getCachedAnimation(cacheKey);
       
       if (!generatedAnimation) {
+        console.log('🎨 Generating new animation...');
         // Generate new animation
         generatedAnimation = await advancedAnimationEngine.generateExerciseAnimation(
           exerciseId,
@@ -63,6 +68,9 @@ export const AnimationGenerator: React.FC<AnimationGeneratorProps> = ({
         
         // Cache the result
         advancedAnimationEngine.setCachedAnimation(cacheKey, generatedAnimation);
+        console.log('✅ Animation generated and cached');
+      } else {
+        console.log('📦 Using cached animation');
       }
       
       setAnimation(generatedAnimation);
@@ -70,10 +78,11 @@ export const AnimationGenerator: React.FC<AnimationGeneratorProps> = ({
       // Load video if consent given
       if (videoConsent) {
         try {
-          console.log(`Loading video for exercise: ${exerciseId}`);
+          console.log(`📹 Loading video for exercise: ${exerciseId}`);
           const video = await pexelsVideoService.getVideoForExercise(exerciseId);
           
           if (video) {
+            console.log(`✅ Video found:`, video.description);
             setVideoMapping(video);
             
             // Validate video URL before setting view mode
@@ -83,18 +92,22 @@ export const AnimationGenerator: React.FC<AnimationGeneratorProps> = ({
               const isValid = isMobile ? true : await pexelsVideoService.validateVideoUrl(video.customVideoUrl);
               
               if (isValid && viewMode === 'auto') {
+                console.log('📹 Setting view mode to video');
                 setViewMode('video');
               } else if (!isValid) {
+                console.log('⚠️ Video URL invalid, using animation');
                 if (viewMode === 'auto') {
                   setViewMode('animation');
                 }
               }
             } else {
+              console.log('⚠️ No video URL, using animation');
               if (viewMode === 'auto') {
                 setViewMode('animation');
               }
             }
           } else {
+            console.log('⚠️ No video found, using animation');
             if (viewMode === 'auto') {
               setViewMode('animation');
             }
@@ -105,24 +118,25 @@ export const AnimationGenerator: React.FC<AnimationGeneratorProps> = ({
             videoUrl: video?.customVideoUrl 
           });
         } catch (videoError) {
-          console.error('Video loading failed:', videoError);
+          console.error('❌ Video loading failed:', videoError);
           pexelsVideoService.trackVideoPerformance(exerciseId, 'error', { error: videoError });
           
           // Fallback to animation on video error
           if (viewMode === 'auto') {
+            console.log('🔄 Falling back to animation due to video error');
             setViewMode('animation');
           }
         }
       } else {
         // No video consent, always use animation
-        console.log(`No video consent, using animation for ${exerciseId}`);
+        console.log(`🚫 No video consent, using animation for ${exerciseId}`);
         if (viewMode === 'auto') {
           setViewMode('animation');
         }
       }
       
     } catch (error) {
-      console.error('Content loading failed:', error);
+      console.error('❌ Content loading failed:', error);
       setError('Failed to load exercise demonstration');
       
       // Create minimal fallback animation
@@ -148,6 +162,7 @@ export const AnimationGenerator: React.FC<AnimationGeneratorProps> = ({
         }
       });
       
+      console.log('🔄 Created fallback animation');
       if (viewMode === 'auto') {
         setViewMode('animation');
       }
@@ -155,6 +170,7 @@ export const AnimationGenerator: React.FC<AnimationGeneratorProps> = ({
     
     setIsLoading(false);
     setIsVideoLoading(false);
+    console.log(`✅ Content loading completed for ${exerciseId}`);
   }, [exerciseId, exerciseName, steps, animationInstruction, level, viewMode]);
 
   useEffect(() => {

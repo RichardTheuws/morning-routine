@@ -47,25 +47,35 @@ function AppContent() {
 
   // Select exercises based on user goals and level - MUST be at top level before any returns
   const selectedExercises = React.useMemo(() => {
-    console.log('Selecting exercises for goals:', selectedGoals, 'duration:', selectedDuration);
+    console.log('🎯 Selecting exercises for goals:', selectedGoals, 'duration:', selectedDuration);
     
     if (selectedGoals.length === 0) {
       // Default selection for first-time users
-      return exercises.slice(0, Math.min(5, exercises.length));
+      console.log('⚠️ No goals selected, using default exercises');
+      const defaultExercises = exercises.slice(0, Math.min(5, exercises.length));
+      console.log('📋 Default exercises:', defaultExercises.map(ex => ex.name_en));
+      return defaultExercises;
     }
     
     // Step 1: Filter exercises based on selected goals
     const filteredExercises = exercises.filter(exercise => 
-      exercise.goals.some(goal => selectedGoals.includes(goal))
+      exercise.goals.some(goal => {
+        const match = selectedGoals.includes(goal);
+        if (match) {
+          console.log(`✅ Exercise "${exercise.name_en}" matches goal "${goal}"`);
+        }
+        return match;
+      })
     );
     
-    console.log('Filtered exercises by goals:', filteredExercises.length);
+    console.log('🔍 Filtered exercises by goals:', filteredExercises.length, 'exercises found');
+    console.log('📝 Filtered exercises:', filteredExercises.map(ex => `${ex.name_en} (${ex.goals.join(', ')})`));
     
     // Step 2: Calculate target number of exercises based on duration
     // Assume average exercise takes 2-3 minutes
     const targetExerciseCount = Math.max(3, Math.min(8, Math.floor(selectedDuration / 2.5)));
     
-    console.log('Target exercise count for', selectedDuration, 'minutes:', targetExerciseCount);
+    console.log('🎯 Target exercise count for', selectedDuration, 'minutes:', targetExerciseCount);
     
     let finalExercises: typeof exercises = [];
     
@@ -73,9 +83,11 @@ function AppContent() {
     if (filteredExercises.length >= targetExerciseCount) {
       // We have enough goal-specific exercises
       finalExercises = filteredExercises.slice(0, targetExerciseCount);
+      console.log('✅ Enough goal-specific exercises found');
     } else {
       // Need to supplement with general exercises
       finalExercises = [...filteredExercises];
+      console.log('⚠️ Not enough goal-specific exercises, supplementing...');
       
       // Add general exercises that don't conflict with goals
       const generalExercises = exercises.filter(exercise => 
@@ -86,6 +98,8 @@ function AppContent() {
          exercise.category.includes('Mobility'))
       );
       
+      console.log('🔄 General exercises available:', generalExercises.length);
+      
       const remainingSlots = targetExerciseCount - finalExercises.length;
       finalExercises = [...finalExercises, ...generalExercises.slice(0, remainingSlots)];
       
@@ -93,10 +107,11 @@ function AppContent() {
       if (finalExercises.length < targetExerciseCount) {
         const anyRemaining = exercises.filter(ex => !finalExercises.includes(ex));
         finalExercises = [...finalExercises, ...anyRemaining.slice(0, targetExerciseCount - finalExercises.length)];
+        console.log('🔄 Added remaining exercises to fill slots');
       }
     }
     
-    console.log('Final selected exercises:', finalExercises.map(ex => ex.name_en));
+    console.log('🎉 Final selected exercises:', finalExercises.map(ex => `${ex.name_en} (${ex.goals.join(', ')})`));
     return finalExercises;
   }, [selectedGoals, selectedDuration]);
 
@@ -176,6 +191,7 @@ function AppContent() {
   };
 
   const handleRoutineComplete = () => {
+    console.log('🎉 Routine completed!');
     // Calculate total duration of selected exercises
     const totalDuration = selectedExercises.reduce((total, exercise) => {
       const duration = exercise.levels[selectedLevel].duration;
@@ -183,7 +199,9 @@ function AppContent() {
       return total + minutes;
     }, 0);
     
+    console.log(`⏱️ Total routine duration: ${totalDuration} minutes`);
     updateProgress(totalDuration);
+    console.log('📊 Progress updated');
     setCurrentState('dashboard');
   };
 

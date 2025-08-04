@@ -128,7 +128,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
 
   const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
     const video = e.currentTarget;
-    console.error(`Video error for ${exerciseName}:`, {
+    console.warn(`⚠️ Video error for ${exerciseName}:`, {
       error: video.error,
       networkState: video.networkState,
       readyState: video.readyState, 
@@ -157,7 +157,8 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
       }
     }
     
-    console.warn(`${errorMessage} for ${exerciseName}: ${videoUrl}`);
+    console.warn(`⚠️ ${errorMessage} for ${exerciseName}: ${videoUrl}`);
+    console.log('🔄 Falling back to animation mode');
     setHasError(true);
     setShowThumbnail(true);
     setIsLoading(false);

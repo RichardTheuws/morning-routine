@@ -84,6 +84,17 @@ export const Dashboard: React.FC<DashboardProps> = ({
             {t('startRoutine')}
           </Button>
           
+          {/* Debug Info - Remove in production */}
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-sm">
+            <h4 className="font-medium text-blue-900 mb-2">🔧 Debug Info:</h4>
+            <div className="space-y-1 text-blue-800">
+              <div>Routines completed: {progress.routines_completed}</div>
+              <div>Current streak: {progress.current_streak}</div>
+              <div>Total time: {formatTime(progress.total_time_spent)}</div>
+              <div>Last completed: {progress.last_completed || 'Never'}</div>
+            </div>
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Button 
               variant="outline" 
