@@ -18,4 +18,4 @@ export const exercises = [
 ];
 
 // Re-export types for convenience
-export * from '../types/Exercise';
+export * from '../../types/Exercise';
