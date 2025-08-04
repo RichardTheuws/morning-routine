@@ -10,6 +10,8 @@ import { DurationSelection } from './components/onboarding/DurationSelection';
 import { Dashboard } from './components/home/Dashboard';
 import { RoutineSession } from './components/routine/RoutineSession';
 import { SettingsPage } from './components/settings/SettingsPage';
+import { ExercisesPage } from './components/exercises/ExercisesPage';
+import { CustomRoutinePage } from './components/routine/CustomRoutinePage';
 import { exercises } from './data/exercises';
 import { UserLevel } from './types/Exercise';
 import { useProgress } from './hooks/useProgress';
@@ -258,6 +260,28 @@ function AppContent() {
           level={selectedLevel}
           onComplete={handleRoutineComplete}
           onExit={() => setCurrentState('dashboard')}
+        />
+      );
+    
+    case 'exercises':
+      return (
+        <ExercisesPage
+          onBack={() => setCurrentState('dashboard')}
+        />
+      );
+    
+    case 'create-routine':
+      return (
+        <CustomRoutinePage
+          onBack={() => setCurrentState('dashboard')}
+          onStartRoutine={(routine) => {
+            // Convert routine to exercises for RoutineSession
+            const routineExercises = exercises.filter(ex => routine.exercises.includes(ex.id));
+            console.log('🎯 Starting custom routine:', routine.name_en, 'with', routineExercises.length, 'exercises');
+            // For now, we'll use the existing routine session with the custom exercises
+            // In the future, we could create a CustomRoutineSession component
+            setCurrentState('routine-session');
+          }}
         />
       );
     
