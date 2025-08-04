@@ -47,6 +47,30 @@ function AppContent() {
   const [selectedDuration, setSelectedDuration] = useState<number>(10);
   const { updateProgress } = useProgress();
 
+  // Helper function to optimize exercise order - MUST be defined before useMemo
+  const optimizeExerciseOrder = React.useCallback((exerciseList: typeof exercises, goals: string[]) => {
+    const ordered = [...exerciseList];
+    
+    // Sort by exercise type for better flow:
+    // 1. Mobility/warm-up first
+    // 2. Strength in middle  
+    // 3. Cardio for energy
+    // 4. Relaxation last
+    ordered.sort((a, b) => {
+      const getOrderScore = (ex: typeof exercises[0]) => {
+        if (ex.category.includes('Relaxation')) return 4; // Last
+        if (ex.category.includes('Cardio')) return 3; // Energy boost
+        if (ex.category.includes('Strength')) return 2; // Middle
+        if (ex.category.includes('Mobility')) return 1; // First
+        return 2.5; // Default middle
+      };
+      
+      return getOrderScore(a) - getOrderScore(b);
+    });
+    
+    return ordered;
+  }, []);
+
   // Select exercises based on user goals and level - MUST be at top level before any returns
   const selectedExercises = React.useMemo(() => {
     console.log('🎯 Selecting exercises for goals:', selectedGoals, 'duration:', selectedDuration);
@@ -192,30 +216,6 @@ function AppContent() {
     
     return finalExercises;
   }, [selectedGoals, selectedDuration]);
-
-  // Helper function to optimize exercise order
-  const optimizeExerciseOrder = (exerciseList: typeof exercises, goals: string[]) => {
-    const ordered = [...exerciseList];
-    
-    // Sort by exercise type for better flow:
-    // 1. Mobility/warm-up first
-    // 2. Strength in middle  
-    // 3. Cardio for energy
-    // 4. Relaxation last
-    ordered.sort((a, b) => {
-      const getOrderScore = (ex: typeof exercises[0]) => {
-        if (ex.category.includes('Relaxation')) return 4; // Last
-        if (ex.category.includes('Cardio')) return 3; // Energy boost
-        if (ex.category.includes('Strength')) return 2; // Middle
-        if (ex.category.includes('Mobility')) return 1; // First
-        return 2.5; // Default middle
-      };
-      
-      return getOrderScore(a) - getOrderScore(b);
-    });
-    
-    return ordered;
-  };
 
   // Save user preferences when they complete onboarding
   const saveUserPreferences = (goals: string[], level: UserLevel, duration: number) => {
