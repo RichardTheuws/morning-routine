@@ -2113,7 +2113,7 @@ export const exercises = [
       }
     }
   }
-];
+},
 {
   "id": "knee-taps",
   "name_nl": "Knie Taps",
@@ -2994,3 +2994,4 @@ export const exercises = [
     }
   }
 }
+];
