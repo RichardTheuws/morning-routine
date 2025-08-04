@@ -211,6 +211,49 @@ class PexelsVideoService {
       thumbnailUrl: 'https://images.pexels.com/videos/6740734/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
       description: 'Superman back strengthening exercise'
     }
+    ,
+    {
+      exerciseId: 'knee-taps',
+      searchTerms: ['knee taps exercise', 'high knees cardio', 'knee lift warm up', 'cardio knee raises'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/8436123/8436123-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/8436123/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      description: 'Knee taps cardio exercise'
+    },
+    {
+      exerciseId: 'heel-taps',
+      searchTerms: ['heel taps exercise', 'butt kicks cardio', 'hamstring activation', 'heel to glute'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/8436234/8436234-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/8436234/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      description: 'Heel taps hamstring activation exercise'
+    },
+    {
+      exerciseId: 'bodyweight-squats-advanced',
+      searchTerms: ['bodyweight squat exercise', 'air squat fitness', 'squat form demonstration', 'functional squat'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/6740456/6740456-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/6740456/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      description: 'Bodyweight squat strength exercise'
+    },
+    {
+      exerciseId: 'elbow-to-knee',
+      searchTerms: ['elbow to knee exercise', 'standing oblique crunch', 'core rotation exercise', 'dynamic core'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/7991678/7991678-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/7991678/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      description: 'Elbow to knee core exercise'
+    },
+    {
+      exerciseId: 'step-jacks',
+      searchTerms: ['step jacks exercise', 'low impact jumping jacks', 'cardio step movement', 'lateral step cardio'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/8436345/8436345-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/8436345/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      description: 'Step jacks low impact cardio exercise'
+    },
+    {
+      exerciseId: 'punches',
+      searchTerms: ['boxing punches exercise', 'cardio boxing workout', 'shadow boxing fitness', 'punch cardio'],
+      customVideoUrl: 'https://videos.pexels.com/video-files/6740389/6740389-uhd_2560_1440_25fps.mp4',
+      thumbnailUrl: 'https://images.pexels.com/videos/6740389/pictures/preview-0.jpg?auto=compress&cs=tinysrgb&w=400&h=300',
+      description: 'Boxing punches cardio exercise'
+    }
   ];
 
   // Get multiple video options for user selection
@@ -486,7 +529,13 @@ class PexelsVideoService {
       'standing-forward-bend': 'standing forward bend uttanasana hamstring',
       'seated-spinal-twist': 'seated spinal twist spine rotation mobility',
       'knee-rolls': 'knee rolls lower back spinal rotation',
-      'superman': 'superman exercise back extension strengthening'
+      'superman': 'superman exercise back extension strengthening',
+      'knee-taps': 'knee taps high knees cardio knee lift warm up',
+      'heel-taps': 'heel taps butt kicks hamstring activation cardio',
+      'bodyweight-squats-advanced': 'bodyweight squat air squat functional movement',
+      'elbow-to-knee': 'elbow to knee standing oblique core rotation',
+      'step-jacks': 'step jacks low impact jumping jacks lateral cardio',
+      'punches': 'boxing punches cardio shadow boxing fitness workout'
     };
 
     return specificTerms[exerciseId] || `${exerciseId} exercise fitness demonstration`;

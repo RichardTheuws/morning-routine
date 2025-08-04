@@ -2114,3 +2114,883 @@ export const exercises = [
     }
   }
 ];
+{
+  "id": "knee-taps",
+  "name_nl": "Knie Taps",
+  "name_en": "Knee Taps",
+  "category": ["Cardio", "Mobility", "Legs"],
+  "goals": ["Energy boost", "Mobility", "Fat loss"],
+  "levels": {
+    "beginner": {
+      "duration": "30s",
+      "sets": 1,
+      "reps": 20,
+      "description_nl": "Lichte cardio oefening waarbij je afwisselend je knieën optilt naar je handen",
+      "description_en": "Light cardio exercise alternating lifting knees to your hands",
+      "steps_nl": [
+        "Sta rechtop met voeten heupbreedte uit elkaar",
+        "Handen voor je lichaam op heuphoogte",
+        "Til afwisselend je knieën op naar je handen",
+        "Houd een gecontroleerd tempo aan",
+        "Blijf rechtop staan tijdens de beweging"
+      ],
+      "steps_en": [
+        "Stand upright with feet hip-width apart",
+        "Hold hands in front of your body at hip height",
+        "Alternately lift your knees up to your hands",
+        "Maintain a controlled tempo",
+        "Stay upright throughout the movement"
+      ],
+      "tips_nl": [
+        "Start langzaam en bouw het tempo op",
+        "Houd je core aangespannen",
+        "Adem regelmatig door"
+      ],
+      "tips_en": [
+        "Start slowly and build up the tempo",
+        "Keep your core engaged",
+        "Breathe regularly throughout"
+      ],
+      "common_mistakes_nl": [
+        "Te snel beginnen zonder warming-up",
+        "Voorover leunen tijdens de beweging",
+        "Adem inhouden"
+      ],
+      "common_mistakes_en": [
+        "Starting too fast without warming up",
+        "Leaning forward during movement",
+        "Holding your breath"
+      ],
+      "alternative_nl": "Marcheren op de plaats als knieën te zwaar zijn",
+      "alternative_en": "March in place if knee lifts are too challenging",
+      "animation_instruction_nl": "Persoon staat rechtop en tilt afwisselend linker en rechter knie op naar heuphoogte. Handen blijven stabiel voor het lichaam. Gecontroleerde, ritmische beweging.",
+      "animation_instruction_en": "Person stands upright alternating lifting left and right knee to hip height. Hands remain stable in front of body. Controlled, rhythmic movement."
+    },
+    "advanced": {
+      "duration": "45s",
+      "sets": 2,
+      "reps": 30,
+      "description_nl": "Snellere knie taps met meer intensiteit en langere duur",
+      "description_en": "Faster knee taps with more intensity and longer duration",
+      "steps_nl": [
+        "Sta rechtop met voeten heupbreedte uit elkaar",
+        "Handen voor je lichaam, iets hoger dan heuphoogte",
+        "Til knieën sneller op naar je handen",
+        "Houd een constant, hoger tempo aan",
+        "Voeg lichte armbeweging toe"
+      ],
+      "steps_en": [
+        "Stand upright with feet hip-width apart",
+        "Hold hands in front of body, slightly higher than hip height",
+        "Lift knees faster up to your hands",
+        "Maintain a constant, higher tempo",
+        "Add slight arm movement"
+      ],
+      "tips_nl": [
+        "Verhoog geleidelijk de snelheid",
+        "Houd je houding recht",
+        "Gebruik je armen voor balans"
+      ],
+      "tips_en": [
+        "Gradually increase the speed",
+        "Keep your posture straight",
+        "Use your arms for balance"
+      ],
+      "common_mistakes_nl": [
+        "Te hard van start gaan",
+        "Houding verliezen bij hogere snelheid",
+        "Onregelmatige ademhaling"
+      ],
+      "common_mistakes_en": [
+        "Starting too intensely",
+        "Losing posture at higher speed",
+        "Irregular breathing"
+      ],
+      "alternative_nl": "Lagere knie lifts als volledige range te zwaar is",
+      "alternative_en": "Lower knee lifts if full range is too challenging",
+      "animation_instruction_nl": "Snellere, meer dynamische knie lifts. Persoon beweegt met meer energie, knieën komen hoger, lichte bounce in de beweging.",
+      "animation_instruction_en": "Faster, more dynamic knee lifts. Person moves with more energy, knees come higher, slight bounce in movement."
+    },
+    "expert": {
+      "duration": "60s",
+      "sets": 3,
+      "reps": 40,
+      "description_nl": "Hoge intensiteit knie taps met maximale snelheid en coördinatie",
+      "description_en": "High intensity knee taps with maximum speed and coordination",
+      "steps_nl": [
+        "Sta rechtop met voeten heupbreedte uit elkaar",
+        "Handen actief bewegend voor optimale coördinatie",
+        "Maximale knie lift snelheid",
+        "Voeg cross-body bewegingen toe",
+        "Houd hoge intensiteit vol"
+      ],
+      "steps_en": [
+        "Stand upright with feet hip-width apart",
+        "Hands actively moving for optimal coordination",
+        "Maximum knee lift speed",
+        "Add cross-body movements",
+        "Maintain high intensity"
+      ],
+      "tips_nl": [
+        "Focus op explosieve bewegingen",
+        "Houd perfecte vorm bij hoge snelheid",
+        "Adem diep en regelmatig"
+      ],
+      "tips_en": [
+        "Focus on explosive movements",
+        "Maintain perfect form at high speed",
+        "Breathe deeply and regularly"
+      ],
+      "common_mistakes_nl": [
+        "Vorm opofferen voor snelheid",
+        "Te vroeg vermoeid raken",
+        "Ongecontroleerde bewegingen"
+      ],
+      "common_mistakes_en": [
+        "Sacrificing form for speed",
+        "Getting tired too early",
+        "Uncontrolled movements"
+      ],
+      "alternative_nl": "Kortere intervallen met rust als volledige duur te zwaar is",
+      "alternative_en": "Shorter intervals with rest if full duration is too challenging",
+      "animation_instruction_nl": "Zeer snelle, explosieve knie lifts. Maximale intensiteit, perfecte coördinatie, cross-body bewegingen geïntegreerd.",
+      "animation_instruction_en": "Very fast, explosive knee lifts. Maximum intensity, perfect coordination, cross-body movements integrated."
+    }
+  }
+},
+{
+  "id": "heel-taps",
+  "name_nl": "Hiel Taps",
+  "name_en": "Heel Taps",
+  "category": ["Cardio", "Mobility", "Legs"],
+  "goals": ["Energy boost", "Mobility", "Fat loss"],
+  "levels": {
+    "beginner": {
+      "duration": "30s",
+      "sets": 1,
+      "reps": 20,
+      "description_nl": "Lichte cardio waarbij je afwisselend je hielen naar achteren tikt",
+      "description_en": "Light cardio alternating tapping your heels behind you",
+      "steps_nl": [
+        "Sta rechtop met voeten heupbreedte uit elkaar",
+        "Handen op je heupen of voor je lichaam",
+        "Buig afwisselend je knieën en tik hielen naar billen",
+        "Houd een gecontroleerd tempo aan",
+        "Blijf rechtop en stabiel staan"
+      ],
+      "steps_en": [
+        "Stand upright with feet hip-width apart",
+        "Place hands on hips or in front of body",
+        "Alternately bend knees and tap heels to glutes",
+        "Maintain a controlled tempo",
+        "Stay upright and stable"
+      ],
+      "tips_nl": [
+        "Start met lage intensiteit",
+        "Focus op hamstring activatie",
+        "Houd je core stabiel"
+      ],
+      "tips_en": [
+        "Start with low intensity",
+        "Focus on hamstring activation",
+        "Keep your core stable"
+      ],
+      "common_mistakes_nl": [
+        "Te ver voorover leunen",
+        "Hielen niet hoog genoeg",
+        "Te snel beginnen"
+      ],
+      "common_mistakes_en": [
+        "Leaning too far forward",
+        "Not lifting heels high enough",
+        "Starting too fast"
+      ],
+      "alternative_nl": "Kleinere bewegingen als volledige range te zwaar is",
+      "alternative_en": "Smaller movements if full range is too challenging",
+      "animation_instruction_nl": "Persoon staat rechtop en buigt afwisselend knieën, hielen tikken richting billen. Gecontroleerde, ritmische beweging met focus op hamstrings.",
+      "animation_instruction_en": "Person stands upright alternately bending knees, heels tapping toward glutes. Controlled, rhythmic movement focusing on hamstrings."
+    },
+    "advanced": {
+      "duration": "45s",
+      "sets": 2,
+      "reps": 30,
+      "description_nl": "Snellere hiel taps met meer intensiteit en betere hamstring activatie",
+      "description_en": "Faster heel taps with more intensity and better hamstring activation",
+      "steps_nl": [
+        "Sta rechtop met voeten heupbreedte uit elkaar",
+        "Armen kunnen meebewegen voor balans",
+        "Snellere hiel taps naar billen",
+        "Verhoog het tempo geleidelijk",
+        "Focus op explosieve hamstring contractie"
+      ],
+      "steps_en": [
+        "Stand upright with feet hip-width apart",
+        "Arms can move for balance",
+        "Faster heel taps to glutes",
+        "Gradually increase tempo",
+        "Focus on explosive hamstring contraction"
+      ],
+      "tips_nl": [
+        "Verhoog snelheid geleidelijk",
+        "Houd perfecte houding",
+        "Voel de hamstring werken"
+      ],
+      "tips_en": [
+        "Increase speed gradually",
+        "Maintain perfect posture",
+        "Feel the hamstring working"
+      ],
+      "common_mistakes_nl": [
+        "Houding verliezen bij snelheid",
+        "Onvolledige bewegingsrange",
+        "Ademhaling vergeten"
+      ],
+      "common_mistakes_en": [
+        "Losing posture with speed",
+        "Incomplete range of motion",
+        "Forgetting to breathe"
+      ],
+      "alternative_nl": "Lagere intensiteit als tempo te hoog wordt",
+      "alternative_en": "Lower intensity if tempo becomes too high",
+      "animation_instruction_nl": "Snellere, meer dynamische hiel taps. Betere hamstring activatie zichtbaar, meer energie in beweging.",
+      "animation_instruction_en": "Faster, more dynamic heel taps. Better hamstring activation visible, more energy in movement."
+    },
+    "expert": {
+      "duration": "60s",
+      "sets": 3,
+      "reps": 40,
+      "description_nl": "Maximale intensiteit hiel taps met perfecte vorm en coördinatie",
+      "description_en": "Maximum intensity heel taps with perfect form and coordination",
+      "steps_nl": [
+        "Sta rechtop met perfecte houding",
+        "Maximale snelheid hiel taps",
+        "Voeg armcoördinatie toe",
+        "Houd hoge intensiteit vol",
+        "Focus op explosieve kracht"
+      ],
+      "steps_en": [
+        "Stand upright with perfect posture",
+        "Maximum speed heel taps",
+        "Add arm coordination",
+        "Maintain high intensity",
+        "Focus on explosive power"
+      ],
+      "tips_nl": [
+        "Maximale hamstring activatie",
+        "Perfecte vorm bij hoge snelheid",
+        "Gecontroleerde explosiviteit"
+      ],
+      "tips_en": [
+        "Maximum hamstring activation",
+        "Perfect form at high speed",
+        "Controlled explosiveness"
+      ],
+      "common_mistakes_nl": [
+        "Vorm opofferen voor snelheid",
+        "Te vroeg vermoeid raken",
+        "Verlies van coördinatie"
+      ],
+      "common_mistakes_en": [
+        "Sacrificing form for speed",
+        "Getting tired too early",
+        "Loss of coordination"
+      ],
+      "alternative_nl": "Interval training als continue intensiteit te zwaar is",
+      "alternative_en": "Interval training if continuous intensity is too challenging",
+      "animation_instruction_nl": "Zeer snelle, explosieve hiel taps. Maximale intensiteit, perfecte coördinatie, armbeweging geïntegreerd.",
+      "animation_instruction_en": "Very fast, explosive heel taps. Maximum intensity, perfect coordination, arm movement integrated."
+    }
+  }
+},
+{
+  "id": "bodyweight-squats-advanced",
+  "name_nl": "Bodyweight Squats",
+  "name_en": "Bodyweight Squats",
+  "category": ["Strength", "Legs", "Core", "Stability"],
+  "goals": ["Build strength", "Mobility", "Fat loss"],
+  "levels": {
+    "beginner": {
+      "duration": "1m",
+      "sets": 1,
+      "reps": 10,
+      "description_nl": "Basis squat beweging voor beenkracht en stabiliteit",
+      "description_en": "Basic squat movement for leg strength and stability",
+      "steps_nl": [
+        "Sta met voeten iets breder dan heupbreedte",
+        "Tenen licht naar buiten gericht",
+        "Zak langzaam door je knieën",
+        "Houd je borst omhoog en rug recht",
+        "Ga zo diep als comfortabel mogelijk",
+        "Duw door je hielen omhoog"
+      ],
+      "steps_en": [
+        "Stand with feet slightly wider than hip-width",
+        "Toes slightly turned out",
+        "Slowly lower through your knees",
+        "Keep chest up and back straight",
+        "Go as deep as comfortably possible",
+        "Push through your heels to rise"
+      ],
+      "tips_nl": [
+        "Knieën volgen richting tenen",
+        "Gewicht op hielen houden",
+        "Langzame, gecontroleerde beweging"
+      ],
+      "tips_en": [
+        "Knees track over toes",
+        "Keep weight on heels",
+        "Slow, controlled movement"
+      ],
+      "common_mistakes_nl": [
+        "Knieën naar binnen vallen",
+        "Te ver voorover leunen",
+        "Niet diep genoeg gaan"
+      ],
+      "common_mistakes_en": [
+        "Knees caving inward",
+        "Leaning too far forward",
+        "Not going deep enough"
+      ],
+      "alternative_nl": "Squat naar stoel als volledige range te zwaar is",
+      "alternative_en": "Squat to chair if full range is too challenging",
+      "animation_instruction_nl": "Persoon staat rechtop, zakt langzaam door knieën tot diepe squat positie, duwt explosief omhoog. Focus op perfecte vorm en knie tracking.",
+      "animation_instruction_en": "Person stands upright, slowly lowers through knees to deep squat position, pushes explosively up. Focus on perfect form and knee tracking."
+    },
+    "advanced": {
+      "duration": "90s",
+      "sets": 2,
+      "reps": 15,
+      "description_nl": "Meer squats met focus op diepte en kracht",
+      "description_en": "More squats focusing on depth and strength",
+      "steps_nl": [
+        "Perfecte squat vorm zoals beginner",
+        "Ga dieper in de squat",
+        "Voeg een pauze toe onderaan",
+        "Explosieve opwaartse beweging",
+        "Houd tempo constant"
+      ],
+      "steps_en": [
+        "Perfect squat form as beginner",
+        "Go deeper into the squat",
+        "Add a pause at the bottom",
+        "Explosive upward movement",
+        "Keep tempo constant"
+      ],
+      "tips_nl": [
+        "Focus op diepte en vorm",
+        "Pauze van 1-2 seconden onderaan",
+        "Explosieve kracht omhoog"
+      ],
+      "tips_en": [
+        "Focus on depth and form",
+        "Pause 1-2 seconds at bottom",
+        "Explosive power going up"
+      ],
+      "common_mistakes_nl": [
+        "Vorm verliezen bij meer reps",
+        "Te snelle bewegingen",
+        "Onvolledige range of motion"
+      ],
+      "common_mistakes_en": [
+        "Losing form with more reps",
+        "Too fast movements",
+        "Incomplete range of motion"
+      ],
+      "alternative_nl": "Minder reps als vorm achteruit gaat",
+      "alternative_en": "Fewer reps if form deteriorates",
+      "animation_instruction_nl": "Diepere squats met pauze onderaan. Meer gecontroleerde beweging, explosieve opwaartse fase, perfecte vorm behouden.",
+      "animation_instruction_en": "Deeper squats with pause at bottom. More controlled movement, explosive upward phase, maintaining perfect form."
+    },
+    "expert": {
+      "duration": "2m",
+      "sets": 3,
+      "reps": 20,
+      "description_nl": "Maximale squats met perfecte vorm en hoge intensiteit",
+      "description_en": "Maximum squats with perfect form and high intensity",
+      "steps_nl": [
+        "Perfecte squat techniek",
+        "Maximale diepte bereiken",
+        "Langere pauze onderaan (2-3 sec)",
+        "Explosieve kracht omhoog",
+        "Hoog tempo volhouden"
+      ],
+      "steps_en": [
+        "Perfect squat technique",
+        "Achieve maximum depth",
+        "Longer pause at bottom (2-3 sec)",
+        "Explosive power up",
+        "Maintain high tempo"
+      ],
+      "tips_nl": [
+        "Maximale mobiliteit benutten",
+        "Perfecte vorm bij alle reps",
+        "Mentale focus op kwaliteit"
+      ],
+      "tips_en": [
+        "Utilize maximum mobility",
+        "Perfect form on all reps",
+        "Mental focus on quality"
+      ],
+      "common_mistakes_nl": [
+        "Vorm opofferen voor aantal",
+        "Te vroeg vermoeid raken",
+        "Ongecontroleerde bewegingen"
+      ],
+      "common_mistakes_en": [
+        "Sacrificing form for quantity",
+        "Getting tired too early",
+        "Uncontrolled movements"
+      ],
+      "alternative_nl": "Kortere sets met rust als volledige volume te zwaar is",
+      "alternative_en": "Shorter sets with rest if full volume is too challenging",
+      "animation_instruction_nl": "Perfecte, diepe squats met maximale controle. Lange pauze onderaan, explosieve opwaartse beweging, hoge intensiteit behouden.",
+      "animation_instruction_en": "Perfect, deep squats with maximum control. Long pause at bottom, explosive upward movement, maintaining high intensity."
+    }
+  }
+},
+{
+  "id": "elbow-to-knee",
+  "name_nl": "Elleboog naar Knie",
+  "name_en": "Elbow to Knee",
+  "category": ["Core", "Mobility", "Cardio"],
+  "goals": ["Build strength", "Mobility", "Energy boost"],
+  "levels": {
+    "beginner": {
+      "duration": "30s",
+      "sets": 1,
+      "reps": 10,
+      "description_nl": "Dynamische core oefening waarbij elleboog en knie elkaar ontmoeten",
+      "description_en": "Dynamic core exercise bringing elbow and knee together",
+      "steps_nl": [
+        "Sta rechtop met voeten heupbreedte uit elkaar",
+        "Handen achter je hoofd, ellebogen wijd",
+        "Til je rechterknie op terwijl je linker elleboog naar beneden brengt",
+        "Probeer elleboog en knie te laten raken",
+        "Wissel af tussen links en rechts",
+        "Houd je core aangespannen"
+      ],
+      "steps_en": [
+        "Stand upright with feet hip-width apart",
+        "Hands behind head, elbows wide",
+        "Lift right knee while bringing left elbow down",
+        "Try to touch elbow and knee",
+        "Alternate between left and right",
+        "Keep your core engaged"
+      ],
+      "tips_nl": [
+        "Focus op core activatie",
+        "Langzame, gecontroleerde beweging",
+        "Balans is belangrijker dan snelheid"
+      ],
+      "tips_en": [
+        "Focus on core activation",
+        "Slow, controlled movement",
+        "Balance is more important than speed"
+      ],
+      "common_mistakes_nl": [
+        "Te snel bewegen en balans verliezen",
+        "Alleen armen gebruiken",
+        "Nek te veel belasten"
+      ],
+      "common_mistakes_en": [
+        "Moving too fast and losing balance",
+        "Using only arms",
+        "Straining the neck too much"
+      ],
+      "alternative_nl": "Marcheren met armzwaai als volledige beweging te zwaar is",
+      "alternative_en": "Marching with arm swing if full movement is too challenging",
+      "animation_instruction_nl": "Persoon staat rechtop, brengt afwisselend elleboog en tegenovergestelde knie samen. Dynamische core rotatie, gecontroleerde beweging.",
+      "animation_instruction_en": "Person stands upright, alternately bringing elbow and opposite knee together. Dynamic core rotation, controlled movement."
+    },
+    "advanced": {
+      "duration": "45s",
+      "sets": 2,
+      "reps": 15,
+      "description_nl": "Snellere elleboog-knie bewegingen met meer core activatie",
+      "description_en": "Faster elbow-knee movements with more core activation",
+      "steps_nl": [
+        "Zelfde startpositie als beginner",
+        "Verhoog het tempo geleidelijk",
+        "Focus op maximale core contractie",
+        "Probeer elleboog en knie echt te raken",
+        "Houd perfecte balans",
+        "Voeg lichte rotatie toe"
+      ],
+      "steps_en": [
+        "Same starting position as beginner",
+        "Gradually increase tempo",
+        "Focus on maximum core contraction",
+        "Try to actually touch elbow and knee",
+        "Maintain perfect balance",
+        "Add slight rotation"
+      ],
+      "tips_nl": [
+        "Verhoog snelheid geleidelijk",
+        "Maximale core activatie",
+        "Perfecte coördinatie behouden"
+      ],
+      "tips_en": [
+        "Increase speed gradually",
+        "Maximum core activation",
+        "Maintain perfect coordination"
+      ],
+      "common_mistakes_nl": [
+        "Vorm verliezen bij hogere snelheid",
+        "Onvolledige bewegingsrange",
+        "Balans verliezen"
+      ],
+      "common_mistakes_en": [
+        "Losing form at higher speed",
+        "Incomplete range of motion",
+        "Losing balance"
+      ],
+      "alternative_nl": "Lagere intensiteit als balans moeilijk wordt",
+      "alternative_en": "Lower intensity if balance becomes difficult",
+      "animation_instruction_nl": "Snellere, meer dynamische elleboog-knie bewegingen. Betere core activatie, meer rotatie, perfecte coördinatie.",
+      "animation_instruction_en": "Faster, more dynamic elbow-knee movements. Better core activation, more rotation, perfect coordination."
+    },
+    "expert": {
+      "duration": "60s",
+      "sets": 3,
+      "reps": 20,
+      "description_nl": "Maximale intensiteit elleboog-knie met perfecte vorm en coördinatie",
+      "description_en": "Maximum intensity elbow-knee with perfect form and coordination",
+      "steps_nl": [
+        "Perfecte techniek zoals advanced",
+        "Maximale snelheid behouden",
+        "Voeg extra core rotatie toe",
+        "Houd hoge intensiteit vol",
+        "Focus op explosieve bewegingen"
+      ],
+      "steps_en": [
+        "Perfect technique as advanced",
+        "Maintain maximum speed",
+        "Add extra core rotation",
+        "Maintain high intensity",
+        "Focus on explosive movements"
+      ],
+      "tips_nl": [
+        "Maximale core kracht",
+        "Perfecte vorm bij hoge snelheid",
+        "Explosieve, gecontroleerde bewegingen"
+      ],
+      "tips_en": [
+        "Maximum core strength",
+        "Perfect form at high speed",
+        "Explosive, controlled movements"
+      ],
+      "common_mistakes_nl": [
+        "Vorm opofferen voor snelheid",
+        "Te vroeg vermoeid raken",
+        "Verlies van coördinatie"
+      ],
+      "common_mistakes_en": [
+        "Sacrificing form for speed",
+        "Getting tired too early",
+        "Loss of coordination"
+      ],
+      "alternative_nl": "Interval training als continue intensiteit te zwaar is",
+      "alternative_en": "Interval training if continuous intensity is too challenging",
+      "animation_instruction_nl": "Zeer snelle, explosieve elleboog-knie bewegingen. Maximale core activatie, perfecte coördinatie, hoge intensiteit.",
+      "animation_instruction_en": "Very fast, explosive elbow-knee movements. Maximum core activation, perfect coordination, high intensity."
+    }
+  }
+},
+{
+  "id": "step-jacks",
+  "name_nl": "Step Jacks",
+  "name_en": "Step Jacks",
+  "category": ["Cardio", "Mobility", "Legs", "Shoulders"],
+  "goals": ["Energy boost", "Mobility", "Fat loss"],
+  "levels": {
+    "beginner": {
+      "duration": "30s",
+      "sets": 1,
+      "reps": 20,
+      "description_nl": "Lage impact versie van jumping jacks, één voet tegelijk",
+      "description_en": "Low impact version of jumping jacks, one foot at a time",
+      "steps_nl": [
+        "Sta rechtop met voeten bij elkaar",
+        "Armen langs je zijden",
+        "Stap met rechtervoet naar rechts terwijl armen omhoog gaan",
+        "Breng rechtervoet terug terwijl armen naar beneden gaan",
+        "Herhaal met linkervoet naar links",
+        "Wissel af in gecontroleerd tempo"
+      ],
+      "steps_en": [
+        "Stand upright with feet together",
+        "Arms at your sides",
+        "Step right foot to the right while arms go up",
+        "Bring right foot back while arms go down",
+        "Repeat with left foot to the left",
+        "Alternate in controlled tempo"
+      ],
+      "tips_nl": [
+        "Houd bewegingen gecontroleerd",
+        "Focus op arm-been coördinatie",
+        "Lage impact, geen springen"
+      ],
+      "tips_en": [
+        "Keep movements controlled",
+        "Focus on arm-leg coordination",
+        "Low impact, no jumping"
+      ],
+      "common_mistakes_nl": [
+        "Te grote stappen nemen",
+        "Armen niet volledig omhoog",
+        "Verlies van ritme"
+      ],
+      "common_mistakes_en": [
+        "Taking steps too wide",
+        "Not raising arms fully",
+        "Loss of rhythm"
+      ],
+      "alternative_nl": "Alleen armbeweging als beenwerk te zwaar is",
+      "alternative_en": "Arm movement only if leg work is too challenging",
+      "animation_instruction_nl": "Persoon stapt afwisselend zijwaarts terwijl armen synchron omhoog en omlaag bewegen. Gecontroleerde, ritmische beweging.",
+      "animation_instruction_en": "Person alternately steps sideways while arms move up and down synchronously. Controlled, rhythmic movement."
+    },
+    "advanced": {
+      "duration": "45s",
+      "sets": 2,
+      "reps": 30,
+      "description_nl": "Snellere step jacks met meer armactivatie en coördinatie",
+      "description_en": "Faster step jacks with more arm activation and coordination",
+      "steps_nl": [
+        "Zelfde beweging als beginner",
+        "Verhoog het tempo geleidelijk",
+        "Grotere armzwaai voor meer activatie",
+        "Voeg lichte bounce toe aan beweging",
+        "Houd perfecte coördinatie",
+        "Focus op schouder mobiliteit"
+      ],
+      "steps_en": [
+        "Same movement as beginner",
+        "Gradually increase tempo",
+        "Larger arm swing for more activation",
+        "Add slight bounce to movement",
+        "Maintain perfect coordination",
+        "Focus on shoulder mobility"
+      ],
+      "tips_nl": [
+        "Verhoog snelheid geleidelijk",
+        "Maximale armzwaai",
+        "Perfecte timing behouden"
+      ],
+      "tips_en": [
+        "Increase speed gradually",
+        "Maximum arm swing",
+        "Maintain perfect timing"
+      ],
+      "common_mistakes_nl": [
+        "Coördinatie verliezen bij snelheid",
+        "Onvolledige armbeweging",
+        "Onregelmatig tempo"
+      ],
+      "common_mistakes_en": [
+        "Losing coordination with speed",
+        "Incomplete arm movement",
+        "Irregular tempo"
+      ],
+      "alternative_nl": "Kleinere bewegingen als coördinatie moeilijk wordt",
+      "alternative_en": "Smaller movements if coordination becomes difficult",
+      "animation_instruction_nl": "Snellere step jacks met meer dynamiek. Grotere armzwaai, lichte bounce, betere schouder mobiliteit.",
+      "animation_instruction_en": "Faster step jacks with more dynamics. Larger arm swing, slight bounce, better shoulder mobility."
+    },
+    "expert": {
+      "duration": "60s",
+      "sets": 3,
+      "reps": 40,
+      "description_nl": "Maximale intensiteit step jacks met perfecte coördinatie",
+      "description_en": "Maximum intensity step jacks with perfect coordination",
+      "steps_nl": [
+        "Perfecte techniek zoals advanced",
+        "Maximale snelheid en intensiteit",
+        "Voeg cross-body bewegingen toe",
+        "Houd hoge intensiteit vol",
+        "Focus op explosieve armactivatie"
+      ],
+      "steps_en": [
+        "Perfect technique as advanced",
+        "Maximum speed and intensity",
+        "Add cross-body movements",
+        "Maintain high intensity",
+        "Focus on explosive arm activation"
+      ],
+      "tips_nl": [
+        "Maximale coördinatie",
+        "Perfecte vorm bij hoge snelheid",
+        "Explosieve bewegingen"
+      ],
+      "tips_en": [
+        "Maximum coordination",
+        "Perfect form at high speed",
+        "Explosive movements"
+      ],
+      "common_mistakes_nl": [
+        "Vorm opofferen voor snelheid",
+        "Verlies van coördinatie",
+        "Te vroeg vermoeid raken"
+      ],
+      "common_mistakes_en": [
+        "Sacrificing form for speed",
+        "Loss of coordination",
+        "Getting tired too early"
+      ],
+      "alternative_nl": "Kortere intervallen als volledige duur te intensief is",
+      "alternative_en": "Shorter intervals if full duration is too intensive",
+      "animation_instruction_nl": "Zeer snelle, explosieve step jacks. Maximale intensiteit, perfecte coördinatie, cross-body bewegingen geïntegreerd.",
+      "animation_instruction_en": "Very fast, explosive step jacks. Maximum intensity, perfect coordination, cross-body movements integrated."
+    }
+  }
+},
+{
+  "id": "punches",
+  "name_nl": "Punches",
+  "name_en": "Punches",
+  "category": ["Cardio", "Arms", "Shoulders"],
+  "goals": ["Energy boost", "Build strength", "Relaxation"],
+  "levels": {
+    "beginner": {
+      "duration": "30s",
+      "sets": 1,
+      "reps": 20,
+      "description_nl": "Lichte boxing bewegingen voor cardio en stress release",
+      "description_en": "Light boxing movements for cardio and stress release",
+      "steps_nl": [
+        "Sta in boxing houding, voeten heupbreedte uit elkaar",
+        "Handen in vuisten voor je gezicht",
+        "Stoot afwisselend met linker en rechter vuist",
+        "Draai je romp licht mee met elke stoot",
+        "Houd je guard omhoog",
+        "Gecontroleerde, ritmische bewegingen"
+      ],
+      "steps_en": [
+        "Stand in boxing stance, feet hip-width apart",
+        "Hands in fists in front of your face",
+        "Punch alternately with left and right fist",
+        "Rotate your torso slightly with each punch",
+        "Keep your guard up",
+        "Controlled, rhythmic movements"
+      ],
+      "tips_nl": [
+        "Focus op techniek, niet op kracht",
+        "Houd schouders ontspannen",
+        "Adem uit bij elke stoot"
+      ],
+      "tips_en": [
+        "Focus on technique, not power",
+        "Keep shoulders relaxed",
+        "Exhale with each punch"
+      ],
+      "common_mistakes_nl": [
+        "Te veel kracht gebruiken",
+        "Schouders te gespannen",
+        "Guard laten zakken"
+      ],
+      "common_mistakes_en": [
+        "Using too much force",
+        "Shoulders too tense",
+        "Dropping guard"
+      ],
+      "alternative_nl": "Langzamere bewegingen als schouders gespannen worden",
+      "alternative_en": "Slower movements if shoulders become tense",
+      "animation_instruction_nl": "Persoon in boxing houding stoot afwisselend met vuisten. Lichte romp rotatie, guard omhoog, gecontroleerde bewegingen.",
+      "animation_instruction_en": "Person in boxing stance punches alternately with fists. Slight torso rotation, guard up, controlled movements."
+    },
+    "advanced": {
+      "duration": "45s",
+      "sets": 2,
+      "reps": 30,
+      "description_nl": "Snellere punches met meer intensiteit en combinaties",
+      "description_en": "Faster punches with more intensity and combinations",
+      "steps_nl": [
+        "Zelfde basis techniek als beginner",
+        "Verhoog het tempo geleidelijk",
+        "Voeg combinaties toe (1-2, 1-2-3)",
+        "Meer romp rotatie voor kracht",
+        "Houd perfecte vorm",
+        "Focus op snelheid en precisie"
+      ],
+      "steps_en": [
+        "Same basic technique as beginner",
+        "Gradually increase tempo",
+        "Add combinations (1-2, 1-2-3)",
+        "More torso rotation for power",
+        "Maintain perfect form",
+        "Focus on speed and precision"
+      ],
+      "tips_nl": [
+        "Verhoog snelheid geleidelijk",
+        "Perfecte techniek behouden",
+        "Gebruik hele lichaam"
+      ],
+      "tips_en": [
+        "Increase speed gradually",
+        "Maintain perfect technique",
+        "Use whole body"
+      ],
+      "common_mistakes_nl": [
+        "Techniek verliezen bij snelheid",
+        "Te veel armkracht gebruiken",
+        "Onregelmatige ademhaling"
+      ],
+      "common_mistakes_en": [
+        "Losing technique with speed",
+        "Using too much arm strength",
+        "Irregular breathing"
+      ],
+      "alternative_nl": "Kortere combinaties als techniek achteruit gaat",
+      "alternative_en": "Shorter combinations if technique deteriorates",
+      "animation_instruction_nl": "Snellere punches met combinaties. Meer romp rotatie, betere techniek, hogere intensiteit.",
+      "animation_instruction_en": "Faster punches with combinations. More torso rotation, better technique, higher intensity."
+    },
+    "expert": {
+      "duration": "60s",
+      "sets": 3,
+      "reps": 40,
+      "description_nl": "Maximale intensiteit punches met perfecte techniek en kracht",
+      "description_en": "Maximum intensity punches with perfect technique and power",
+      "steps_nl": [
+        "Perfecte boxing techniek",
+        "Maximale snelheid en intensiteit",
+        "Complexe combinaties",
+        "Voeg footwork toe",
+        "Houd hoge intensiteit vol",
+        "Focus op explosieve kracht"
+      ],
+      "steps_en": [
+        "Perfect boxing technique",
+        "Maximum speed and intensity",
+        "Complex combinations",
+        "Add footwork",
+        "Maintain high intensity",
+        "Focus on explosive power"
+      ],
+      "tips_nl": [
+        "Maximale technische precisie",
+        "Explosieve kracht ontwikkeling",
+        "Perfecte ademhaling"
+      ],
+      "tips_en": [
+        "Maximum technical precision",
+        "Explosive power development",
+        "Perfect breathing"
+      ],
+      "common_mistakes_nl": [
+        "Techniek opofferen voor kracht",
+        "Te vroeg vermoeid raken",
+        "Verlies van focus"
+      ],
+      "common_mistakes_en": [
+        "Sacrificing technique for power",
+        "Getting tired too early",
+        "Loss of focus"
+      ],
+      "alternative_nl": "Interval training als continue intensiteit te zwaar is",
+      "alternative_en": "Interval training if continuous intensity is too challenging",
+      "animation_instruction_nl": "Zeer snelle, explosieve punches met perfecte techniek. Complexe combinaties, footwork, maximale intensiteit.",
+      "animation_instruction_en": "Very fast, explosive punches with perfect technique. Complex combinations, footwork, maximum intensity."
+    }
+  }
+}
