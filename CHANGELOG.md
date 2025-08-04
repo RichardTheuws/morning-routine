@@ -5,6 +5,46 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2025-01-27
+
+### Added
+- **6 New Cardio & Strength Exercises** - Comprehensive exercise library expansion
+  - **Cardio (4 exercises)**: Knee Taps, Heel Taps, Step Jacks, Punches
+  - **Strength (2 exercises)**: Bodyweight Squats, Elbow to Knee
+- **Modular Exercise Architecture** - Refactored exercises into organized modules
+  - **Category-based files**: back.ts, neck.ts, core.ts, cardio.ts, mobility.ts, strength.ts, relaxation.ts
+  - **Better maintainability**: Smaller files, clear separation of concerns
+  - **Improved performance**: Faster loading, better code organization
+
+### Improved
+- **Smart Exercise Selection Algorithm** - Completely redesigned routine generation
+  - **Goal-based scoring**: Exercises scored by relevance to user goals
+  - **Category balancing**: Ensures variety across exercise types
+  - **Complementary selection**: Adds supporting exercises (core for back pain, etc.)
+  - **Optimized ordering**: Mobility → Strength → Cardio → Relaxation flow
+  - **Better goal matching**: More accurate exercise selection for specific goals
+- **Exercise Database Structure** - Now contains 31+ complete exercises
+  - **Back Pain**: 8 targeted exercises
+  - **Neck Pain**: 6 specific exercises  
+  - **Energy Boost**: 8 cardio exercises
+  - **Strength**: 6 strength-building exercises
+  - **Mobility**: 12 mobility exercises
+  - **Fat Loss**: 6 cardio exercises
+  - **Relaxation**: 3 relaxation exercises
+
+### Enhanced
+- **Routine Quality** - Much better goal-to-exercise matching
+- **Exercise Variety** - Better distribution across categories
+- **User Experience** - More relevant exercise suggestions
+- **Code Organization** - Cleaner, more maintainable codebase
+
+### Technical
+- **Modular Architecture** - Exercises split into logical category files
+- **Smart Scoring System** - Algorithm scores exercises by goal relevance
+- **Category Balancing** - Prevents routine from being too focused on one area
+- **Complementary Logic** - Automatically adds supporting exercises
+- **Flow Optimization** - Orders exercises for optimal workout progression
+
 ## [1.2.0] - 2025-01-27
 
 ### Added

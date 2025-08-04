@@ -174,8 +174,8 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onBack }) => {
           <div className="space-y-3 text-sm text-slate-600">
             <p>
               {isLanguageDutch 
-                ? 'Morning Routine App v1.2.0 - Privacy-first, open source ochtendroutine app. Ontwikkeld door Richard Theuws met bolt.new.'
-                : 'Morning Routine App v1.2.0 - Privacy-first, open source morning routine app. Developed by Richard Theuws using bolt.new.'
+                ? 'Morning Routine App v1.3.0 - Privacy-first, open source ochtendroutine app. Ontwikkeld door Richard Theuws met bolt.new.'
+                : 'Morning Routine App v1.3.0 - Privacy-first, open source morning routine app. Developed by Richard Theuws using bolt.new.'
               }
             </p>
             <p>

@@ -2,6 +2,8 @@
 
 A privacy-first, open source Progressive Web App (PWA) for creating and following personalized morning routines. Works completely offline, no account required, all data stays local on your device.
 
+**Current Version: 1.3.0**
+
 ![Morning Routine App](https://images.pexels.com/photos/4056723/pexels-photo-4056723.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop)
 
 ## ✨ Features

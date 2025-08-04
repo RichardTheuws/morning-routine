@@ -54,62 +54,167 @@ function AppContent() {
     if (selectedGoals.length === 0) {
       // Default selection for first-time users
       console.log('⚠️ No goals selected, using default exercises');
-      const defaultExercises = exercises.slice(0, Math.min(5, exercises.length));
+      const defaultExercises = exercises
+        .filter(ex => ex.goals.includes('Mobility') || ex.goals.includes('Energy boost'))
+        .slice(0, Math.min(5, exercises.length));
       console.log('📋 Default exercises:', defaultExercises.map(ex => ex.name_en));
       return defaultExercises;
     }
     
-    // Step 1: Filter exercises based on selected goals
-    const filteredExercises = exercises.filter(exercise => 
-      exercise.goals.some(goal => {
-        const match = selectedGoals.includes(goal);
-        if (match) {
-          console.log(`✅ Exercise "${exercise.name_en}" matches goal "${goal}"`);
+    // Step 1: Score exercises based on goal relevance
+    const scoredExercises = exercises.map(exercise => {
+      let score = 0;
+      let matchedGoals: string[] = [];
+      
+      exercise.goals.forEach(goal => {
+        if (selectedGoals.includes(goal)) {
+          score += 10; // High score for direct goal match
+          matchedGoals.push(goal);
         }
-        return match;
-      })
-    );
+      });
+      
+      // Bonus points for exercises that support multiple selected goals
+      const goalMatches = exercise.goals.filter(goal => selectedGoals.includes(goal)).length;
+      if (goalMatches > 1) {
+        score += goalMatches * 5; // Bonus for multi-goal exercises
+      }
+      
+      // Category-based scoring for better variety
+      if (selectedGoals.includes('Reduce back pain') && exercise.category.includes('Back')) score += 5;
+      if (selectedGoals.includes('Reduce neck pain') && exercise.category.includes('Neck')) score += 5;
+      if (selectedGoals.includes('Build strength') && exercise.category.includes('Strength')) score += 5;
+      if (selectedGoals.includes('Energy boost') && exercise.category.includes('Cardio')) score += 5;
+      if (selectedGoals.includes('Mobility') && exercise.category.includes('Mobility')) score += 5;
+      if (selectedGoals.includes('Fat loss') && exercise.category.includes('Cardio')) score += 5;
+      if (selectedGoals.includes('Relaxation') && exercise.category.includes('Relaxation')) score += 5;
+      
+      return { exercise, score, matchedGoals };
+    }).filter(item => item.score > 0); // Only include exercises with some relevance
     
-    console.log('🔍 Filtered exercises by goals:', filteredExercises.length, 'exercises found');
-    console.log('📝 Filtered exercises:', filteredExercises.map(ex => `${ex.name_en} (${ex.goals.join(', ')})`));
+    // Sort by score (highest first)
+    scoredExercises.sort((a, b) => b.score - a.score);
+    
+    console.log('🔍 Scored exercises by goals:', scoredExercises.length, 'exercises found');
+    console.log('📝 Top scored exercises:', scoredExercises.slice(0, 8).map(item => 
+      `${item.exercise.name_en} (score: ${item.score}, goals: ${item.matchedGoals.join(', ')})`
+    ));
     
     // Step 2: Calculate target number of exercises based on duration
-    // Assume average exercise takes 2-3 minutes
-    const targetExerciseCount = Math.max(3, Math.min(8, Math.floor(selectedDuration / 2.5)));
+    // More realistic: 1.5-2 minutes per exercise including rest
+    const targetExerciseCount = Math.max(4, Math.min(10, Math.floor(selectedDuration / 2)));
     
     console.log('🎯 Target exercise count for', selectedDuration, 'minutes:', targetExerciseCount);
     
+    // Step 3: Smart selection for balanced routine
     let finalExercises: typeof exercises = [];
+    const selectedCategories = new Set<string>();
     
-    // Step 3: Prioritize goal-specific exercises
-    if (filteredExercises.length >= targetExerciseCount) {
-      // We have enough goal-specific exercises
-      finalExercises = filteredExercises.slice(0, targetExerciseCount);
-      console.log('✅ Enough goal-specific exercises found');
-    } else {
-      // Need to supplement with general exercises
-      finalExercises = [...filteredExercises];
-      console.log('⚠️ Not enough goal-specific exercises, supplementing...');
+    // Prioritize highest scoring exercises but ensure variety
+    for (const item of scoredExercises) {
+      if (finalExercises.length >= targetExerciseCount) break;
       
-      // Add general exercises that don't conflict with goals
-      const generalExercises = exercises.filter(exercise => 
-        !filteredExercises.includes(exercise) &&
-        // Prefer exercises that are generally beneficial
-        (exercise.goals.includes('Mobility') || 
-         exercise.goals.includes('Reduce back pain') ||
-         exercise.category.includes('Mobility'))
-      );
+      const exercise = item.exercise;
+      const exerciseCategories = exercise.category;
       
-      console.log('🔄 General exercises available:', generalExercises.length);
+      // Check if we already have too many exercises from the same category
+      const categoryOverlap = exerciseCategories.some(cat => selectedCategories.has(cat));
+      const categoryCount = Array.from(selectedCategories).filter(cat => 
+        exerciseCategories.includes(cat)
+      ).length;
+      
+      // Add exercise if:
+      // 1. High score (>15) - always include top matches
+      // 2. Or if we need variety and this adds new category
+      // 3. Or if we have few exercises and this is relevant
+      if (item.score >= 15 || 
+          (!categoryOverlap && finalExercises.length < targetExerciseCount * 0.7) ||
+          (finalExercises.length < 3 && item.score >= 5)) {
+        
+        finalExercises.push(exercise);
+        exerciseCategories.forEach(cat => selectedCategories.add(cat));
+        
+        console.log(`✅ Added: ${exercise.name_en} (score: ${item.score}, categories: ${exerciseCategories.join(', ')})`);
+      }
+    }
+    
+    // Step 4: Fill remaining slots with complementary exercises
+    if (finalExercises.length < targetExerciseCount) {
+      console.log('🔄 Need more exercises, adding complementary ones...');
+      
+      // Add complementary exercises that work well with selected goals
+      const complementaryExercises = exercises.filter(exercise => {
+        if (finalExercises.includes(exercise)) return false;
+        
+        // Always good: mobility and core
+        if (exercise.goals.includes('Mobility') || exercise.category.includes('Core')) return true;
+        
+        // For back pain: add core and mobility
+        if (selectedGoals.includes('Reduce back pain') && 
+            (exercise.category.includes('Core') || exercise.category.includes('Mobility'))) return true;
+            
+        // For neck pain: add shoulder mobility
+        if (selectedGoals.includes('Reduce neck pain') && 
+            exercise.category.includes('Shoulders')) return true;
+            
+        // For energy: add light cardio
+        if (selectedGoals.includes('Energy boost') && 
+            exercise.category.includes('Cardio')) return true;
+            
+        // For strength: add core
+        if (selectedGoals.includes('Build strength') && 
+            exercise.category.includes('Core')) return true;
+            
+        return false;
+      });
       
       const remainingSlots = targetExerciseCount - finalExercises.length;
-      finalExercises = [...finalExercises, ...generalExercises.slice(0, remainingSlots)];
+      finalExercises = [...finalExercises, ...complementaryExercises.slice(0, remainingSlots)];
       
-      // If still not enough, add any remaining exercises
-      if (finalExercises.length < targetExerciseCount) {
-        const anyRemaining = exercises.filter(ex => !finalExercises.includes(ex));
-        finalExercises = [...finalExercises, ...anyRemaining.slice(0, targetExerciseCount - finalExercises.length)];
-        console.log('🔄 Added remaining exercises to fill slots');
+      console.log('🔄 Added complementary exercises:', complementaryExercises.slice(0, remainingSlots).map(ex => ex.name_en));
+    }
+    
+    // Step 5: Ensure we have at least minimum exercises
+    if (finalExercises.length < 3) {
+      console.log('⚠️ Still need more exercises, adding any suitable ones...');
+      const anyRemaining = exercises.filter(ex => !finalExercises.includes(ex));
+      const needed = Math.min(3 - finalExercises.length, anyRemaining.length);
+      finalExercises = [...finalExercises, ...anyRemaining.slice(0, needed)];
+    }
+    
+    // Step 6: Optimize order for better flow
+    finalExercises = optimizeExerciseOrder(finalExercises, selectedGoals);
+    
+    console.log('🎉 Final selected exercises:');
+    finalExercises.forEach((ex, index) => {
+      const goalMatches = ex.goals.filter(goal => selectedGoals.includes(goal));
+      console.log(`${index + 1}. ${ex.name_en} - Goals: ${goalMatches.join(', ')} - Categories: ${ex.category.join(', ')}`);
+    });
+    
+    return finalExercises;
+  }, [selectedGoals, selectedDuration]);
+
+  // Helper function to optimize exercise order
+  const optimizeExerciseOrder = (exerciseList: typeof exercises, goals: string[]) => {
+    const ordered = [...exerciseList];
+    
+    // Sort by exercise type for better flow:
+    // 1. Mobility/warm-up first
+    // 2. Strength in middle  
+    // 3. Cardio for energy
+    // 4. Relaxation last
+    ordered.sort((a, b) => {
+      const getOrderScore = (ex: typeof exercises[0]) => {
+        if (ex.category.includes('Relaxation')) return 4; // Last
+        if (ex.category.includes('Cardio')) return 3; // Energy boost
+        if (ex.category.includes('Strength')) return 2; // Middle
+        if (ex.category.includes('Mobility')) return 1; // First
+        return 2.5; // Default middle
+      };
+      
+      return getOrderScore(a) - getOrderScore(b);
+    });
+    
+    return ordered;
       }
     }
     
